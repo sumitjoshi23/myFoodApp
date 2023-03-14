@@ -47,14 +47,14 @@ function Body() {
   ) : (
     <>
       <div className="flex py-2 px-8 h-12 mx-4 my-2">
-        <form className="flex" onSubmit={handleFormSubmit}>
+        <form className="flex mx-auto px-24" onSubmit={handleFormSubmit}>
           <input
             placeholder="Search restaurant here"
-            className="focus:bg-[#CBE4DE] outline-none rounded-l-full w-80 px-3 rounded-lg bg-gray-100 border border-[#2E4F4F]"
+            className="h-12 focus:bg-[#CBE4DE] outline-none rounded-l-full w-96 px-3 rounded-lg bg-gray-100 border border-[#2E4F4F]"
             value={searchText}
             onChange={handleChange}
           ></input>
-          <Button className="rounded-r-full bg-gray-100 w-10 pl-2 border border-[#2E4F4F]">
+          <Button className="rounded-r-full h-12 text-xl bg-gray-100 w-14 pl-4 border border-[#2E4F4F]">
             <BiSearchAlt />
           </Button>
         </form>
@@ -64,7 +64,7 @@ function Body() {
               setSearchText("");
               setFilteredRestaurants(allRestaurants);
             }}
-            className="bg-gray-100 border border-gray-300 rounded-full w-8 mx-1 pl-2"
+            className="bg-gray-100 border h-12 border-gray-300 rounded-full w-8 mx-1 pl-2"
           >
             <BiReset />
           </Button>
@@ -74,7 +74,6 @@ function Body() {
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link
-              className="mx-4 my-8"
               key={restaurant.data.id}
               to={"/restaurant/" + restaurant.data.id}
             >

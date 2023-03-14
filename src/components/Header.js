@@ -7,27 +7,25 @@ import appLogo from "../utils/images/appLogo.png";
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
-    <div className="sticky top-0 py-2 bg-[#2E4F4F] shadow-lg">
-      <div className="container flex items-center justify-between mx-auto px-32">
+    <div className="sticky top-0 py-2 z-10 bg-[#2E4F4F] shadow-lg">
+      <div className="grid grid-cols-5 items-center px-32">
         <Link to="/">
-          <img className="w-1/3 rounded-lg " src={appLogo} alt="logo" />
+          <img className="w-1/2 rounded-lg " src={appLogo} alt="logo" />
         </Link>
-        <ul className="flex">
-          <li>
-            <ButtonList />
-          </li>
-        </ul>
-        <div className="w-1/12">
+        <div className="flex col-span-3 justify-center">
+          <ButtonList />
+        </div>
+        <div>
           {!isLoggedIn ? (
             <Button
-              className="w-full float-right hover:bg-[#0E8388] py-2 bg-[#CBE4DE] border-4 rounded-full border-[#2C3333]"
+              className="w-1/3 float-right hover:bg-[#0E8388] py-2 bg-[#CBE4DE] border-4 rounded-full border-[#2C3333]"
               onClick={() => setIsLoggedIn(true)}
             >
               LogOut
             </Button>
           ) : (
             <Button
-              className="w-full float-right hover:bg-[#0E8388] py-2 bg-[#CBE4DE] border-4 rounded-full border-[#2C3333]"
+              className="w-1/3 float-right hover:bg-[#0E8388] py-2 bg-[#CBE4DE] border-4 rounded-full border-[#2C3333]"
               onClick={() => setIsLoggedIn(false)}
             >
               Login

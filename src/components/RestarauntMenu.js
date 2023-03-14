@@ -20,23 +20,31 @@ function RestaurantMenu() {
           <ul className="flex flex-wrap">
             {Object.values(restaurant.menu.items).map((item) => (
               <li
-                className="w-full m-8 shadow-lg border border-gray-200 list-none flex"
+                className="hover:bg-[#CBE4DE] hover:scale-110 hover:shadow-[#2E4F4F] rounded-lg w-full m-8 shadow-lg border border-gray-200 list-none flex"
                 key={item.id}
               >
-                {item.cloudinaryImageId ? (
+                <div className="w-1/4 p-4">
                   <img
-                    className="w-1/4"
-                    src={CDN_IMG_URL + item?.cloudinaryImageId}
-                    alt="img"
+                    className="rounded-lg"
+                    src={
+                      item.cloudinaryImageId
+                        ? CDN_IMG_URL + item?.cloudinaryImageId
+                        : fallBackItemPic
+                    }
+                    alt="Item Pic"
                   />
-                ) : (
-                  <img className="w-1/4" src={fallBackItemPic} alt="img" />
-                )}
+                </div>
+
                 <div className="mx-16 my-6">
                   <p className="font-semibold">{item.name}</p>
                   <p className="text-gray-500">{item.description}</p>
                   <p className="text-sm">
-                    {parseFloat(item.price) / 100} Rs /-
+                    <span>Rs </span>
+                    {item.price
+                      ? parseFloat(item.price / 100)
+                      : item?.variantsV2?.variant_groups[0]?.variations[0]
+                          ?.price}
+                    /-
                   </p>
                   <p className="text-sm text-gray-700">
                     {item.isVeg ? "Veg item" : "Non-Veg item"}

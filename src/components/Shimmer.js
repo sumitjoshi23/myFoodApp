@@ -1,13 +1,13 @@
 function Shimmer() {
   return (
-    <div className="mx-12 flex flex-wrap justify-center">
+    <div className="flex flex-wrap justify-center">
       {Array(10)
         .fill("")
         .map((e, index) => {
           return (
             <div
               key={index}
-              className="p-2 m-4 h-96 w-60 shadow-lg bg-gray-200 rounded-lg overflow-hidden"
+              className="mx-4 my-8 h-80 w-60 bg-gray-100 rounded-lg overflow-hidden "
             ></div>
           );
         })}
