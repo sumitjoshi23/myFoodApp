@@ -2,7 +2,12 @@ import { useParams } from "react-router-dom";
 import { CDN_IMG_URL } from "../config";
 import useRestaurant from "../hooks/useRestaurant";
 import Shimmer from "./Shimmer";
-import fallBackItemPic from "../utils/images/fallBackItemPic.jpeg";
+
+import { RxDotFilled } from "react-icons/rx";
+import { TbDiscount2 } from "react-icons/tb";
+import { AiFillStar } from "react-icons/ai";
+import MenuItem from "./MenuItem";
+import OfferSection from "./OfferSection";
 function RestaurantMenu() {
   let { id } = useParams();
   let restaurant = useRestaurant(id);
@@ -10,53 +15,63 @@ function RestaurantMenu() {
     <Shimmer />
   ) : (
     <>
-      <img
-        className="w-1/4  py-10"
-        src={CDN_IMG_URL + restaurant.cloudinaryImageId}
-        alt="img"
-      />
       <div className="flex">
-        <div>
-          <ul className="flex flex-wrap">
-            {Object.values(restaurant.menu.items).map((item) => (
-              <li
-                className="hover:bg-[#CBE4DE] hover:scale-110 hover:shadow-[#2E4F4F] rounded-lg w-full m-8 shadow-lg border border-gray-200 list-none flex"
-                key={item.id}
-              >
-                <div className="w-1/4 p-4">
-                  <img
-                    className="rounded-lg"
-                    src={
-                      item.cloudinaryImageId
-                        ? CDN_IMG_URL + item?.cloudinaryImageId
-                        : fallBackItemPic
-                    }
-                    alt="Item Pic"
-                  />
-                </div>
-
-                <div className="mx-16 my-6">
-                  <p className="font-semibold">{item.name}</p>
-                  <p className="text-gray-500">{item.description}</p>
-                  <p className="text-sm">
-                    <span>Rs </span>
-                    {item.price
-                      ? parseFloat(item.price / 100)
-                      : item?.variantsV2?.variant_groups[0]?.variations[0]
-                          ?.price}
-                    /-
-                  </p>
-                  <p className="text-sm text-gray-700">
-                    {item.isVeg ? "Veg item" : "Non-Veg item"}
-                  </p>
-                </div>
-                <hr />
+        <div className="self-start min-w-[30%]	border border-gray-200 rounded-lg m-2 bg-[#2E4F4F]">
+          <div className="py-2 mx-4">
+            <div className="py-4 sticky top-16 z-5 shadow-xl my-1 font-bold text-xl mb-3 bg-[#CBE4DE] text-[#2E4F4F] p-2 rounded-lg flex justify-center">
+              <p>{restaurant.name}</p>
+            </div>
+            <img src={CDN_IMG_URL + restaurant.cloudinaryImageId} alt="img" />{" "}
+            <h2 className="m-2 text-[#CBE4DE] text-sm">
+              {restaurant.cuisines?.join(", ")}
+            </h2>
+            <hr />
+            <ul
+              className={
+                "m-2 flex items-center justify-center bg-gray-200 rounded-lg text-sm font-semibold text-gray-700"
+              }
+            >
+              <li className="flex items-center">
+                <span className="p-1">{restaurant.avgRating}</span>
+                <AiFillStar />
               </li>
-            ))}
-          </ul>
+              <RxDotFilled />
+              {restaurant?.sla?.slaString !== "--" && (
+                <>
+                  <li>{restaurant?.sla?.slaString}</li>
+                  <RxDotFilled />
+                </>
+              )}
+              <li>{restaurant.costForTwoMsg}</li>
+            </ul>
+            <div className="p-2">
+              <h2 className="my-2">
+                {restaurant.labels.map(({ title, message }) => {
+                  return (
+                    message !== "null" && (
+                      <div key={title}>
+                        <h1 className="font-semibold text-[#CBE4DE]">
+                          {title}
+                        </h1>
+                        <p className="bg-[#CBE4DE] border border-[#2C3333] p-2 rounded-lg">
+                          {message}
+                        </p>
+                      </div>
+                    )
+                  );
+                })}
+              </h2>
+              <hr />
+            </div>
+          </div>
+        </div>
+        <div className="py-2">
+          <OfferSection restaurant={restaurant} />
+          <MenuItem restaurant={restaurant} />
         </div>
       </div>
     </>
   );
 }
 export default RestaurantMenu;
+//  writing-mode: vertical-lr;

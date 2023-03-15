@@ -25,19 +25,19 @@ let appRouter = createBrowserRouter([
         element: <Body />,
       },
       {
-        path: "/about",
+        path: "about",
         element: <About />,
       },
       {
-        path: "/contact",
+        path: "contact",
         element: <Contact />,
       },
       {
-        path: "/restaurant/:id",
+        path: "restaurant/:id",
         element: <RestaurantMenu />,
       },
       {
-        path: "/cart",
+        path: "cart",
         element: (
           <Suspense fallback={<Shimmer />}>
             <Cart />

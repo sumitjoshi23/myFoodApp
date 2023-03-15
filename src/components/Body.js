@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { BiSearchAlt, BiReset } from "react-icons/bi";
 import Button from "../Button";
+import { FOODAPP_API_URL } from "../config";
 
 const filterData = (searchText, restaurantList) => {
   return restaurantList.filter((restaurant) =>
@@ -27,9 +28,7 @@ function Body() {
   };
 
   async function getRestaurants() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7084598&lng=77.0609436&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(FOODAPP_API_URL);
     const json = await data.json();
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
