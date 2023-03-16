@@ -13,7 +13,7 @@ const Cart = () => {
 
   const renderedItems = Object.values(items).map((item) => (
     <div
-      className="hover:bg-[#CBE4DE] hover:duration-500 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg m-8 p-4 shadow-lg border border-gray-200 flex"
+      className="hover:bg-[#CBE4DE] hover:duration-500 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg m-8 p-4 shadow-lg border flex"
       key={item.id}
     >
       <div className="w-full flex justify-between items-center">
@@ -59,7 +59,7 @@ const Cart = () => {
 
   return (
     <>
-      <div className="py-4 flex flex-col items-center justify-center bg-gray-100">
+      <div className="py-4 flex flex-col items-center justify-center">
         <h1 className="text-3xl font-bold mb-8 text-[#2E4F4F]">Cart</h1>
         {cartTotal !== 0 && (
           <div className="flex text-[#A84448] text-2xl font-bold justify-between hover:scale-105 hover:shadow-lg transition-transform:  ">
@@ -78,7 +78,7 @@ const Cart = () => {
         {items.length ? (
           renderedItems
         ) : (
-          <div className="py-4 max-w-lg w-full font-bold text-3xl text-[#0E8388] h-96 flex justify-center items-center">
+          <div className="py-4 max-w-lg w-full font-bold text-3xl text-[#0E8388] flex justify-center items-center">
             <p className="">Empty cart 🙃 Start adding items to your cart</p>
           </div>
         )}

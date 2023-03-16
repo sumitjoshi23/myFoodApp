@@ -7,13 +7,13 @@ import store from "./store";
 function App() {
   return (
     <Provider store={store}>
-      <Header />
-      <div className="container mx-auto px-36 ">
-        <div className="border border-slate-150 px-8 p-8">
+      <div className="flex flex-col">
+        <Header />
+        <div className="container mx-auto px-36 min-h-screen">
           <Outlet />
         </div>
+        <Footer className="self-end	" />
       </div>
-      <Footer className="fixed bottom-0" />
     </Provider>
   );
 }

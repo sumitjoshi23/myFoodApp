@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { BiSearchAlt, BiReset } from "react-icons/bi";
 import Button from "../Button";
 import { FOODAPP_API_URL } from "../config";
+import RestaurantList from "./RestaurantList";
 
 const filterData = (searchText, restaurantList) => {
   return restaurantList.filter((restaurant) =>
@@ -45,20 +46,18 @@ function Body() {
     <Shimmer />
   ) : (
     <>
-      <div className="flex justify-center py-2 px-8 h-20 mx-4">
-        <div className=" fixed top-20 z-10 p-3 shadow-lg bg-white rounded-full">
-          <form className=" flex h-full p-1" onSubmit={handleFormSubmit}>
-            <input
-              placeholder="Search restaurant here"
-              className="h-12 focus:bg-[#CBE4DE] outline-none rounded-l-full w-96 px-3 rounded-lg bg-gray-100 border border-[#2E4F4F]"
-              value={searchText}
-              onChange={handleChange}
-            ></input>
-            <Button className="rounded-r-full h-12 text-xl bg-gray-100 w-14 pl-4 border border-[#2E4F4F]">
-              <BiSearchAlt />
-            </Button>
-          </form>
-        </div>
+      <div className="sticky top-16 z-10 my-8 rounded-full max-w-fit m-auto bg-white shadow-lg flex justify-center items-center">
+        <form className=" p-2 flex h-full" onSubmit={handleFormSubmit}>
+          <input
+            placeholder="Search restaurant here"
+            className="text-center h-12 focus:bg-[#CBE4DE] outline-none rounded-l-full w-96 rounded-lg bg-gray-100 border border-[#2E4F4F]"
+            value={searchText}
+            onChange={handleChange}
+          ></input>
+          <Button className="rounded-r-full h-12 text-xl bg-gray-100 w-14 pl-4 border border-[#2E4F4F]">
+            <BiSearchAlt />
+          </Button>
+        </form>
         {/* {searchText ? (
           <Button
             onClick={(e) => {
@@ -71,18 +70,7 @@ function Body() {
           </Button>
         ) : null} */}
       </div>
-      <div className="flex flex-wrap justify-around">
-        {filteredRestaurants.map((restaurant) => {
-          return (
-            <Link
-              key={restaurant.data.id}
-              to={"/restaurant/" + restaurant.data.id}
-            >
-              <RestaurantCard {...restaurant.data} />
-            </Link>
-          );
-        })}
-      </div>
+      <RestaurantList filteredRestaurants={filteredRestaurants} />
     </>
   );
 }
