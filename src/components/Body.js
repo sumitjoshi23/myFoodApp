@@ -45,29 +45,31 @@ function Body() {
     <Shimmer />
   ) : (
     <>
-      <div className="flex py-2 px-8 h-12 mx-4 my-2">
-        <form className="flex mx-auto px-24" onSubmit={handleFormSubmit}>
-          <input
-            placeholder="Search restaurant here"
-            className="h-12 focus:bg-[#CBE4DE] outline-none rounded-l-full w-96 px-3 rounded-lg bg-gray-100 border border-[#2E4F4F]"
-            value={searchText}
-            onChange={handleChange}
-          ></input>
-          <Button className="rounded-r-full h-12 text-xl bg-gray-100 w-14 pl-4 border border-[#2E4F4F]">
-            <BiSearchAlt />
-          </Button>
-        </form>
-        {searchText ? (
+      <div className="flex justify-center py-2 px-8 h-20 mx-4">
+        <div className=" fixed top-20 z-10 p-3 shadow-lg bg-white rounded-full">
+          <form className=" flex h-full p-1" onSubmit={handleFormSubmit}>
+            <input
+              placeholder="Search restaurant here"
+              className="h-12 focus:bg-[#CBE4DE] outline-none rounded-l-full w-96 px-3 rounded-lg bg-gray-100 border border-[#2E4F4F]"
+              value={searchText}
+              onChange={handleChange}
+            ></input>
+            <Button className="rounded-r-full h-12 text-xl bg-gray-100 w-14 pl-4 border border-[#2E4F4F]">
+              <BiSearchAlt />
+            </Button>
+          </form>
+        </div>
+        {/* {searchText ? (
           <Button
             onClick={(e) => {
               setSearchText("");
               setFilteredRestaurants(allRestaurants);
             }}
-            className="bg-gray-100 border h-12 border-gray-300 rounded-full w-8 mx-1 pl-2"
+            className="bg-gray-100 border z-10 h-12 border-gray-300 rounded-full  pl-2"
           >
             <BiReset />
           </Button>
-        ) : null}
+        ) : null} */}
       </div>
       <div className="flex flex-wrap justify-around">
         {filteredRestaurants.map((restaurant) => {

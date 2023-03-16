@@ -6,7 +6,7 @@ const store = configureStore({
     cart: cartReducer,
   },
 });
-console.log(store.getState());
+// console.log(store.getState());
 
 export * from "./slices/cartSlice";
 export default store;

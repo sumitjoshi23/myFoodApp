@@ -5,3 +5,4 @@ export const CDN_IMG_URL =
 
 export const RESRAURANT_MENU_URL =
   "https://www.swiggy.com/dapi/menu/v4/full?lat=28.7084598&lng=77.0609436&menuId=";
+// https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.705235&lng=77.05899&restaurantId=559844&submitAction=ENTER

@@ -9,11 +9,11 @@ function App() {
     <Provider store={store}>
       <Header />
       <div className="container mx-auto px-36 ">
-        <div className="border border-slate-150 px-8 pb-8">
+        <div className="border border-slate-150 px-8 p-8">
           <Outlet />
         </div>
       </div>
-      <Footer />
+      <Footer className="fixed bottom-0" />
     </Provider>
   );
 }

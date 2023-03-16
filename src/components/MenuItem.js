@@ -10,10 +10,7 @@ function MenuItem({ restaurant }) {
   const dispatch = useDispatch();
   const items = useSelector((store) => store.cart.items);
   return (
-    <div className="w-full font-semibold text-2xl">
-      <p className="text-[#CBE4DE] border p-3 bg-[#2E4F4F] border-gray-300 shadow-xl rounded-lg">
-        🍽️ Choose delicious food from our catalog 🍽️
-      </p>
+    <div className="w-full">
       <ul className="flex flex-wrap">
         {Object.values(restaurant.menu.items).map((item) => (
           <li
@@ -45,21 +42,22 @@ function MenuItem({ restaurant }) {
                   : item?.variantsV2?.variant_groups[0]?.variations[0]?.price}
                 /-
               </p>
-
-              <Button
-                className="font-semibold flex justify-center items-center hover:bg-[#0E8388] hover:text-white m-2 px-5 text-xl bg-[#CBE4DE] border-2 rounded-full border-[#2C3333]"
-                onClick={() => dispatch(addItem(item))}
-              >
-                Add to cart
-              </Button>
-              {Object.values(items).includes(item) && (
+              <div className="flex">
                 <Button
-                  className="bg-red-100 font-semibold flex justify-center items-center hover:bg-red-200 m-2 px-5 text-xl border-2 rounded-full  border-red-900"
-                  onClick={() => dispatch(removeItem(item))}
+                  className="font-semibold flex justify-center items-center hover:bg-[#0E8388] hover:text-white m-2 px-5 text-xl bg-[#CBE4DE] border-2 rounded-full border-[#2C3333]"
+                  onClick={() => dispatch(addItem(item))}
                 >
-                  Remove
+                  Add to cart
                 </Button>
-              )}
+                {Object.values(items).includes(item) && (
+                  <Button
+                    className="bg-red-100 font-semibold flex justify-center items-center hover:bg-red-200 m-2 px-5 text-xl border-2 rounded-full  border-red-900"
+                    onClick={() => dispatch(removeItem(item))}
+                  >
+                    Remove
+                  </Button>
+                )}
+              </div>
             </div>
             <hr />
           </li>
@@ -68,5 +66,4 @@ function MenuItem({ restaurant }) {
     </div>
   );
 }
-
 export default MenuItem;

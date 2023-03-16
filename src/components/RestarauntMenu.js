@@ -2,12 +2,12 @@ import { useParams } from "react-router-dom";
 import { CDN_IMG_URL } from "../config";
 import useRestaurant from "../hooks/useRestaurant";
 import Shimmer from "./Shimmer";
-
-import { RxDotFilled } from "react-icons/rx";
-import { TbDiscount2 } from "react-icons/tb";
-import { AiFillStar } from "react-icons/ai";
 import MenuItem from "./MenuItem";
 import OfferSection from "./OfferSection";
+import { RxDotFilled } from "react-icons/rx";
+import { AiFillStar } from "react-icons/ai";
+import OfferSlider from "./OfferSlider";
+
 function RestaurantMenu() {
   let { id } = useParams();
   let restaurant = useRestaurant(id);
@@ -16,9 +16,9 @@ function RestaurantMenu() {
   ) : (
     <>
       <div className="flex">
-        <div className="self-start min-w-[30%]	border border-gray-200 rounded-lg m-2 bg-[#2E4F4F]">
+        <div className="self-start min-w-[30%] border border-gray-200 rounded-lg m-2 bg-[#2E4F4F]">
           <div className="py-2 mx-4">
-            <div className="py-4 sticky top-16 z-5 shadow-xl my-1 font-bold text-xl mb-3 bg-[#CBE4DE] text-[#2E4F4F] p-2 rounded-lg flex justify-center">
+            <div className="py-4 sticky top-20 z-5 shadow-xl my-1 font-bold text-xl mb-3 bg-[#CBE4DE] text-[#2E4F4F] p-2 rounded-lg flex justify-center">
               <p>{restaurant.name}</p>
             </div>
             <img src={CDN_IMG_URL + restaurant.cloudinaryImageId} alt="img" />{" "}
@@ -67,6 +67,7 @@ function RestaurantMenu() {
         </div>
         <div className="py-2">
           <OfferSection restaurant={restaurant} />
+          <OfferSlider restaurant={restaurant} />
           <MenuItem restaurant={restaurant} />
         </div>
       </div>
