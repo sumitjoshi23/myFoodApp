@@ -3,10 +3,12 @@ import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Provider store={store}>
+      <ScrollToTop />
       <div className="flex flex-col">
         <Header />
         <div className="container mx-auto px-36 min-h-screen">
