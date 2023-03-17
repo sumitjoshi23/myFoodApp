@@ -4,7 +4,7 @@ import outlet2 from "../utils/images/outlet2.jpg";
 
 const About = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="py-8 flex flex-col items-center justify-center">
       <h1 className="text-3xl font-bold mb-8 text-[#2E4F4F]">About Us</h1>
       <p className="max-w-lg text-center text-gray-700">
         Welcome to our food ordering app! We're dedicated to making it easy and

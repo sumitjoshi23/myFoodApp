@@ -25,7 +25,7 @@ const ConfirmOrderDetails = () => {
     </tr>
   ));
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="py-8 flex flex-col items-center justify-center">
       <h1 className="text-3xl font-bold mb-8 text-[#2E4F4F]">Confirm Order</h1>
       <div className="p-5 text-center">
         <div className="grid grid-cols-2 gap-4 mb-8">

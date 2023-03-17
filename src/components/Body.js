@@ -15,7 +15,9 @@ function Body() {
   const [searchText, setSearchText] = useState("");
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleChange = (e) => {
     setSearchText(e.target.value);
   };
@@ -47,11 +49,7 @@ function Body() {
     <Shimmer />
   ) : (
     <>
-      <div className="mb-4 text-center text-3xl italic text-[#2E4F4F] font-semibold">
-        15 Restaurants near you...
-      </div>
-
-      <div className="sticky top-16 z-10 mb-8 rounded-full max-w-fit m-auto bg-white shadow-lg flex justify-center items-center">
+      <div className="fixed left-[50%] translate-x-[-50%] z-10 rounded-full max-w-fit m-auto bg-white shadow-xl flex justify-center items-center">
         <form className="p-2 flex h-full" onSubmit={handleFormSubmit}>
           <input
             placeholder="Search restaurant here"
@@ -74,6 +72,9 @@ function Body() {
             <BiReset />
           </Button>
         ) : null} */}
+      </div>
+      <div className="mt-20 mb-4 text-center text-3xl italic text-[#2E4F4F] font-semibold">
+        15 Restaurants near you...
       </div>
       <RestaurantList filteredRestaurants={filteredRestaurants} />
     </>

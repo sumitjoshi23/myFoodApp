@@ -25,7 +25,7 @@ function RestaurantDetails() {
     <Shimmer />
   ) : (
     <>
-      <div className="sticky top-16 z-10 text-3xl font-bold mb-8 text-[#CBE4DE] py-4 bg-[#2E4F4F] rounded-lg flex justify-center">
+      <div className="sticky top-16 z-10 text-3xl font-bold mb-8 text-[#CBE4DE] mt-8 py-4 bg-[#2E4F4F] rounded-lg flex justify-center">
         <p>{name}</p>
       </div>
       <div className="flex my-4">

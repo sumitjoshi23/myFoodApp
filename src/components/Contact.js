@@ -117,7 +117,9 @@ const ContactUsPage = () => {
 
   const content = showDialogueBox ? formSubmissionConfirmationBox : form;
   return (
-    <div className="flex flex-col items-center justify-center">{content}</div>
+    <div className="py-8 flex flex-col items-center justify-center">
+      {content}
+    </div>
   );
 };
 
