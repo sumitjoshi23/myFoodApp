@@ -1,11 +1,9 @@
-import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
-import { Link } from "react-router-dom";
-import { BiSearchAlt, BiReset } from "react-icons/bi";
-import Button from "../Button";
+import { BiSearchAlt } from "react-icons/bi";
 import { FOODAPP_API_URL } from "../config";
 import RestaurantList from "./RestaurantList";
+import { fallBackLandingPage } from "../utils/helper";
 
 const filterData = (searchText, restaurantList) => {
   return restaurantList.filter((restaurant) =>
@@ -34,8 +32,11 @@ function Body() {
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
+
   useEffect(() => {
-    getRestaurants();
+    getRestaurants().catch(() => {
+      document.write(fallBackLandingPage);
+    });
   }, []);
 
   if (!allRestaurants) {
