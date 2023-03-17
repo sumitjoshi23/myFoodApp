@@ -56,7 +56,7 @@ const Cart = () => {
 
   return (
     <>
-      <div className="py-4 flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center">
         <h1 className="text-3xl font-bold mb-8 text-[#2E4F4F]">Cart</h1>
         {cartTotal !== 0 && (
           <div className="bg-gray-100 rounded-xl p-5">

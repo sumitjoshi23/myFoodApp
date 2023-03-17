@@ -12,8 +12,8 @@ const Footer = () => {
           </div>
           <div className="flex justify-center ">
             <nav className="flex space-x-4">
-              <a href="/" className="text-gray-300 hover:text-white">
-                Home
+              <a href="/offers" className="text-gray-300 hover:text-white">
+                Offers
               </a>
               <a href="/about" className="text-gray-300 hover:text-white">
                 About

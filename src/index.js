@@ -12,6 +12,7 @@ import Shimmer from "./components/Shimmer";
 import ConfirmOrderDetails from "./components/ConfirmOrderDetails";
 import RestaurantDetails from "./components/RestarauntDetails";
 import OrderSuccess from "./components/OrderSuccess";
+import Offers from "./components/Offers";
 const Cart = lazy(() => import("./components/Cart"));
 
 let el = document.querySelector("#root");
@@ -29,6 +30,10 @@ let appRouter = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "offers",
+        element: <Offers />,
       },
       {
         path: "contact",

@@ -5,8 +5,8 @@ import { AiOutlineHome, AiOutlineShoppingCart } from "react-icons/ai";
 import {
   MdContactSupport,
   MdOutlineConnectWithoutContact,
+  MdOutlineLocalOffer,
 } from "react-icons/md";
-import { GrContact } from "react-icons/gr";
 import { useSelector } from "react-redux";
 
 const ButtonList = () => {
@@ -14,6 +14,11 @@ const ButtonList = () => {
 
   let allButtons = [
     { title: "Home", icon: <AiOutlineHome />, to: "/" },
+    {
+      title: "Offers",
+      icon: <MdOutlineLocalOffer />,
+      to: "/offers",
+    },
     { title: "About", icon: <MdContactSupport />, to: "/about" },
     {
       title: "Contact",

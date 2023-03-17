@@ -47,7 +47,7 @@ function Body() {
     <Shimmer />
   ) : (
     <>
-      <div className="text-center m-4 text-3xl italic text-[#2E4F4F] font-semibold">
+      <div className="mb-4 text-center text-3xl italic text-[#2E4F4F] font-semibold">
         15 Restaurants near you...
       </div>
 

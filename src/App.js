@@ -9,7 +9,7 @@ function App() {
     <Provider store={store}>
       <div className="flex flex-col">
         <Header />
-        <div className="container mx-auto px-36 min-h-screen">
+        <div className="container py-8 mx-auto px-36 min-h-screen">
           <Outlet />
         </div>
         <Footer className="self-end	" />

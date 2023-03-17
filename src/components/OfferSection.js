@@ -6,7 +6,7 @@ const OfferSection = ({ restaurant }) => {
   const { offers } =
     restaurant?.cards[1]?.card?.card?.gridElements.infoWithStyle ?? {};
   return (
-    <div className="bg-[#2E4F4F] p-4 mb-4 text-center rounded-lg">
+    <div className="p-3 pt-4 mt-6 bg-[#2E4F4F] text-center rounded-lg">
       <p className="mb-5 font-semibold text-2xl text-[#CBE4DE]">
         💸**Coupons and offers**💰
       </p>

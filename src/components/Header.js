@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../Button";
+import { FaRegUserCircle } from "react-icons/fa";
 import ButtonList from "../ButtonList";
 import appLogo from "../utils/images/appLogo.png";
 
@@ -21,14 +22,20 @@ function Header() {
               className="float-right"
               onClick={() => setIsLoggedIn(false)}
             >
-              Login
+              <span>
+                <FaRegUserCircle />
+              </span>
+              <span className="m-2">Login</span>
             </Button>
           ) : (
             <Button
               className="float-right "
               onClick={() => setIsLoggedIn(true)}
             >
-              LogOut
+              <span>
+                <FaRegUserCircle />
+              </span>
+              <span className="m-2">LogOut</span>
             </Button>
           )}
         </div>

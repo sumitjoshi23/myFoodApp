@@ -21,54 +21,50 @@ function RestaurantMenuList({ menuDataSet }) {
   const dispatch = useDispatch();
   const items = useSelector((store) => store.cart.items);
   return (
-    <div className="w-full">
-      <ul className="flex flex-wrap">
-        {menuInfo.map((item, i) => (
-          <li
-            className="hover:bg-[#CBE4DE] hover:duration-300 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg w-full m-8 shadow-lg border border-gray-200 list-none flex"
-            key={i}
-          >
-            <div className="max-w-[10vw] p-4">
+    <div className="flex flex-wrap">
+      {menuInfo.map((item, i) => (
+        <div
+          className="w-full hover:bg-[#CBE4DE] hover:duration-300 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg my-6 shadow-lg border border-gray-200 list-none flex"
+          key={i}
+        >
+          <div className="max-w-[10vw] p-4">
+            <img
+              className="rounded-lg"
+              src={item.imageId ? CDN_IMG_URL + item.imageId : fallBackItemPic}
+              alt="Item Pic"
+            />
+          </div>
+
+          <div className="px-4 my-6">
+            <div className="font-semibold">
+              {item.name}
               <img
-                className="rounded-lg"
-                src={
-                  item.imageId ? CDN_IMG_URL + item.imageId : fallBackItemPic
-                }
-                alt="Item Pic"
+                className="my-1 w-6"
+                src={item.isVeg ? logoVeg : logoNonVeg}
               />
             </div>
-
-            <div className="px-4 my-6">
-              <div className="font-semibold">
-                {item.name}
-                <img
-                  className="my-1 w-6"
-                  src={item.isVeg ? logoVeg : logoNonVeg}
-                />
-              </div>
-              <p className="m-1 text-gray-500">{item.description}</p>
-              <p className="m-1 text-sm">
-                Rs {item.price ? item.price / 100 : fallbackItemPrice / 100}
-                /-
-              </p>
-              <div className="flex mt-4">
-                <Button onClick={() => dispatch(addItem(item))}>
-                  Add to cart
+            <p className="m-1 text-gray-500">{item.description}</p>
+            <p className="m-1 text-sm">
+              Rs {item.price ? item.price / 100 : fallbackItemPrice / 100}
+              /-
+            </p>
+            <div className="flex mt-4">
+              <Button onClick={() => dispatch(addItem(item))}>
+                Add to cart
+              </Button>
+              {Object.values(items).includes(item) && (
+                <Button
+                  className="border-red-900 hover:bg-red-800 bg-red-100"
+                  onClick={() => dispatch(removeItem(item))}
+                >
+                  Remove
                 </Button>
-                {Object.values(items).includes(item) && (
-                  <Button
-                    className="border-red-900 hover:bg-red-800 bg-red-100"
-                    onClick={() => dispatch(removeItem(item))}
-                  >
-                    Remove
-                  </Button>
-                )}
-              </div>
+              )}
             </div>
-            <hr />
-          </li>
-        ))}
-      </ul>
+          </div>
+          <hr />
+        </div>
+      ))}
     </div>
   );
 }
