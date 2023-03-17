@@ -47,8 +47,12 @@ function Body() {
     <Shimmer />
   ) : (
     <>
-      <div className="sticky top-16 z-10 my-8 rounded-full max-w-fit m-auto bg-white shadow-lg flex justify-center items-center">
-        <form className=" p-2 flex h-full" onSubmit={handleFormSubmit}>
+      <div className="text-center m-4 text-3xl italic text-[#2E4F4F] font-semibold">
+        15 Restaurants near you...
+      </div>
+
+      <div className="sticky top-16 z-10 mb-8 rounded-full max-w-fit m-auto bg-white shadow-lg flex justify-center items-center">
+        <form className="p-2 flex h-full" onSubmit={handleFormSubmit}>
           <input
             placeholder="Search restaurant here"
             className="text-center h-12 focus:bg-[#CBE4DE] outline-none rounded-l-full w-96 rounded-lg bg-gray-100 border border-[#2E4F4F]"
