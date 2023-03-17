@@ -3,11 +3,11 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="w-full bg-gray-800 text-white">
-      <div className="max-w-7xl mx-auto py-8 px-4">
+      <div className="max-w-7xl mx-auto py-6 px-4">
         <div className="flex justify-between">
           <div>
             <p className="text-center text-gray-300">
-              &copy; MyFood Ordering App. All rights reserved.
+              &copy; MyFood Ordering App with ❤️ All rights reserved.
             </p>
           </div>
           <div className="flex justify-center ">

@@ -54,9 +54,9 @@ function Body() {
             value={searchText}
             onChange={handleChange}
           ></input>
-          <Button className="rounded-r-full h-12 text-xl bg-gray-100 w-14 pl-4 border border-[#2E4F4F]">
+          <button className="rounded-r-full h-12 text-xl bg-gray-100 w-14 pl-4 border border-[#2E4F4F]">
             <BiSearchAlt />
-          </Button>
+          </button>
         </form>
         {/* {searchText ? (
           <Button

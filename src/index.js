@@ -3,13 +3,15 @@ import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import RestaurantMenu from "./components/RestarauntMenu";
 import App from "./App";
 import Error from "./components/Error";
 import About from "./components/About";
 import Body from "./components/Body";
 import Contact from "./components/Contact";
 import Shimmer from "./components/Shimmer";
+import ConfirmOrderDetails from "./components/ConfirmOrderDetails";
+import RestaurantDetails from "./components/RestarauntDetails";
+import OrderSuccess from "./components/OrderSuccess";
 const Cart = lazy(() => import("./components/Cart"));
 
 let el = document.querySelector("#root");
@@ -34,7 +36,7 @@ let appRouter = createBrowserRouter([
       },
       {
         path: "restaurant/:id",
-        element: <RestaurantMenu />,
+        element: <RestaurantDetails />,
       },
       {
         path: "cart",
@@ -43,6 +45,14 @@ let appRouter = createBrowserRouter([
             <Cart />
           </Suspense>
         ),
+      },
+      {
+        path: "orderDetails",
+        element: <ConfirmOrderDetails />,
+      },
+      {
+        path: "orderSuccess",
+        element: <OrderSuccess />,
       },
     ],
   },

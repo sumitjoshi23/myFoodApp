@@ -18,14 +18,14 @@ function Header() {
         <div>
           {!isLoggedIn ? (
             <Button
-              className="w-1/3 float-right hover:bg-[#0E8388] py-2 bg-[#CBE4DE] border-4 rounded-full border-[#2C3333] hover:duration-500"
+              className="float-right "
               onClick={() => setIsLoggedIn(true)}
             >
               LogOut
             </Button>
           ) : (
             <Button
-              className="w-1/3 float-right hover:bg-[#0E8388] py-2 bg-[#CBE4DE] border-4 rounded-full border-[#2C3333] hover:duration-500"
+              className="float-right"
               onClick={() => setIsLoggedIn(false)}
             >
               Login

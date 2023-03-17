@@ -94,12 +94,7 @@ const ContactUsPage = () => {
           ></textarea>
         </div>
         <div className="flex justify-center">
-          <Button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
-          >
-            Submit
-          </Button>
+          <Button>Submit</Button>
         </div>
       </form>
     </>
@@ -112,13 +107,9 @@ const ContactUsPage = () => {
       <p>Your message has been successfully received at our end.</p>
       <p>
         We will contact you shortly on your provided email address i.e.
-        <span className="pfont-semibold text-[#2E4F4F]">{emailAddress}</span>
+        <span className="font-semibold text-[#2E4F4F]">{emailAddress}</span>
       </p>
-      <Button
-        onClick={handleCloseButtonClick}
-        className="hover:scale-105 hover:duration-300 bg-[#0E8388] text-white font-bold m-4 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        type="submit"
-      >
+      <Button className="mt-5" onClick={handleCloseButtonClick} type="submit">
         Close
       </Button>
     </div>
