@@ -18,17 +18,17 @@ function Header() {
         <div>
           {!isLoggedIn ? (
             <Button
-              className="float-right "
-              onClick={() => setIsLoggedIn(true)}
-            >
-              LogOut
-            </Button>
-          ) : (
-            <Button
               className="float-right"
               onClick={() => setIsLoggedIn(false)}
             >
               Login
+            </Button>
+          ) : (
+            <Button
+              className="float-right "
+              onClick={() => setIsLoggedIn(true)}
+            >
+              LogOut
             </Button>
           )}
         </div>
