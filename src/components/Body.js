@@ -49,7 +49,7 @@ function Body() {
     <Shimmer />
   ) : (
     <>
-      <div className="fixed left-[50%] translate-x-[-50%] z-10 rounded-full max-w-fit m-auto bg-white shadow-xl flex justify-center items-center">
+      <div className="fixed left-[50%] translate-x-[-50%] z-10 rounded-full max-w-fit m-auto bg-slate-200 shadow-xl flex justify-center items-center">
         <form className="p-2 flex h-full" onSubmit={handleFormSubmit}>
           <input
             placeholder="Search restaurant here"
