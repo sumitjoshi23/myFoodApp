@@ -1,3 +1,4 @@
+import { nanoid } from "@reduxjs/toolkit";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -14,7 +15,9 @@ const OrderSuccess = () => {
         <p className="text-gray-700 mb-4">
           Your order has been successfully placed.
         </p>
-        <p className="text-gray-700 mb-4">Order ID: 123456789</p>
+        <p className="text-gray-700 mb-4">
+          Order ID: {nanoid().substring(0, 9)}
+        </p>
         <p className="text-gray-700 mb-4">
           Ordered On: {new Date().toDateString()}
         </p>
