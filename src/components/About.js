@@ -19,7 +19,7 @@ const About = () => {
         great food without the hassle!
       </p>
       <div className="mt-8 flex flex-wrap justify-center">
-        <div className="hover:scale-110 hover:duration-300 max-w-xs mx-4 my-4 bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="hover:scale-110 duration-300 max-w-xs mx-4 my-4 bg-white shadow-lg rounded-lg overflow-hidden">
           <img
             className="w-full h-56 object-cover object-center"
             src={outlet1}
@@ -34,7 +34,7 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className="hover:scale-110 hover:duration-300 max-w-xs mx-4 my-4 bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="hover:scale-110 duration-300 max-w-xs mx-4 my-4 bg-white shadow-lg rounded-lg overflow-hidden">
           <img className="w-full h-56" src={outlet2} alt="team member" />
           <div className="py-4 px-6">
             <h2 className="text-lg font-bold mb-2">Bangalore Outlet</h2>

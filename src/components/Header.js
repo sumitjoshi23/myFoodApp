@@ -44,37 +44,47 @@ function Header() {
   };
 
   return (
-    <div className="sticky top-0 py-2 z-10 bg-[#2E4F4F] shadow-lg">
-      <div className="grid grid-cols-5 items-center px-32">
-        <Link to="/">
-          <img className="w-1/4 rounded-full" src={appLogo} alt="logo" />
+    <nav className="sticky top-0 shadow-lg z-10 flex items-center justify-between flex-wrap bg-[#2E4F4F] p-4">
+      <div className="flex items-center flex-shrink-0 text-white mx-4">
+        <Link className="hover:scale-125 duration-300 flex items-center" to="/">
+          <img src={appLogo} alt="logo" className="rounded w-10 mr-5" />
+          <span className="font-semibold text-xl">J Foods & Co.</span>
         </Link>
-        <div className="flex col-span-3 justify-center">
+      </div>
+
+      <div className="w-full flex-grow lg:flex lg:items-center lg:w-auto">
+        <div className="flex items-center justify-center lg:flex-grow">
           <ButtonList />
         </div>
-        <div>
+        <div className="mx-4">
           {!profile ? (
-            <Button className="float-right" onClick={login}>
+            <button
+              className="flex items-center text-xl px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:scale-125 duration-300 hover:text-[#2E4F4F] hover:bg-white mt-4 lg:mt-0"
+              onClick={login}
+            >
               <img
-                className="rounded-full w-6"
+                className="rounded-full w-8"
                 src={googleIcon}
                 alt="googleIcon"
               />
               <span className="m-2">Sign In</span>
-            </Button>
+            </button>
           ) : (
-            <Button className="float-right " onClick={logOut}>
+            <button
+              className="flex items-center text-xl px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:scale-110 duration-300 hover:text-[#2E4F4F] hover:bg-white mt-4 lg:mt-0 "
+              onClick={logOut}
+            >
               <img
-                className="rounded-full w-6"
+                className="rounded-full w-8"
                 src={profile.picture}
                 alt="user image"
               />
-              <span className="m-2 w-min">{profile.name}</span>
-            </Button>
+              <span className="m-2 ">{profile.name}</span>
+            </button>
           )}
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
 

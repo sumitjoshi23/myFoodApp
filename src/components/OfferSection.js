@@ -13,7 +13,7 @@ const OfferSection = ({ restaurant }) => {
         {offers.map(({ info }) => (
           <div
             key={info.couponCode}
-            className="hover:scale-105 hover:duration-300 m-1 h-28"
+            className="hover:scale-105 duration-300 m-1 h-28"
           >
             <div className="flex items-center h-full bg-[#CBE4DE] border border-[#2C3333] rounded-lg ">
               <div className="flex items-center">
@@ -25,7 +25,7 @@ const OfferSection = ({ restaurant }) => {
                 <p className="text-xs text-[#A84448]">{info.header}</p>
               </div>
               <div
-                className="text-xs hover:scale-110 hover:duration-300 bg-[#BBD6B8] border border-gray-500 rounded-full m-1 px-1 py-2 "
+                className="text-xs hover:scale-110 duration-300 bg-[#BBD6B8] border border-gray-500 rounded-full m-1 px-1 py-2 "
                 style={{ writingMode: "vertical-lr" }}
               >
                 {info.couponCode.substring(4)}

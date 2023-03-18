@@ -73,7 +73,7 @@ function Body() {
                 setSearchText("");
                 setFilteredRestaurants(allRestaurants);
               }}
-              className="font-semibold  hover:bg-[#2C3333] hover:text-white mx-2 p-1 text-xl border-2 rounded-full hover:duration-500  bg-gray-100 border-gray-300 mt-1"
+              className="font-semibold  hover:bg-[#2C3333] hover:text-white mx-2 p-1 text-xl border-2 rounded-full duration-500  bg-gray-100 border-gray-300 mt-1"
             >
               <BiReset />
             </button>

@@ -39,7 +39,9 @@ const OrderSuccess = () => {
           )}
         </p>
 
-        <p className="text-gray-700 mb-4">ETA: {getETA(35)}</p>
+        <p className="text-gray-700 mb-4">
+          ETA: {getETA(Math.floor(Math.random() * (50 - 30)) + 30)}
+        </p>
         <p className="mt-8">
           <Link
             to="/"

@@ -28,12 +28,16 @@ const ButtonList = () => {
     { title: "About", icon: <MdContactSupport />, to: "/about" },
   ];
   let renderedButtons = allButtons.map((button) => (
-    <Link key={button.title} to={button.to}>
-      <Button>
-        <span>{button.icon}</span>
-        {button.items && <span className="pl-1">{button.items.length}</span>}
-        <span className="m-2">{button.title}</span>
-      </Button>
+    <Link
+      key={button.title}
+      to={button.to}
+      className="flex mx-6 text-xl items-center text-white hover:scale-110 duration-200 hover:text-teal-200"
+    >
+      <span className="m-1 text-4xl">{button.icon}</span>
+      {button.items && (
+        <span className="mr-1 text-red-400">{button.items.length}</span>
+      )}
+      <span className="m-1">{button.title}</span>
     </Link>
   ));
   return renderedButtons;

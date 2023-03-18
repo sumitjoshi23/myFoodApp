@@ -21,7 +21,7 @@ const Offers = () => {
   const renderedOffers = offers.map((offer) => {
     return (
       <div
-        className="border bg-gray-200 hover:bg-[#CBE4DE] hover:duration-300 hover:scale-110 hover:shadow-[#2E4F4F] border-gray-300 rounded-xl shadow-lg m-8 p-4 text-center"
+        className="border bg-gray-200 hover:bg-[#CBE4DE] duration-300 hover:scale-110 hover:shadow-[#2E4F4F] border-gray-300 rounded-xl shadow-lg m-8 p-4 text-center"
         key={offer.couponCode}
       >
         <div className="flex m-4 items-center justify-center">

@@ -24,7 +24,7 @@ function RestaurantMenuList({ menuDataSet }) {
     <div className="flex flex-wrap">
       {menuInfo.map((item, i) => (
         <div
-          className="w-full hover:bg-[#CBE4DE] hover:duration-300 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg my-6 shadow-lg border border-gray-200 list-none flex"
+          className="w-full hover:bg-[#CBE4DE] duration-300 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg my-6 shadow-lg border border-gray-200 list-none flex"
           key={i}
         >
           <div className="max-w-[10vw] p-4">

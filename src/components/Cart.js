@@ -18,7 +18,7 @@ const Cart = () => {
 
   const renderedItems = Object.values(items).map((item, index) => (
     <div
-      className="hover:bg-[#CBE4DE] hover:duration-500 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg m-8 p-4 shadow-lg border flex"
+      className="hover:bg-[#CBE4DE] duration-500 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg m-8 p-4 shadow-lg border flex"
       key={index}
     >
       <div className="w-full grid grid-cols-5 justify-between items-center">

@@ -28,7 +28,7 @@ const ConfirmOrderDetails = () => {
           <div className="font-bold text-gray-700">Order Date:</div>
           <div>{new Date().toLocaleDateString()}</div>
           <div className="font-bold text-gray-700">Expected Delivery Time:</div>
-          <div>{getETA(35)}</div>
+          <div> {getETA(Math.floor(Math.random() * (50 - 30)) + 30)}</div>
           <div className="font-bold text-gray-700">Shipping Address:</div>
           <div>1234 Main St, Mg Road, Delhi, India</div>
         </div>
