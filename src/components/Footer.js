@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex justify-between">
           <div>
             <p className="text-center text-gray-300">
-              &copy; MyFood Ordering App with ❤️ All rights reserved.
+              &copy; J Foods and Co. Pinched with ❤️. All rights reserved.
             </p>
           </div>
           <div className="flex justify-center ">
