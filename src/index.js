@@ -13,6 +13,7 @@ import ConfirmOrderDetails from "./components/ConfirmOrderDetails";
 import RestaurantDetails from "./components/RestarauntDetails";
 import OrderSuccess from "./components/OrderSuccess";
 import Offers from "./components/Offers";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 const Cart = lazy(() => import("./components/Cart"));
 
 let el = document.querySelector("#root");
@@ -63,4 +64,8 @@ let appRouter = createBrowserRouter([
   },
 ]);
 
-root.render(<RouterProvider router={appRouter} />);
+root.render(
+  <GoogleOAuthProvider clientId="765542815213-ojvan3ttmq3vq3vorjg3erg2jrrgq46j.apps.googleusercontent.com">
+    <RouterProvider router={appRouter} />
+  </GoogleOAuthProvider>
+);

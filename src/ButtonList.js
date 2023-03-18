@@ -19,13 +19,13 @@ const ButtonList = () => {
       icon: <MdOutlineLocalOffer />,
       to: "/offers",
     },
-    { title: "About", icon: <MdContactSupport />, to: "/about" },
     {
       title: "Contact",
       icon: <MdOutlineConnectWithoutContact />,
       to: "/contact",
     },
     { title: "Cart", icon: <AiOutlineShoppingCart />, to: "/cart", items },
+    { title: "About", icon: <MdContactSupport />, to: "/about" },
   ];
   let renderedButtons = allButtons.map((button) => (
     <Link key={button.title} to={button.to}>

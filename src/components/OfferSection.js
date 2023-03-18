@@ -2,7 +2,6 @@ import React from "react";
 import { CDN_IMG_URL } from "../config";
 
 const OfferSection = ({ restaurant }) => {
-  console.log(restaurant);
   const { offers } =
     restaurant?.cards[1]?.card?.card?.gridElements.infoWithStyle ?? {};
   return (

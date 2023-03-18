@@ -26,7 +26,7 @@ const Offers = () => {
       >
         <div className="flex m-4 items-center justify-center">
           <img
-            className="w-10 h-10"
+            className="w-14"
             src={CDN_IMG_URL + offer.logo}
             alt="offerLogo"
           />
@@ -42,7 +42,7 @@ const Offers = () => {
     );
   });
   return (
-    <div className="py-8 flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center">
       <h1 className="text-3xl font-bold mb-8 text-[#2E4F4F]">
         Offers and Coupons
       </h1>

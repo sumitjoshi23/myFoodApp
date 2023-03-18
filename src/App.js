@@ -1,9 +1,9 @@
+import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
-import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -11,10 +11,10 @@ function App() {
       <ScrollToTop />
       <div className="flex flex-col">
         <Header />
-        <div className="container mx-auto px-36 min-h-screen">
+        <div className="container mx-auto py-5 px-36 min-h-screen">
           <Outlet />
         </div>
-        <Footer className="self-end	" />
+        <Footer />
       </div>
     </Provider>
   );

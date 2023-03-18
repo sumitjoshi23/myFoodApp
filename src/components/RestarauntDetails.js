@@ -28,17 +28,14 @@ function RestaurantDetails() {
       <div className="sticky top-16 z-10 text-3xl font-bold mb-8 text-[#CBE4DE] mt-8 py-4 bg-[#2E4F4F] rounded-lg flex justify-center">
         <p>{name}</p>
       </div>
-      <div className="flex my-4">
-        <div className="self-start min-w-[30%] rounded-lg mr-4 bg-[#2E4F4F]">
+      <div className="flex my-6">
+        <div className="text-center self-start min-w-[30%] rounded-lg mr-4 border border-gray-200 bg-[#e5f0ee]">
           <div className="m-4">
             <img src={CDN_IMG_URL + cloudinaryImageId} alt="img" />
-            <h2 className="m-2 text-[#CBE4DE] text-sm">
-              {cuisines?.join(", ")}
-            </h2>
-            <hr />
+            <h2 className="my-6 font-bold text-lg">{cuisines?.join(", ")}</h2>
             <ul
               className={
-                "m-2 flex items-center justify-center bg-gray-200 rounded-lg text-sm font-semibold text-gray-700"
+                "my-6 flex items-center justify-center bg-gray-300 rounded-lg font-semibold"
               }
             >
               <li className="flex items-center">
@@ -54,24 +51,19 @@ function RestaurantDetails() {
               )}
               <li>{costForTwoMessage}</li>
             </ul>
-            <div className="p-2">
-              <h2 className="my-2">
-                {labels.map(({ title, message }) => {
-                  return (
-                    message !== "null" && (
-                      <div key={title}>
-                        <h1 className="font-semibold text-[#CBE4DE]">
-                          {title}
-                        </h1>
-                        <p className="bg-[#CBE4DE] border border-[#2C3333] p-2 rounded-lg">
-                          {message}
-                        </p>
-                      </div>
-                    )
-                  );
-                })}
-              </h2>
-              <hr />
+            <div className="my-6">
+              {labels.map(({ title, message }) => {
+                return (
+                  message !== "null" && (
+                    <div className="my-6" key={title}>
+                      <h1 className="underline underline-offset-4 font-semibold">
+                        {title}
+                      </h1>
+                      <p className="mt-2">{message}</p>
+                    </div>
+                  )
+                );
+              })}
             </div>
           </div>
         </div>

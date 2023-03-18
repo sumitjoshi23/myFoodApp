@@ -3,11 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Button from "../Button";
 import { clearCart } from "../store";
-import {
-  fallbackItemPrice,
-  getCurrentDate,
-  getDateAfterNthDays,
-} from "../utils/helper";
+import { fallbackItemPrice, getETA } from "../utils/helper";
 
 const ConfirmOrderDetails = () => {
   const dispatch = useDispatch();
@@ -25,14 +21,14 @@ const ConfirmOrderDetails = () => {
     </tr>
   ));
   return (
-    <div className="py-8 flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center">
       <h1 className="text-3xl font-bold mb-8 text-[#2E4F4F]">Confirm Order</h1>
       <div className="p-5 text-center">
         <div className="grid grid-cols-2 gap-4 mb-8">
           <div className="font-bold text-gray-700">Order Date:</div>
-          <div>{getCurrentDate()}</div>
-          <div className="font-bold text-gray-700">Expected Delivery Date:</div>
-          <div>{getDateAfterNthDays(1)}</div>
+          <div>{new Date().toLocaleDateString()}</div>
+          <div className="font-bold text-gray-700">Expected Delivery Time:</div>
+          <div>{getETA(35)}</div>
           <div className="font-bold text-gray-700">Shipping Address:</div>
           <div>1234 Main St, Mg Road, Delhi, India</div>
         </div>
