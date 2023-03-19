@@ -11,7 +11,7 @@ const OrderSuccess = () => {
   useEffect(() => {
     let timer = setTimeout(() => {
       setShowLoader(false);
-    }, 8000);
+    }, 4000);
 
     return () => {
       clearTimeout(timer);
