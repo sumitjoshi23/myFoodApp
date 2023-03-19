@@ -88,9 +88,9 @@ function Body() {
             </button>
           ) : null}
           <br />
-          <p className="pt-4 font-normal text-lg text-gray-600">
+          <p className="font-normal text-lg text-gray-600">
             {filteredRestaurants.length} Outlet(s) found...
-          </p>{" "}
+          </p>
         </div>
       </div>
       <RestaurantList filteredRestaurants={filteredRestaurants} />
