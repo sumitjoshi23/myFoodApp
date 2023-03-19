@@ -46,9 +46,15 @@ function Header() {
   return (
     <nav className="sticky top-0 shadow-lg z-10 flex items-center justify-between flex-wrap bg-[#2E4F4F] p-4">
       <div className="flex items-center flex-shrink-0 text-white mx-4">
-        <Link className="hover:scale-125 duration-300 flex items-center" to="/">
-          <img src={appLogo} alt="logo" className="rounded w-10 mr-5" />
-          <span className="font-semibold text-xl">J Foods & Co.</span>
+        <Link className="flex items-center" to="/">
+          <img
+            src={appLogo}
+            alt="logo"
+            className="rounded w-10 mr-5 hover:rotate-180 hover:scale-125 duration-300 "
+          />
+          <span className="hover:text-white hover:scale-110 font-semibold text-xl">
+            J Foods & Co.
+          </span>
         </Link>
       </div>
 

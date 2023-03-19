@@ -1,14 +1,29 @@
 import { nanoid } from "@reduxjs/toolkit";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getETA } from "../utils/helper";
+import Checkmark from "./Checkmark";
 
 const OrderSuccess = () => {
+  const [showLoader, setShowLoader] = useState(true);
+
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      setShowLoader(false);
+    }, 8000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [showLoader]);
+
   var d = new Date();
   d.setMinutes(d.getMinutes() + 30);
   const profile = useSelector((store) => store.signedInUser.profile);
-  return (
+  const content = showLoader ? (
+    <Checkmark />
+  ) : (
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-3xl font-bold mb-8 text-[#2E4F4F]">
         Order Confirmed
@@ -53,6 +68,7 @@ const OrderSuccess = () => {
       </div>
     </div>
   );
+  return content;
 };
 
 export default OrderSuccess;

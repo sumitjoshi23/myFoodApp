@@ -5,7 +5,6 @@ import { FOODAPP_API_URL } from "../config";
 import RestaurantList from "./RestaurantList";
 import { fallBackLandingPage } from "../utils/helper";
 import { useSelector } from "react-redux";
-import Button from "../Button";
 
 const filterData = (searchText, restaurantList) => {
   return restaurantList.filter((restaurant) =>
@@ -53,6 +52,16 @@ function Body() {
     <>
       <div className="  max-w-fit m-auto  ">
         <div className=" flex flex-col items-center">
+          <div className="m-4 font-semibold text-center text-3xl">
+            {profile && (
+              <p className="pb-4">
+                Hey,{" "}
+                <span className="italic text-[#0E8388] ">{profile.name}</span>
+                😊 Welcome back !!!
+              </p>
+            )}
+            Our restaurants are waiting for your next order...
+          </div>
           <form
             className="rounded-full bg-slate-200 shadow-xl p-2 flex"
             onSubmit={handleFormSubmit}
@@ -78,21 +87,13 @@ function Body() {
               <BiReset />
             </button>
           ) : null}
+          <br />
+          <p className="pt-4 font-normal text-lg text-gray-600">
+            {filteredRestaurants.length} Outlet(s) found...
+          </p>{" "}
         </div>
       </div>
-      <div className="m-4 font-semibold text-center text-3xl">
-        {profile && (
-          <p className="pb-4">
-            Hey, <span className="italic text-[#0E8388] ">{profile.name}</span>
-            😊 ... We missed you, welcome back !!!
-          </p>
-        )}
-        Choose a variety of cuisines from restaurants near you...
-        <br />
-        <p className="pt-4 font-normal text-lg text-gray-600">
-          {filteredRestaurants.length} Outlet(s) found...
-        </p>
-      </div>
+
       <RestaurantList filteredRestaurants={filteredRestaurants} />
     </>
   );

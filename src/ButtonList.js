@@ -20,7 +20,7 @@ const ButtonList = () => {
       to: "/offers",
     },
     {
-      title: "Contact",
+      title: "Contact Us",
       icon: <MdOutlineConnectWithoutContact />,
       to: "/contact",
     },

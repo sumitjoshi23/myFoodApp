@@ -18,7 +18,7 @@ const OfferSection = ({ restaurant }) => {
             <div className="flex items-center h-full bg-[#CBE4DE] border border-[#2C3333] rounded-lg ">
               <div className="flex items-center">
                 <img
-                  className="w-8 h-8 p-1"
+                  className="w-9 p-1"
                   src={CDN_IMG_URL + info.offerLogo}
                   alt="offerLogo"
                 />
