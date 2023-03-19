@@ -7,19 +7,30 @@ const Footer = () => {
 
   return (
     <>
-      {profile && (
-        <div
-          className="fixed top-[50%] left-0 translate-y-[-40%] text-white font-semibold text-sm bg-[#2E4F4F] mx-0 px-1 py-4 rounded rotate-180 hover:scale-125 duration-300 tracking-wide	"
-          style={{
-            writingMode: "vertical-rl",
-          }}
-        >
-          <i>
-            Currently logged in as{" "}
-            <span className="text-red-400 font-extrabold">{profile.name}</span>
-          </i>
-        </div>
-      )}
+      (
+      <div
+        className="fixed top-[50%] left-0 translate-y-[-40%] text-white font-semibold text-sm bg-[#2E4F4F] mx-0 pr-1 pl-2 py-4 rounded rotate-180 hover:scale-125 duration-300 tracking-wide"
+        style={{
+          writingMode: "vertical-rl",
+        }}
+      >
+        <i>
+          {profile ? (
+            <>
+              Currently logged in as{" "}
+              <span className="text-red-400 font-extrabold">
+                {profile.name}
+              </span>
+            </>
+          ) : (
+            <>
+              <span className="not-italic">🙃</span> Delicious stuff ... Order
+              quickly <span className="not-italic">🙃</span>
+            </>
+          )}
+        </i>
+      </div>
+      )
       <div className="fixed bottom-0 right-0  rounded-full  bg-white border-green-500 border-4 m-3">
         <BiPhoneCall className="text-4xl m-1 text-green-500" />
       </div>
