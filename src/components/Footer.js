@@ -33,12 +33,12 @@ const Footer = () => {
       </div>
       )
       <div className="fixed bottom-0 right-0 white m-3">
-        <Link to="https://web.whatsapp.com/send?phone=918285049037">
+        <a href="https://web.whatsapp.com/send?phone=918285049037">
           <img
             src="https://cdn-icons-png.flaticon.com/512/124/124034.png"
             className="w-12 m-2 rounded-xl text-green-500"
           />
-        </Link>
+        </a>
       </div>
       <footer className="w-full bg-gray-800 text-white">
         <div className="max-w-7xl mx-auto py-6 px-4">
