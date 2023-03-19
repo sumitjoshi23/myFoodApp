@@ -10,9 +10,9 @@ import quoraLogo from "../utils/images/quoraLogo.png";
 const FixedSideBars = () => {
   const { profile } = useSelector((store) => store.signedInUser);
 
-  const leftBar = (
+  const leftSideBar = (
     <div
-      className="fixed top-[50%] left-0 translate-y-[-45%] text-white text-center font-semibold bg-[#2E4F4F] mx-0 pr-1 pl-2 py-4 rounded rotate-180 hover:scale-125 duration-300"
+      className="fixed top-[50%] translate-y-[-40%] text-white text-center font-semibold bg-[#2E4F4F] pr-1 pl-2 py-2 rounded rotate-180 hover:scale-125 duration-300"
       style={{
         writingMode: "vertical-rl",
       }}
@@ -33,7 +33,7 @@ const FixedSideBars = () => {
     </div>
   );
   const rightSideBar = (
-    <div className="fixed flex flex-col top-[50%] right-0 translate-y-[-45%] text-white font-semibold text-sm bg-[#2E4F4F] mx-0 p-2 rounded hover:scale-125 duration-300 tracking-wide">
+    <div className="fixed flex flex-col top-[50%] right-0 translate-y-[-40%] font-semibold bg-[#2E4F4F] p-2 rounded hover:scale-125 duration-300">
       <a
         target="_blank"
         rel="noreferrer"
@@ -98,7 +98,7 @@ const FixedSideBars = () => {
   );
 
   const bottomWhatsAppLink = (
-    <div className="fixed bottom-0 right-0 hover:scale-110 duration-300 m-2">
+    <div className="fixed bottom-0 right-0 hover:scale-110 duration-300 my-2">
       <a
         target="_blank"
         rel="noreferrer"
@@ -107,7 +107,7 @@ const FixedSideBars = () => {
         <img
           src={whatsAppLogo}
           alt="whatsappLogo"
-          className="w-12 rounded-xl text-green-500"
+          className="w-14 rounded-full text-green-500"
         />
       </a>
     </div>
@@ -115,7 +115,7 @@ const FixedSideBars = () => {
 
   return (
     <>
-      {leftBar}
+      {leftSideBar}
       {rightSideBar}
       {bottomWhatsAppLink}
     </>
