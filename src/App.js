@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
 import { Provider, useSelector } from "react-redux";
 import store from "./store";
+import FixedSideBars from "./components/FixedSideBars";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Outlet />
         </div>
         <Footer />
+        <FixedSideBars />
       </div>
     </Provider>
   );
