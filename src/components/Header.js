@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Button from "../Button";
 import googleIcon from "../utils/images/googleIcon.png";
 import ButtonList from "../ButtonList";
 import appLogo from "../utils/images/appLogo.jpg";
@@ -44,53 +43,55 @@ function Header() {
   };
 
   return (
-    <nav className="sticky top-0 shadow-lg z-10 flex items-center justify-between flex-wrap bg-[#2E4F4F] p-4">
-      <div className="flex items-center flex-shrink-0 text-white mx-4">
-        <Link className="flex items-center" to="/">
-          <img
-            src={appLogo}
-            alt="logo"
-            className="rounded w-10 mr-5 hover:rotate-180 hover:scale-125 duration-700 "
-          />
-          <span className="hover:text-white hover:scale-110 font-semibold text-xl">
-            J Foods & Co.
-          </span>
-        </Link>
-      </div>
+    <>
+      <nav className="sticky top-0 shadow-lg z-10 flex items-center justify-between flex-wrap bg-[#2E4F4F] p-4">
+        <div className="flex items-center flex-shrink-0 text-white mx-4">
+          <Link className="flex items-center" to="/">
+            <img
+              src={appLogo}
+              alt="logo"
+              className="rounded w-10 mr-5 hover:rotate-180 hover:scale-125 duration-700 "
+            />
+            <span className="hover:text-white hover:scale-110 font-semibold text-xl">
+              J Foods & Co.
+            </span>
+          </Link>
+        </div>
 
-      <div className="w-full flex-grow lg:flex lg:items-center lg:w-auto">
-        <div className="flex items-center justify-center lg:flex-grow">
-          <ButtonList />
+        <div className="w-full flex-grow lg:flex lg:items-center lg:w-auto">
+          <div className="flex items-center justify-center lg:flex-grow">
+            <ButtonList />
+          </div>
+          <div className="mx-4">
+            {!profile ? (
+              <button
+                className="flex items-center text-xl px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:scale-125 duration-300 hover:text-[#2E4F4F] hover:bg-white mt-4 lg:mt-0"
+                onClick={login}
+              >
+                <img
+                  className="rounded-full w-8"
+                  src={googleIcon}
+                  alt="googleIcon"
+                />
+                <span className="m-2">Sign In</span>
+              </button>
+            ) : (
+              <button
+                className="flex items-center text-xl px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:scale-110 duration-300 hover:text-[#2E4F4F] hover:bg-white mt-4 lg:mt-0 "
+                onClick={logOut}
+              >
+                <img
+                  className="rounded-full w-8"
+                  src={profile.picture}
+                  alt="user image"
+                />
+                <span className="m-2 ">Sign out</span>
+              </button>
+            )}
+          </div>
         </div>
-        <div className="mx-4">
-          {!profile ? (
-            <button
-              className="flex items-center text-xl px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:scale-125 duration-300 hover:text-[#2E4F4F] hover:bg-white mt-4 lg:mt-0"
-              onClick={login}
-            >
-              <img
-                className="rounded-full w-8"
-                src={googleIcon}
-                alt="googleIcon"
-              />
-              <span className="m-2">Sign In</span>
-            </button>
-          ) : (
-            <button
-              className="flex items-center text-xl px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:scale-110 duration-300 hover:text-[#2E4F4F] hover:bg-white mt-4 lg:mt-0 "
-              onClick={logOut}
-            >
-              <img
-                className="rounded-full w-8"
-                src={profile.picture}
-                alt="user image"
-              />
-              <span className="m-2 ">{profile.name}</span>
-            </button>
-          )}
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 }
 

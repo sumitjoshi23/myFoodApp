@@ -1,21 +1,19 @@
-// import React from 'react'
+import { useEffect, useState } from "react";
 
-// const useShowLoader = () => {
-//     const [showLoader, setShowLoader] = useState(true);
+const useShowLoader = (delay) => {
+  const [showLoader, setShowLoader] = useState(true);
 
-//     useEffect(() => {
-//         let timer = setTimeout(() => {
-//           setShowLoader(false);
-//         }, 5000);
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      setShowLoader(false);
+    }, delay);
 
-//         return () => {
-//           clearTimeout(timer);
-//         };
-//       }, [showLoader]);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [showLoader]);
 
-//   return (
+  return showLoader;
+};
 
-//   )
-// }
-
-// export default useShowLoader
+export default useShowLoader;

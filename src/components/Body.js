@@ -93,7 +93,6 @@ function Body() {
           </p>{" "}
         </div>
       </div>
-
       <RestaurantList filteredRestaurants={filteredRestaurants} />
     </>
   );

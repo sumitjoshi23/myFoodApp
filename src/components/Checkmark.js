@@ -1,17 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { ImCheckmark } from "react-icons/im";
+import useShowLoader from "../hooks/useShowLoader";
 const Checkmark = () => {
-  const [showLoader, setShowLoader] = useState(true);
-
-  useEffect(() => {
-    let timer = setTimeout(() => {
-      setShowLoader(false);
-    }, 2000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [showLoader]);
+  const showLoader = useShowLoader(2500);
 
   let content = (
     <div className="flex flex-col items-center justify-center h-96 font-semibold text-xl">
