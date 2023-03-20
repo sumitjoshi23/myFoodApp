@@ -11,7 +11,7 @@ const useShowLoader = (delay) => {
     return () => {
       clearTimeout(timer);
     };
-  }, [showLoader]);
+  }, [showLoader, delay]);
 
   return showLoader;
 };

@@ -1,16 +1,19 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { RESRAURANT_MENU_URL } from "../config";
 
 const useRestaurant = (id) => {
   let [restaurant, setRestaurant] = useState(null);
-  async function getRestaraunt() {
-    let data = await fetch(RESRAURANT_MENU_URL + id);
-    let json = await data.json();
-    setRestaurant(json.data);
-  }
+  const getRestaurant = useCallback(
+    async function () {
+      let data = await fetch(RESRAURANT_MENU_URL + id);
+      let json = await data.json();
+      setRestaurant(json.data);
+    },
+    [id]
+  );
   useEffect(() => {
-    getRestaraunt();
-  }, []);
+    getRestaurant();
+  }, [getRestaurant]);
 
   return restaurant;
 };
