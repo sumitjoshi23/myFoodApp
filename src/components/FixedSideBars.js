@@ -1,20 +1,13 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import whatsAppLogo from "../utils/images/whatsAppLogo.png";
 import facebookLogo from "../utils/images/facebookLogo.png";
 import instagramLogo from "../utils/images/instagramLogo.png";
 import twitterLogo from "../utils/images/twitterLogo.png";
 import telegramLogo from "../utils/images/telegramLogo.png";
 import quoraLogo from "../utils/images/quoraLogo.png";
-import Button from "../Button";
-import { Link } from "react-router-dom";
-import { clearCart } from "../store";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
 const FixedSideBars = () => {
-  const items = useSelector((store) => store.cart.items);
-  const dispatch = useDispatch();
-
   const { profile } = useSelector((store) => store.signedInUser);
 
   const leftSideBar = (
@@ -119,36 +112,12 @@ const FixedSideBars = () => {
       </a>
     </div>
   );
-  const bottomCartButtons = (
-    <div className="px-0 fixed bottom-2 right-44 opacity-70 hover:opacity-100">
-      {items.length !== 0 && (
-        <div className="rounded-full flex ">
-          <Link to="/cart">
-            <Button className="hover:scale-110 hover:bg-green-700 border-none h-10 text-xs mx-0 px-0 rounded-l-full text-white rounded-lg bg-green-800 ">
-              <AiOutlineShoppingCart className="m-1 text-4xl" />
-              {items.length} !! Proceed to pay
-            </Button>
-          </Link>
-
-          <Button
-            onClick={() => {
-              dispatch(clearCart());
-            }}
-            className="hover:scale-110 hover:bg-red-700 border-none text-xs h-10 mx-0 px-0 rounded-r-full text-white  rounded-lg bg-red-800 "
-          >
-            Clear cart
-          </Button>
-        </div>
-      )}
-    </div>
-  );
 
   return (
     <>
       {leftSideBar}
       {rightSideBar}
       {bottomWhatsAppLink}
-      {bottomCartButtons}
     </>
   );
 };

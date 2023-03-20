@@ -7,6 +7,9 @@ import Button from "../Button";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, removeItem } from "../store";
 import { fallbackItemPrice } from "../utils/helper";
+import { Link } from "react-router-dom";
+import { clearCart } from "../store";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 function RestaurantMenuList({ menuDataSet }) {
   let menuDetails = menuDataSet.map((card) => card.card.card);
   let itemCards = menuDetails
@@ -49,11 +52,17 @@ function RestaurantMenuList({ menuDataSet }) {
               Rs {item.price ? item.price / 100 : fallbackItemPrice / 100}
               /-
             </p>
-            <div className="flex mt-4 ">
-              <Button onClick={() => dispatch(addItem(item))}>Add</Button>
+            <div className="flex mt-4">
+              <Button
+                className="border-none py-4 px-16 bg-[#b6d5ce] hover:bg-[#2b967d]"
+                onClick={() => dispatch(addItem(item))}
+              >
+                Add
+              </Button>
               {Object.values(items).includes(item) && (
                 <Button
-                  className="border-red-900 mx-2 hover:bg-red-800 bg-red-100"
+                  className="border-none mx-4 py-4 px-12
+                   hover:bg-[#a5373b] bg-[#fa999c]"
                   onClick={() => dispatch(removeItem(item))}
                 >
                   Remove
@@ -63,6 +72,29 @@ function RestaurantMenuList({ menuDataSet }) {
           </div>
         </div>
       ))}
+      (
+      <div className="px-0 fixed bottom-2 right-44">
+        {items.length !== 0 && (
+          <div className="rounded-full flex ">
+            <Link to="/cart">
+              <Button className="hover:scale-110 hover:bg-green-700 text-xs rounded-l-full text-white rounded-lg bg-green-800 ">
+                <AiOutlineShoppingCart className="m-1 text-4xl" />
+                {items.length} !! Proceed to pay
+              </Button>
+            </Link>
+
+            <Button
+              onClick={() => {
+                dispatch(clearCart());
+              }}
+              className="hover:scale-110 hover:bg-red-700 text-xs rounded-r-full text-white rounded-lg bg-red-800 "
+            >
+              Clear cart
+            </Button>
+          </div>
+        )}
+      </div>
+      );
     </div>
   );
 }

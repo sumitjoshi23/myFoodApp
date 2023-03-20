@@ -5,10 +5,13 @@ import { clearCart } from "../store";
 import { addItem, removeItem } from "../store";
 import fallBackItemPic from "../utils/images/fallBackItemPic.jpeg";
 import { CDN_IMG_URL } from "../config";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { fallbackItemPrice } from "../utils/helper";
+import { BiArrowBack } from "react-icons/bi";
 
 const Cart = () => {
+  const nav = useNavigate();
+
   const dispatch = useDispatch();
   const items = useSelector((store) => store.cart.items);
   const cartTotal = items.reduce(
@@ -34,16 +37,16 @@ const Cart = () => {
           {item.price ? item.price / 100 : fallbackItemPrice / 100}
           /-
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex items-center">
           <Button
-            className=" bg-green-200 border font-bold h-8 w-8 pb-1 my-2 rounded-full"
+            className=" bg-green-200 font-bold h-8 w-8 pb-1 m-2 rounded-full"
             onClick={() => dispatch(addItem(item))}
           >
             +
           </Button>
           {
             <Button
-              className="bg-red-200 border font-bold h-8 w-8 pb-1 border-red-900 rounded-full hover:bg-red-800 "
+              className="bg-red-200 font-bold h-8 w-8 pb-1 rounded-full hover:bg-red-800 "
               onClick={() => dispatch(removeItem(item))}
             >
               -
@@ -68,7 +71,7 @@ const Cart = () => {
                 <Button className="m-2 px-5">Place Order</Button>
               </Link>
               <Button
-                className="m-2 p-5 border-red-900 hover:bg-red-800 "
+                className="m-2 p-5 hover:bg-red-800 "
                 onClick={() => dispatch(clearCart())}
               >
                 Clear Cart
@@ -84,6 +87,14 @@ const Cart = () => {
             !!!
           </div>
         )}
+      </div>
+      <div className="px-0 float-right">
+        <Button
+          onClick={() => nav(-1)}
+          className="hover:scale-110 hover:bg-green-700 text-base text-white rounded-full bg-green-800 "
+        >
+          <BiArrowBack className="text-xl mr-2" /> Go back
+        </Button>
       </div>
     </>
   );

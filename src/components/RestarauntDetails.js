@@ -45,7 +45,7 @@ function RestaurantDetails() {
         )}
       </div>
       <div className="flex items-center justify-center rounded-lg border border-gray-400 bg-[#e5f0ee]">
-        <div className="p-2 rounded m-2 border border-gray-300">
+        <div className="p-2 rounded ml-8 m-2 border border-gray-300">
           <img
             className="w-72 rounded"
             src={CDN_IMG_URL + cloudinaryImageId}
@@ -89,7 +89,7 @@ function RestaurantDetails() {
               {costForTwoMessage}
             </li>
           </ul>
-          <div className="">
+          <div className="m-auto w-[80%]">
             {labels.map(({ title, message }) => {
               return (
                 message !== "null" && (
@@ -97,7 +97,7 @@ function RestaurantDetails() {
                     <h1 className="underline underline-offset-4 font-semibold">
                       {title}
                     </h1>
-                    <p className="mt-1">{message}</p>
+                    <p>{message}</p>
                   </div>
                 )
               );
