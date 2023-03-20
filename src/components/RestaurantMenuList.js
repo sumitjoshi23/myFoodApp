@@ -10,6 +10,8 @@ import { fallbackItemPrice } from "../utils/helper";
 import { Link } from "react-router-dom";
 import { clearCart } from "../store";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { BiRightArrowAlt } from "react-icons/bi";
+
 function RestaurantMenuList({ menuDataSet }) {
   let menuDetails = menuDataSet.map((card) => card.card.card);
   let itemCards = menuDetails
@@ -54,14 +56,14 @@ function RestaurantMenuList({ menuDataSet }) {
             </p>
             <div className="flex mt-4">
               <Button
-                className="border-none py-4 px-16 bg-[#b6d5ce] hover:bg-[#2b967d]"
+                className="border-none py-4 px-[70px] bg-[#b6d5ce] hover:bg-[#2b967d]"
                 onClick={() => dispatch(addItem(item))}
               >
                 Add
               </Button>
               {Object.values(items).includes(item) && (
                 <Button
-                  className="border-none mx-4 py-4 px-12
+                  className="border-none mx-4 py-4 px-[70px]
                    hover:bg-[#a5373b] bg-[#fa999c]"
                   onClick={() => dispatch(removeItem(item))}
                 >
@@ -79,7 +81,8 @@ function RestaurantMenuList({ menuDataSet }) {
             <Link to="/cart">
               <Button className="hover:scale-110 hover:bg-green-700 text-xs rounded-l-full text-white rounded-lg bg-green-800 ">
                 <AiOutlineShoppingCart className="m-1 text-4xl" />
-                {items.length} !! Proceed to pay
+                {items.length} !! Proceed to pay{" "}
+                <BiRightArrowAlt className="text-2xl" />
               </Button>
             </Link>
 

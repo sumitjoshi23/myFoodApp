@@ -80,21 +80,23 @@ const Cart = () => {
           </div>
         )}
         {items.length ? (
-          <div className=" grid grid-cols-2">{renderedItems}</div>
+          <>
+            <div className=" grid grid-cols-2">{renderedItems}</div>
+            <div className="sticky bottom-2 self-end">
+              <Button
+                onClick={() => nav(-1)}
+                className="hover:scale-110 hover:bg-green-700 text-xs text-white rounded-full bg-green-800 "
+              >
+                <BiArrowBack className="text-xl mr-1" /> Go back
+              </Button>
+            </div>
+          </>
         ) : (
           <div className="absolute top-72 font-bold text-2xl text-[#0E8388]">
             Empty cart 🙃 Visit restaurants and choose your favourite cuisine
             !!!
           </div>
         )}
-      </div>
-      <div className="px-0 float-right">
-        <Button
-          onClick={() => nav(-1)}
-          className="hover:scale-110 hover:bg-green-700 text-base text-white rounded-full bg-green-800 "
-        >
-          <BiArrowBack className="text-xl mr-2" /> Go back
-        </Button>
       </div>
     </>
   );
