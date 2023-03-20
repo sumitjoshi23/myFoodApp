@@ -119,34 +119,37 @@ const FixedSideBars = () => {
       </a>
     </div>
   );
+  const bottomCartButtons = (
+    <div className="px-0 fixed bottom-2 right-44 opacity-70 hover:opacity-100">
+      {items.length !== 0 && (
+        <div className="rounded-full flex ">
+          <Link to="/cart">
+            <Button className="hover:scale-110 hover:bg-green-700 border-none h-10 text-xs mx-0 px-0 rounded-l-full text-white rounded-lg bg-green-800 ">
+              {items.length} Item(s) in{" "}
+              <AiOutlineShoppingCart className="m-1 text-4xl" /> !! proceed to
+              pay
+            </Button>
+          </Link>
+
+          <Button
+            onClick={() => {
+              dispatch(clearCart());
+            }}
+            className="hover:scale-110 hover:bg-red-700 border-none text-xs h-10 mx-0 px-0 rounded-r-full text-white  rounded-lg bg-red-800 "
+          >
+            Clear cart
+          </Button>
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <>
       {leftSideBar}
       {rightSideBar}
       {bottomWhatsAppLink}
-      <div className="px-0 fixed bottom-2 right-44">
-        {items.length !== 0 && (
-          <div className="rounded-full flex">
-            <Link to="/cart">
-              <Button className="hover:scale-110 hover:bg-green-700 border-none h-10 text-xs mx-0 px-0 rounded-l-full text-white rounded-lg bg-green-800 ">
-                {items.length} Item(s) in{" "}
-                <AiOutlineShoppingCart className="m-1 text-4xl" /> !! proceed to
-                pay
-              </Button>
-            </Link>
-
-            <Button
-              onClick={() => {
-                dispatch(clearCart());
-              }}
-              className="border-none hover:scale-110 hover:bg-red-700  text-xs h-10 mx-0 px-0 rounded-r-full text-white  rounded-lg bg-red-800 "
-            >
-              Clear cart
-            </Button>
-          </div>
-        )}
-      </div>
+      {bottomCartButtons}
     </>
   );
 };

@@ -36,14 +36,14 @@ const Cart = () => {
         </div>
         <div className="float-right flex items-center mx-auto">
           <Button
-            className=" bg-green-200 border font-bold h-8 w-8 pb-1 px-0 rounded-full"
+            className=" bg-green-200 border font-bold h-8 w-8 pb-1 mx-2 rounded-full"
             onClick={() => dispatch(addItem(item))}
           >
             +
           </Button>
           {
             <Button
-              className="bg-red-200 border font-bold h-8 w-8 pb-1 border-red-900 px-0 rounded-full hover:bg-red-800 "
+              className="bg-red-200 border font-bold h-8 w-8 pb-1 border-red-900 rounded-full hover:bg-red-800 "
               onClick={() => dispatch(removeItem(item))}
             >
               -

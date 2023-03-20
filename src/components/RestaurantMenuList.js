@@ -55,7 +55,7 @@ function RestaurantMenuList({ menuDataSet }) {
               </Button>
               {Object.values(items).includes(item) && (
                 <Button
-                  className="border-red-900 hover:bg-red-800 bg-red-100"
+                  className="border-red-900 mx-2 hover:bg-red-800 bg-red-100"
                   onClick={() => dispatch(removeItem(item))}
                 >
                   Remove
