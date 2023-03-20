@@ -12,11 +12,12 @@ function About() {
       <div className="max-w-3xl text-center">
         <p className="text-lg text-gray-700 leading-relaxed mb-6">
           I'm a passionate web developer who loves building beautiful,
-          responsive user interfaces using various frameworks like React JS,
-          Tailwind CSS etc. I have experience working on a variety of web
-          projects, from small websites to large-scale web applications. I enjoy
-          exploring new technologies and learning new skills to stay up-to-date
-          with the latest trends in web development.
+          responsive user interfaces using various frameworks, library and tools
+          . I have a professional working experience of around 4 years and
+          worked on a variety of web projects, from small websites to
+          large-scale web applications. I enjoy exploring new technologies and
+          learning new skills to stay up-to-date with the latest trends in web
+          development.
         </p>
         <p className="text-lg text-gray-700 leading-relaxed mb-6">
           On this website, I'have used a bunch of technologies including React,
