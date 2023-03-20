@@ -24,9 +24,9 @@ function RestaurantCard({
   return (
     <div className="relative m-8 hover:bg-[#CBE4DE] duration-300 hover:scale-110 hover:shadow-[#2E4F4F] h-80 w-60 shadow-2xl bg-[#E1EEDD] rounded-lg overflow-hidden border border-[#0E8388]">
       <span className="absolute w-6 bg-slate-200 ">
-        <img src={veg ? logoVeg : logoNonVeg} />
+        <img src={veg ? logoVeg : logoNonVeg} alt="vegNonVegIcon" />
       </span>
-      <img src={CDN_IMG_URL + cloudinaryImageId} alt="card Image" />
+      <img src={CDN_IMG_URL + cloudinaryImageId} alt="card" />
       <div className="p-2">
         <h2 className="font-semibold my-2">{name}</h2>
         <h2 className="text-gray-700 text-sm">{cuisines?.join(", ")}</h2>

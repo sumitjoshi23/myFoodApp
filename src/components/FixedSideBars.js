@@ -98,7 +98,7 @@ const FixedSideBars = () => {
   );
 
   const bottomWhatsAppLink = (
-    <div className="fixed bottom-0 right-0 hover:scale-110 duration-300 my-2">
+    <div className="fixed bottom-0 right-0 hover:scale-125 duration-300 m-3">
       <a
         target="_blank"
         rel="noreferrer"
@@ -107,7 +107,7 @@ const FixedSideBars = () => {
         <img
           src={whatsAppLogo}
           alt="whatsappLogo"
-          className="w-14 rounded-full text-green-500"
+          className="w-14 rounded-lg text-green-500"
         />
       </a>
     </div>

@@ -26,7 +26,6 @@ function Body() {
     e.preventDefault();
     const data = filterData(searchText, allRestaurants);
     setFilteredRestaurants(data);
-    setSearchText("");
   };
 
   async function getRestaurants() {

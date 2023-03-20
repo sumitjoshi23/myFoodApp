@@ -40,6 +40,7 @@ function RestaurantMenuList({ menuDataSet }) {
               {item.name}
               <img
                 className="my-1 w-6"
+                alt="vegNonVegIcon"
                 src={item.isVeg ? logoVeg : logoNonVeg}
               />
             </div>

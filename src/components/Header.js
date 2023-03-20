@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import googleIcon from "../utils/images/googleIcon.png";
 import ButtonList from "../ButtonList";
@@ -83,7 +83,7 @@ function Header() {
                 <img
                   className="rounded-full w-8"
                   src={profile.picture}
-                  alt="user image"
+                  alt="userProfile"
                 />
                 <span className="m-2 ">Sign out</span>
               </button>

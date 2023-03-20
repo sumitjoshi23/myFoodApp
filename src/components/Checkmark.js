@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ImCheckmark } from "react-icons/im";
 import useShowLoader from "../hooks/useShowLoader";
 const Checkmark = () => {
