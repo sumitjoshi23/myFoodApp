@@ -2,7 +2,7 @@ import React from "react";
 
 const OfferSlider = () => {
   return (
-    <div className="overflow-x-hidden text-[#CBE4DE] font-semibold bg-[#2E4F4F] rounded-lg p-4 mb-4 ">
+    <div className="overflow-x-hidden text-[#CBE4DE] font-semibold bg-[#000000] rounded-lg p-2 my-4 ">
       <div className="max-w-xs flex animate-marquee whitespace-nowrap">
         <br />
         <span className="font-semibold mx-4">💸Heavy discount💰</span>

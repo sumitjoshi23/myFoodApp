@@ -12,7 +12,7 @@ function App() {
       <ScrollToTop />
       <div className="flex flex-col">
         <Header />
-        <div className="container mx-auto py-5 px-36 min-h-screen">
+        <div className="container mx-auto px-36 min-h-screen">
           <Outlet />
         </div>
         <Footer />

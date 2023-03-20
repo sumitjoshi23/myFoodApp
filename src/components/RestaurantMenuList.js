@@ -7,6 +7,7 @@ import Button from "../Button";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, removeItem } from "../store";
 import { fallbackItemPrice } from "../utils/helper";
+import { Link } from "react-router-dom";
 function RestaurantMenuList({ menuDataSet }) {
   let menuDetails = menuDataSet.map((card) => card.card.card);
   let itemCards = menuDetails
@@ -21,7 +22,14 @@ function RestaurantMenuList({ menuDataSet }) {
   const dispatch = useDispatch();
   const items = useSelector((store) => store.cart.items);
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap my-4">
+      <div className="w-full">
+        {items.length !== 0 && (
+          <Link to="/cart">
+            <Button className="float-right">Proceed to Pay</Button>
+          </Link>
+        )}
+      </div>
       {menuInfo.map((item, i) => (
         <div
           className="w-full hover:bg-[#CBE4DE] duration-300 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg my-6 shadow-lg border border-gray-200 list-none flex"

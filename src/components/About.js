@@ -1,53 +1,50 @@
 import React from "react";
-import outlet1 from "../utils/images/outlet1.jpg";
-import outlet2 from "../utils/images/outlet2.jpg";
+import myPic from "../utils/images/myPic.jpg";
 
-const About = () => {
+function About() {
   return (
-    <div className="flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold mb-8 text-[#2E4F4F]">About Us</h1>
-      <p className="max-w-lg text-center text-gray-700">
-        Welcome to our food ordering app! We're dedicated to making it easy and
-        convenient for you to order delicious food from your favorite local
-        restaurants. With just a few taps on your phone, you can browse menus,
-        customize your order, and have your meal delivered straight to your
-        door. Whether you're craving pizza, sushi, burgers, or something else
-        entirely, our app has you covered. Plus, we offer fast delivery,
-        real-time order tracking, and easy payment options, so you can sit back
-        and relax while we take care of the rest.
-        <br /> So why wait? Start using our web app today and start enjoying
-        great food without the hassle!
-      </p>
-      <div className="mt-8 flex flex-wrap justify-center">
-        <div className="hover:scale-110 duration-300 max-w-xs mx-4 my-4 bg-white shadow-lg rounded-lg overflow-hidden">
-          <img
-            className="w-full h-56 object-cover object-center"
-            src={outlet1}
-            alt="team member"
-          />
-          <div className="py-4 px-6">
-            <h2 className="text-lg font-bold mb-2">Delhi Outlet</h2>
-            <p className="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              vel gravida lorem. Nunc quis lacus eu leo efficitur facilisis a
-              nec lorem.
-            </p>
-          </div>
-        </div>
-        <div className="hover:scale-110 duration-300 max-w-xs mx-4 my-4 bg-white shadow-lg rounded-lg overflow-hidden">
-          <img className="w-full h-56" src={outlet2} alt="team member" />
-          <div className="py-4 px-6">
-            <h2 className="text-lg font-bold mb-2">Bangalore Outlet</h2>
-            <p className="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              vel gravida lorem. Nunc quis lacus eu leo efficitur facilisis a
-              nec lorem.
-            </p>
-          </div>
-        </div>
+    <div className="flex flex-col items-center justify-center bg-gray-100 py-10 px-4">
+      <img className="w-48 rounded-full mb-4" src={myPic} alt="MyPic" />
+      <h1 className="text-4xl font-bold text-gray-800 mb-2">
+        Hello, I'm Sumit Joshi
+      </h1>
+      <p className="text-xl text-gray-600 mb-6"> Front End Web Developer</p>
+      <div className="max-w-3xl text-center">
+        <p className="text-lg text-gray-700 leading-relaxed mb-6">
+          I'm a passionate web developer who loves building beautiful,
+          responsive user interfaces using various frameworks like React JS,
+          Tailwind CSS etc. I have experience working on a variety of web
+          projects, from small websites to large-scale web applications. I enjoy
+          exploring new technologies and learning new skills to stay up-to-date
+          with the latest trends in web development.
+        </p>
+        <p className="text-lg text-gray-700 leading-relaxed mb-6">
+          On this website, I'have used a bunch of technologies including React,
+          Redux, Tailwind.
+          <br /> Key features in this website are listed below:
+        </p>
+
+        <p className="text-lg text-gray-700 leading-relaxed mb-6  font-semibold">
+          Key features in this website are listed below:
+        </p>
+        <ul className="text-green-700 ">
+          <li>Complete flow from Outlet listing to order getting placed</li>
+          <li>Used React for better functionality and UI performance</li>
+          <li>Used Redux for data management</li>
+          <li>
+            Implemented oAuth to allow users to sign in and get a personalised
+            touch
+          </li>
+          <li>Used live data from Swiggy API</li>
+          <li>Added custom error page for incorrect urls</li>
+          <li>
+            Added Shimmer Effects in restaurant listing and menu listing page
+          </li>
+          <li> Created Nested routing</li>
+        </ul>
       </div>
     </div>
   );
-};
+}
 
 export default About;
