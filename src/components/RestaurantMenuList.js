@@ -21,10 +21,10 @@ function RestaurantMenuList({ menuDataSet }) {
   const dispatch = useDispatch();
   const items = useSelector((store) => store.cart.items);
   return (
-    <div className="flex flex-wrap my-4">
+    <div className="grid grid-cols-2">
       {menuInfo.map((item, i) => (
         <div
-          className="w-full hover:bg-[#CBE4DE] duration-300 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg my-6 shadow-lg border border-gray-200 list-none flex"
+          className=" hover:bg-[#CBE4DE] duration-300 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg m-6 shadow-lg border border-gray-200 grid"
           key={i}
         >
           <div className="max-w-[10vw] p-4">
@@ -35,7 +35,7 @@ function RestaurantMenuList({ menuDataSet }) {
             />
           </div>
 
-          <div className="px-4 my-6">
+          <div className="px-4 mb-6">
             <div className="font-semibold">
               {item.name}
               <img
@@ -49,10 +49,8 @@ function RestaurantMenuList({ menuDataSet }) {
               Rs {item.price ? item.price / 100 : fallbackItemPrice / 100}
               /-
             </p>
-            <div className="flex mt-4">
-              <Button onClick={() => dispatch(addItem(item))}>
-                Add to cart
-              </Button>
+            <div className="flex mt-4 ">
+              <Button onClick={() => dispatch(addItem(item))}>Add</Button>
               {Object.values(items).includes(item) && (
                 <Button
                   className="border-red-900 mx-2 hover:bg-red-800 bg-red-100"
@@ -63,7 +61,6 @@ function RestaurantMenuList({ menuDataSet }) {
               )}
             </div>
           </div>
-          <hr />
         </div>
       ))}
     </div>
