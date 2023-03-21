@@ -14,7 +14,7 @@ import RestaurantDetails from "./components/RestarauntDetails";
 import OrderSuccess from "./components/OrderSuccess";
 import Offers from "./components/Offers";
 import { GoogleOAuthProvider } from "@react-oauth/google";
-// import AboutMe from "./components/AboutMe";
+import AboutMe from "./components/AboutMe";
 const Cart = lazy(() => import("./components/Cart"));
 
 let el = document.querySelector("#root");
@@ -30,14 +30,14 @@ let appRouter = createBrowserRouter([
         element: <Body />,
       },
       {
-        path: "about",
+        path: "/about",
         element: <About />,
-        // children: [
-        //   {
-        //     path: "/about/me",
-        //     element: <p>ghuhuhu</p>,
-        //   },
-        // ],
+        children: [
+          {
+            path: "me",
+            element: <AboutMe />,
+          },
+        ],
       },
       {
         path: "offers",

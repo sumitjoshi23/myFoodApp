@@ -33,7 +33,10 @@ const Cart = () => {
         />
         <div className="font-semibold text-center ml-2">{item.name}</div>
         <div className="font-semibold text-center ml-2">
-          Qty- {item.quantity}
+          Qty-{" "}
+          <span className="text-red-800 font-extrabold text-lg">
+            {item.quantity}
+          </span>
         </div>
         <div className="text-center text-gray-400 max-h-36 overflow-hidden">
           {item.description}
