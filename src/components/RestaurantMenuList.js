@@ -65,7 +65,7 @@ function RestaurantMenuList({ menuDataSet }) {
               /-
             </p>
             {items.some((i) => i.id === menuItem.id) ? (
-              <div className="font-semibold flex items-center justify-between text-white hover:text-white text-xl  rounded-full duration-500 h-12 py-4 px-9 w-min bg-[#3F979B] hover:bg-[#3F979B]">
+              <div className="font-semibold flex items-center justify-between text-white hover:text-white text-xl  rounded-full duration-500 h-12 py-4 px-9 w-min bg-[#3F979B] hover:bg-[#2d7d81]">
                 <button
                   className="px-3"
                   onClick={() => dispatch(removeItem(menuItem))}
@@ -84,7 +84,7 @@ function RestaurantMenuList({ menuDataSet }) {
               </div>
             ) : (
               <Button
-                className="border-none text-white py-4 px-[70px] bg-[#2b967d] hover:bg-[#2b967d]"
+                className="border-none text-white py-4 px-[70px] bg-[#229177] hover:bg-[#0f5544]"
                 onClick={() => dispatch(addItem(menuItem))}
               >
                 Add
