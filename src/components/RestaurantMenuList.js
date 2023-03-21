@@ -53,38 +53,38 @@ function RestaurantMenuList({ menuDataSet }) {
             <div className="font-semibold">
               {menuItem.name}
               <img
-                className="my-1 w-6"
+                className="my-2 w-6"
                 alt="vegNonVegIcon"
                 src={menuItem.isVeg ? logoVeg : logoNonVeg}
               />
             </div>
             <p className="m-1 text-gray-500">{menuItem.description}</p>
-            <p className="m-1 text-sm">
+            <p className="m-1 my-3 font-semibold">
               Rs{" "}
               {menuItem.price ? menuItem.price / 100 : fallbackItemPrice / 100}
               /-
             </p>
             {items.some((i) => i.id === menuItem.id) ? (
-              <div className="font-semibold flex items-center justify-between  hover:text-white text-xl  rounded-full duration-500 h-12 py-4 px-9 bg-[#b6d5ce] w-min hover:bg-[#2b967d]">
+              <div className="font-semibold flex items-center justify-between text-white hover:text-white text-xl  rounded-full duration-500 h-12 py-4 px-9 w-min bg-[#3F979B] hover:bg-[#3F979B]">
                 <button
                   className="px-3"
-                  onClick={() => dispatch(addItem(menuItem))}
+                  onClick={() => dispatch(removeItem(menuItem))}
                 >
-                  +
+                  -
                 </button>
                 <p className="px-3 ">
                   {items.find((item) => item.id === menuItem.id).quantity}
                 </p>
                 <button
                   className=" px-3 "
-                  onClick={() => dispatch(removeItem(menuItem))}
+                  onClick={() => dispatch(addItem(menuItem))}
                 >
-                  -
+                  +
                 </button>
               </div>
             ) : (
               <Button
-                className="border-none py-4 px-[70px] bg-[#b6d5ce] hover:bg-[#2b967d]"
+                className="border-none text-white py-4 px-[70px] bg-[#2b967d] hover:bg-[#2b967d]"
                 onClick={() => dispatch(addItem(menuItem))}
               >
                 Add

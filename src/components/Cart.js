@@ -25,7 +25,7 @@ const Cart = () => {
       className="hover:bg-[#CBE4DE] duration-500 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg m-4 p-4 shadow-lg border "
       key={index}
     >
-      <div className="grid grid-cols-5 justify-between items-center">
+      <div className="grid grid-cols-6 justify-between items-center">
         <img
           className="rounded-lg"
           src={item.imageId ? CDN_IMG_URL + item?.imageId : fallBackItemPic}
@@ -45,14 +45,14 @@ const Cart = () => {
         </div>
         <div className="flex items-center">
           <Button
-            className=" bg-green-200 font-bold h-8 w-8 pb-1 m-2 rounded-full"
+            className=" bg-[#2b967d] text-white font-bold h-8 w-8 pb-1 m-2 rounded-full"
             onClick={() => dispatch(addItem(item))}
           >
             +
           </Button>
           {
             <Button
-              className="bg-red-200 font-bold h-8 w-8 pb-1 rounded-full hover:bg-red-800 "
+              className="bg-red-800 hover:bg-red-600 text-white font-bold h-8 w-8 pb-1 rounded-full"
               onClick={() => dispatch(removeItem(item))}
             >
               -
@@ -68,16 +68,18 @@ const Cart = () => {
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-3xl font-bold mb-8 text-[#2E4F4F] ">Cart</h1>
         {cartTotal !== 0 && (
-          <div className="bg-gray-100 rounded-xl p-5">
+          <div className="bg-gray-200 rounded-xl p-5">
             <div className="flex justify-center text-[#A84448] text-2xl font-bold hover:scale-105 mb-4 ">
               Cart total : Rs {cartTotal}/-
             </div>
             <div className="flex">
               <Link to="/orderDetails">
-                <Button className="m-2 px-5">Place Order</Button>
+                <Button className="bg-[#2b967d] text-white m-2 px-5">
+                  Place Order
+                </Button>
               </Link>
               <Button
-                className="m-2 p-5 hover:bg-red-800 "
+                className="m-2 p-5 bg-red-800 hover:bg-red-600 text-white"
                 onClick={() => dispatch(clearCart())}
               >
                 Clear Cart
