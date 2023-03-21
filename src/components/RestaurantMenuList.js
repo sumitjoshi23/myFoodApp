@@ -84,7 +84,7 @@ function RestaurantMenuList({ menuDataSet }) {
               </div>
             ) : (
               <Button
-                className="border-none text-white py-4 px-[70px] hover:bg-[#2b8e77] bg-[#417369]"
+                className="border-none text-white py-4 px-[70px] hover:bg-[#2b8e77] bg-green-800"
                 onClick={() => dispatch(addItem(menuItem))}
               >
                 Add
