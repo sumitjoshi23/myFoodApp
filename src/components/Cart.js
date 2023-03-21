@@ -45,14 +45,14 @@ const Cart = () => {
         </div>
         <div className="flex items-center">
           <Button
-            className=" bg-[#2b967d] text-white font-bold h-8 w-8 pb-1 m-2 rounded-full"
+            className="hover:bg-[#197e66] bg-[#0b3e31] text-white font-bold h-8 w-8 pb-1 m-2 rounded-full"
             onClick={() => dispatch(addItem(item))}
           >
             +
           </Button>
           {
             <Button
-              className="bg-red-800 hover:bg-red-600 text-white font-bold h-8 w-8 pb-1 rounded-full"
+              className="hover:bg-[#9c4246] bg-[#8e2629] text-white font-bold h-8 w-8 pb-1 rounded-full"
               onClick={() => dispatch(removeItem(item))}
             >
               -
@@ -70,16 +70,16 @@ const Cart = () => {
         {cartTotal !== 0 && (
           <div className="bg-gray-200 rounded-xl p-5">
             <div className="flex justify-center text-[#A84448] text-2xl font-bold hover:scale-105 mb-4 ">
-              Cart total : Rs {cartTotal}/-
+              Total payable : Rs {cartTotal}/-
             </div>
             <div className="flex">
               <Link to="/orderDetails">
-                <Button className="bg-[#2b967d] text-white m-2 px-5">
+                <Button className="hover:bg-[#197e66] bg-[#0b3e31] text-white m-2 px-5">
                   Place Order
                 </Button>
               </Link>
               <Button
-                className="m-2 p-5 bg-red-800 hover:bg-red-600 text-white"
+                className="m-2 p-5 hover:bg-[#9c4246] bg-[#8e2629] text-white"
                 onClick={() => dispatch(clearCart())}
               >
                 Clear Cart
