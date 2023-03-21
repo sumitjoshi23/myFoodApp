@@ -31,10 +31,10 @@ function RestaurantMenuList({ menuDataSet }) {
   );
 
   return (
-    <div className="grid grid-cols-2">
+    <div className="grid grid-cols-2 ">
       {menuInfo.map((menuItem, i) => (
         <div
-          className=" hover:bg-[#CBE4DE] duration-300 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg m-6 shadow-lg border border-gray-200 grid"
+          className="even:mr-0 odd:ml-0 hover:bg-[#CBE4DE] duration-300 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg m-6 shadow-lg border border-gray-200 grid"
           key={i}
         >
           <div className="max-w-[10vw] p-4">
@@ -59,13 +59,13 @@ function RestaurantMenuList({ menuDataSet }) {
               />
             </div>
             <p className="m-1 text-gray-500">{menuItem.description}</p>
-            <p className="m-1 my-3 font-semibold">
+            <p className="m-1 mt-3 mb-4 font-semibold">
               Rs{" "}
               {menuItem.price ? menuItem.price / 100 : fallbackItemPrice / 100}
               /-
             </p>
             {items.some((i) => i.id === menuItem.id) ? (
-              <div className="font-semibold flex items-center justify-between text-white hover:text-white text-xl  rounded-full duration-500 h-12 py-4 px-9 w-min bg-[#3F979B] hover:bg-[#2d7d81]">
+              <div className="font-semibold flex items-center justify-between text-white hover:text-white text-xl rounded-full duration-500 h-12 py-4 px-9 w-min bg-[#3F979B] hover:bg-[#2d7d81]">
                 <button
                   className="px-3"
                   onClick={() => dispatch(removeItem(menuItem))}

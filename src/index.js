@@ -30,7 +30,7 @@ let appRouter = createBrowserRouter([
         element: <Body />,
       },
       {
-        path: "/about",
+        path: "about",
         element: <About />,
         children: [
           {

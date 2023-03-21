@@ -19,48 +19,47 @@ const Cart = () => {
       (acc += ((curr.price || fallbackItemPrice) * curr.quantity) / 100),
     0
   );
+  const totalQuantity = items.reduce((acc, curr) => (acc += curr.quantity), 0);
 
   const renderedItems = items.map((item, index) => (
     <div
-      className="hover:bg-[#CBE4DE] duration-500 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg m-4 p-4 shadow-lg border "
+      className="hover:bg-[#CBE4DE] duration-500 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg my-4 p-4 shadow-lg border "
       key={index}
     >
-      <div className="grid grid-cols-6 justify-between items-center">
+      <div className="grid grid-cols-8 justify-between items-center">
         <img
-          className="rounded-lg"
+          className="rounded-lg m-2"
           src={item.imageId ? CDN_IMG_URL + item?.imageId : fallBackItemPic}
           alt="Item Pic"
         />
-        <div className="font-semibold text-center ml-2">{item.name}</div>
-        <div className="font-semibold text-center ml-2">
+        <div className="font-semibold text-center ml-4 mr-2">{item.name}</div>
+        <div className="m-2 col-span-3 text-center text-gray-400 max-h-36 overflow-hidden">
+          {item?.description}
+        </div>
+        <div className="m-2 font-semibold text-center">
+          <span>Rs </span>
+          {item.price ? item.price / 100 : fallbackItemPrice / 100}
+          /-
+        </div>
+        <div className="font-semibold text-center m-2">
           Qty-{" "}
           <span className="text-red-800 font-extrabold text-lg">
             {item.quantity}
           </span>
         </div>
-        <div className="text-center text-gray-400 max-h-36 overflow-hidden">
-          {item.description}
-        </div>
-        <div className="font-semibold text-center">
-          <span>Rs </span>
-          {item.price ? item.price / 100 : fallbackItemPrice / 100}
-          /-
-        </div>
-        <div className="flex items-center">
-          <Button
-            className="hover:bg-[#0f4539] bg-green-800 text-white font-bold h-8 w-8 pb-1 m-2 rounded-full"
+        <div className="font-semibold flex items-center justify-between text-white m-5 hover:text-white text-xl hover:scale-125 rounded-full duration-500 h-6 p-5 hover:bg-[#155b4e] bg-[#20856d]">
+          <button
+            className="hover:scale-125 duration-300 p-0 m-0"
+            onClick={() => dispatch(removeItem(item))}
+          >
+            -
+          </button>
+          <button
+            className="hover:scale-125 duration-300 p-0 m-0"
             onClick={() => dispatch(addItem(item))}
           >
             +
-          </Button>
-          {
-            <Button
-              className="hover:bg-[#9c4246] bg-red-800 text-white font-bold h-8 w-8 pb-1 rounded-full"
-              onClick={() => dispatch(removeItem(item))}
-            >
-              -
-            </Button>
-          }
+          </button>
         </div>
       </div>
     </div>
@@ -70,19 +69,27 @@ const Cart = () => {
     <>
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-3xl font-bold mb-8 text-[#2E4F4F] ">Cart</h1>
-        {cartTotal !== 0 && (
-          <div className="bg-gray-200 rounded-xl p-5">
-            <div className="flex justify-center text-[#A84448] text-2xl font-bold hover:scale-105 mb-4 ">
-              Total payable : Rs {cartTotal}/-
+        <div className="bg-slate-200 rounded-lg p-8 mb-4 text-center shadow-xl">
+          <div className="font-bold text-xl text-gray-700 mb-2">Summary:</div>
+          <div className="flex flex-col items-center flex-wrap justify-center">
+            <div className="font-semibold text-gray-700 mb-2">
+              Total number of items: {totalQuantity}
             </div>
-            <div className="flex">
+            <div className="text-end font-semibold text-gray-700 mb-2">
+              Total Payable: {cartTotal}
+            </div>
+          </div>
+        </div>
+        {cartTotal !== 0 && (
+          <div className="flex justify-between items-center text-[#A84448] text-2xl font-bold hover:scale-105 mb-4 ">
+            <div className="flex items-center ">
               <Link to="/orderDetails">
-                <Button className="hover:bg-[#0f4539] bg-green-800 text-white m-2 px-5">
+                <Button className="hover:bg-[#155b4e] bg-[#20856d] text-white m-2 px-5">
                   Place Order
                 </Button>
               </Link>
               <Button
-                className="m-2 p-5 hover:bg-[#9c4246] bg-red-800 text-white"
+                className="m-2 p-5 hover:bg-[#66181c] bg-[#ab3339] text-white"
                 onClick={() => dispatch(clearCart())}
               >
                 Clear Cart
@@ -92,11 +99,11 @@ const Cart = () => {
         )}
         {items.length ? (
           <>
-            <div className="grid grid-cols-2">{renderedItems}</div>
+            <div className="flex flex-wrap">{renderedItems}</div>
             <div className="sticky bottom-2 self-end">
               <Button
                 onClick={() => nav(-1)}
-                className="hover:scale-110 hover:bg-green-700 text-xs text-white rounded-full bg-green-800 "
+                className="hover:scale-110 hover:bg-green-700 px-8 text-white text-xs rounded-full h-12 bg-green-800"
               >
                 <BiArrowBack className="text-xl mr-1" /> Go back
               </Button>

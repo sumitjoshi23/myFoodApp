@@ -44,7 +44,7 @@ function RestaurantDetails() {
           ""
         )}
       </div>
-      <div className="flex items-center justify-center rounded-lg border border-gray-400 bg-[#e5f0ee]">
+      <div className="flex items-center justify-center rounded-lg border border-gray-200 bg-[#e5f0ee]">
         <div className="p-2 rounded ml-8 m-2 border border-gray-300">
           <img
             className="w-72 rounded"

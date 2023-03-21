@@ -16,7 +16,7 @@ function About() {
         <p className="text-lg text-gray-700 leading-relaxed mb-6">
           I'm a passionate web developer who loves building beautiful,
           responsive user interfaces using various technologies including{" "}
-          <span className="text-red-700 font-semibold">
+          <span className="text-[#216e71] font-semibold">
             HTML, CSS, Javascript, React, Redux{" "}
             <span className="text-gray-700 font-normal">and</span> Tailwind
           </span>
@@ -24,20 +24,24 @@ function About() {
         </p>
         <p className="text-lg text-gray-700 leading-relaxed mb-6">
           I have a professional working experience of around{" "}
-          <span className="text-red-700 font-semibold">4 years</span> and worked
-          on a variety of web projects, from small websites to large-scale web
-          applications. I also worked as a software tester and used tools like
-          <span className="text-red-700 font-semibold"> Cucumber</span> and{" "}
-          <span className="text-red-700 font-semibold">Selenium</span> in order
-          to automate the web app. I have also worked in{" "}
-          <span className="text-red-700 font-semibold">Java</span> to fix bugs
+          <span className="text-[#216e71] font-semibold">4 years</span> and
+          worked on a variety of web projects, from small websites to
+          large-scale web applications. I also worked as a software tester and
+          used tools like
+          <span className="text-[#216e71] font-semibold">
+            {" "}
+            Cucumber
+          </span> and{" "}
+          <span className="text-[#216e71] font-semibold">Selenium</span> in
+          order to automate the web app. I have also worked in{" "}
+          <span className="text-[#1e6669] font-semibold">Java</span> to fix bugs
           and implementing required usecases. Later on I switched purely to
           front end and helped my organization in{" "}
-          <span className="text-red-700 font-semibold">
+          <span className="text-[#216e71] font-semibold">
             migrating the whole UI
           </span>{" "}
           and{" "}
-          <span className="text-red-700 font-semibold">
+          <span className="text-[#216e71] font-semibold">
             writing own components like Accordions, Buttons, Dropdowns, Routes,
             etc
           </span>{" "}
@@ -45,16 +49,16 @@ function About() {
         </p>
         <p className="text-lg text-gray-700 leading-relaxed mb-6">
           I am{" "}
-          <span className="text-red-700 font-semibold">
+          <span className="text-[#216e71] font-semibold">
             well versed in giving training to new joiness
           </span>{" "}
           and handling teams as I was{" "}
-          <span className="text-red-700 font-semibold">
+          <span className="text-[#216e71] font-semibold">
             leading the testing team
           </span>{" "}
           in the previous organization before switching myself in front end. I
           also have great experience in client-handling as I{" "}
-          <span className="text-red-700 font-semibold">
+          <span className="text-[#216e71] font-semibold">
             often gave product demos to client
           </span>{" "}
           for the organization.

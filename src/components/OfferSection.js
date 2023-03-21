@@ -5,13 +5,13 @@ const OfferSection = ({ restaurant }) => {
   const { offers } =
     restaurant?.cards[1]?.card?.card?.gridElements.infoWithStyle ?? {};
   return (
-    <div className="p-3 pt-4 mt-6 bg-[#e5f0ee] text-center border border-gray-300 rounded-lg ">
+    <div className="p-3 pt-4 mt-6 bg-[#e5f0ee] text-center border border-gray-200 rounded-lg ">
       <p className="mb-5 font-semibold text-2xl ">💸**Coupons and offers**💰</p>
       <div className="font-semibold  flex justify-center p-2 m-2">
         {offers.map(({ info }) => (
           <div
             key={info.couponCode}
-            className="hover:scale-105 duration-300 m-1 h-28 w-36"
+            className="hover:scale-105 duration-300 m-1 h-28 w-48"
           >
             <div className="flex flex-col items-center justify-center p-4 h-full w-full bg-[#b6d5ce] rounded-lg ">
               <img
