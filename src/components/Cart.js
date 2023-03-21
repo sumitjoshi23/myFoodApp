@@ -15,13 +15,14 @@ const Cart = () => {
   const dispatch = useDispatch();
   const items = useSelector((store) => store.cart.items);
   const cartTotal = items.reduce(
-    (acc, curr) => (acc += (curr.price || fallbackItemPrice) / 100),
+    (acc, curr) =>
+      (acc += ((curr.price || fallbackItemPrice) * curr.quantity) / 100),
     0
   );
 
-  const renderedItems = Object.values(items).map((item, index) => (
+  const renderedItems = items.map((item, index) => (
     <div
-      className="hover:bg-[#CBE4DE] duration-500 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg m-4 p-4 shadow-lg border flex"
+      className="hover:bg-[#CBE4DE] duration-500 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg m-4 p-4 shadow-lg border "
       key={index}
     >
       <div className="grid grid-cols-5 justify-between items-center">
@@ -31,7 +32,12 @@ const Cart = () => {
           alt="Item Pic"
         />
         <div className="font-semibold text-center ml-2">{item.name}</div>
-        <div className="text-center text-gray-400">{item.description}</div>
+        <div className="font-semibold text-center ml-2">
+          Qty- {item.quantity}
+        </div>
+        <div className="text-center text-gray-400 max-h-36 overflow-hidden">
+          {item.description}
+        </div>
         <div className="font-semibold text-center">
           <span>Rs </span>
           {item.price ? item.price / 100 : fallbackItemPrice / 100}
@@ -81,7 +87,7 @@ const Cart = () => {
         )}
         {items.length ? (
           <>
-            <div className=" grid grid-cols-2">{renderedItems}</div>
+            <div className="grid grid-cols-2">{renderedItems}</div>
             <div className="sticky bottom-2 self-end">
               <Button
                 onClick={() => nav(-1)}

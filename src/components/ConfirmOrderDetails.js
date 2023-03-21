@@ -9,14 +9,21 @@ const ConfirmOrderDetails = () => {
   const dispatch = useDispatch();
   const items = useSelector((store) => store.cart.items);
   const cartTotal = items.reduce(
-    (acc, curr) => (acc += curr.price / 100 || fallbackItemPrice / 100),
+    (acc, curr) =>
+      (acc += ((curr.price || fallbackItemPrice) * curr.quantity) / 100),
+
     0
   );
-  const renderedItems = Object.values(items).map((item, index) => (
+  const totalQuantity = items.reduce((acc, curr) => (acc += curr.quantity), 0);
+  const renderedItems = items.map((item, index) => (
     <tr key={index}>
       <td className="border px-4 py-2">{item.name}</td>
+      <td className="border px-4 py-2">{item.quantity}</td>
       <td className="border px-4 py-2">
         {item.price / 100 || fallbackItemPrice / 100} /-
+      </td>
+      <td className="border px-4 py-2">
+        {(item.price / 100 || fallbackItemPrice / 100) * item.quantity} /-
       </td>
     </tr>
   ));
@@ -39,10 +46,16 @@ const ConfirmOrderDetails = () => {
             <table className="min-w-[40vw]">
               <thead>
                 <tr>
-                  <th className="w-1/2 px-4 py-2 font-bold text-gray-700">
+                  <th className="w-2/5 px-4 py-2 font-bold text-gray-700">
                     Product
                   </th>
-                  <th className="w-1/4 px-4 py-2 font-bold text-gray-700">
+                  <th className="w-1/5 px-4 py-2 font-bold text-gray-700">
+                    Quantity
+                  </th>
+                  <th className="w-1/5 px-4 py-2 font-bold text-gray-700">
+                    Rate(per piece)
+                  </th>{" "}
+                  <th className="w-1/5 px-4 py-2 font-bold text-gray-700">
                     Price
                   </th>
                 </tr>
@@ -53,6 +66,10 @@ const ConfirmOrderDetails = () => {
                   <td className="border px-4 py-2 font-bold text-gray-700">
                     Total:
                   </td>
+                  <td className="border px-4 py-2 font-bold text-gray-700">
+                    {totalQuantity}
+                  </td>
+                  <td className="border px-4 py-2 font-bold text-gray-700"></td>
                   <td className="border px-4 py-2 font-bold text-gray-700">
                     Rs {cartTotal} /-
                   </td>

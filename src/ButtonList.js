@@ -10,6 +10,10 @@ import { useSelector } from "react-redux";
 
 const ButtonList = () => {
   let items = useSelector((store) => store.cart.items);
+  const totalItemsInCart = items.reduce(
+    (acc, curr) => (acc += curr.quantity),
+    0
+  );
 
   let allButtons = [
     { title: "Home", icon: <AiOutlineHome />, to: "/" },
@@ -23,7 +27,12 @@ const ButtonList = () => {
       icon: <MdOutlineConnectWithoutContact />,
       to: "/contact",
     },
-    { title: "Cart", icon: <AiOutlineShoppingCart />, to: "/cart", items },
+    {
+      title: "Cart",
+      icon: <AiOutlineShoppingCart />,
+      to: "/cart",
+      totalItemsInCart,
+    },
     { title: "About", icon: <MdContactSupport />, to: "/about" },
   ];
   let renderedButtons = allButtons.map((button) => (
@@ -33,8 +42,8 @@ const ButtonList = () => {
       className="flex mx-6 text-xl items-center text-white hover:scale-110 duration-200 hover:text-teal-200"
     >
       <span className="m-1 text-4xl">{button.icon}</span>
-      {button.items && (
-        <span className="mr-1 text-red-400">{button.items.length}</span>
+      {button.totalItemsInCart && (
+        <span className="mr-1 text-red-400">{button.totalItemsInCart}</span>
       )}
       <span className="m-1">{button.title}</span>
     </Link>

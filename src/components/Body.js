@@ -31,8 +31,11 @@ function Body() {
   async function getRestaurants() {
     const data = await fetch(FOODAPP_API_URL);
     const json = await data.json();
-    setAllRestaurants(json?.data?.cards[0]?.data?.data?.cards);
-    setFilteredRestaurants(json?.data?.cards[0]?.data?.data?.cards);
+    let allRestaurantsCard = json?.data?.cards.find(
+      (card) => card.cardType === "seeAllRestaurants"
+    );
+    setAllRestaurants(allRestaurantsCard?.data?.data?.cards);
+    setFilteredRestaurants(allRestaurantsCard?.data?.data?.cards);
   }
 
   useEffect(() => {

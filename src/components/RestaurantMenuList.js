@@ -25,9 +25,14 @@ function RestaurantMenuList({ menuDataSet }) {
 
   const dispatch = useDispatch();
   const items = useSelector((store) => store.cart.items);
+  const totalItemsInCart = items.reduce(
+    (acc, curr) => (acc += curr.quantity),
+    0
+  );
+
   return (
     <div className="grid grid-cols-2">
-      {menuInfo.map((item, i) => (
+      {menuInfo.map((menuItem, i) => (
         <div
           className=" hover:bg-[#CBE4DE] duration-300 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg m-6 shadow-lg border border-gray-200 grid"
           key={i}
@@ -35,42 +40,56 @@ function RestaurantMenuList({ menuDataSet }) {
           <div className="max-w-[10vw] p-4">
             <img
               className="rounded-lg"
-              src={item.imageId ? CDN_IMG_URL + item.imageId : fallBackItemPic}
+              src={
+                menuItem.imageId
+                  ? CDN_IMG_URL + menuItem.imageId
+                  : fallBackItemPic
+              }
               alt="Item Pic"
             />
           </div>
 
           <div className="px-4 mb-6">
             <div className="font-semibold">
-              {item.name}
+              {menuItem.name}
               <img
                 className="my-1 w-6"
                 alt="vegNonVegIcon"
-                src={item.isVeg ? logoVeg : logoNonVeg}
+                src={menuItem.isVeg ? logoVeg : logoNonVeg}
               />
             </div>
-            <p className="m-1 text-gray-500">{item.description}</p>
+            <p className="m-1 text-gray-500">{menuItem.description}</p>
             <p className="m-1 text-sm">
-              Rs {item.price ? item.price / 100 : fallbackItemPrice / 100}
+              Rs{" "}
+              {menuItem.price ? menuItem.price / 100 : fallbackItemPrice / 100}
               /-
             </p>
-            <div className="flex mt-4">
+            {items.some((i) => i.id === menuItem.id) ? (
+              <div className="font-semibold flex items-center justify-between  hover:text-white text-xl  rounded-full duration-500 h-12 py-4 px-9 bg-[#b6d5ce] w-min hover:bg-[#2b967d]">
+                <button
+                  className="px-3"
+                  onClick={() => dispatch(addItem(menuItem))}
+                >
+                  +
+                </button>
+                <p className="px-3 ">
+                  {items.find((item) => item.id === menuItem.id).quantity}
+                </p>
+                <button
+                  className=" px-3 "
+                  onClick={() => dispatch(removeItem(menuItem))}
+                >
+                  -
+                </button>
+              </div>
+            ) : (
               <Button
                 className="border-none py-4 px-[70px] bg-[#b6d5ce] hover:bg-[#2b967d]"
-                onClick={() => dispatch(addItem(item))}
+                onClick={() => dispatch(addItem(menuItem))}
               >
                 Add
               </Button>
-              {Object.values(items).includes(item) && (
-                <Button
-                  className="border-none mx-4 py-4 px-[70px]
-                   hover:bg-[#a5373b] bg-[#fa999c]"
-                  onClick={() => dispatch(removeItem(item))}
-                >
-                  Remove
-                </Button>
-              )}
-            </div>
+            )}
           </div>
         </div>
       ))}
@@ -81,7 +100,7 @@ function RestaurantMenuList({ menuDataSet }) {
             <Link to="/cart">
               <Button className="hover:scale-110 hover:bg-green-700 text-xs rounded-l-full text-white rounded-lg bg-green-800 ">
                 <AiOutlineShoppingCart className="m-1 text-4xl" />
-                {items.length} !! Proceed to pay{" "}
+                {totalItemsInCart} !! Proceed to pay{" "}
                 <BiRightArrowAlt className="text-2xl" />
               </Button>
             </Link>
