@@ -78,7 +78,12 @@ const ConfirmOrderDetails = () => {
             </table>
           </div>
           <Link className="p-2" to="/orderSuccess">
-            <Button onClick={() => dispatch(clearCart())}>Confirm Order</Button>
+            <Button
+              className="hover:bg-[#155b4e] bg-[#20856d] text-white m-2 px-5"
+              onClick={() => dispatch(clearCart())}
+            >
+              Confirm Order
+            </Button>
           </Link>
         </>
       ) : (

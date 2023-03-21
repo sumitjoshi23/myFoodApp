@@ -81,15 +81,15 @@ const Cart = () => {
           </div>
         </div>
         {cartTotal !== 0 && (
-          <div className="flex justify-between items-center text-[#A84448] text-2xl font-bold hover:scale-105 mb-4 ">
-            <div className="flex items-center ">
+          <div className="flex justify-between items-center text-[#A84448] text-2xl font-bold mb-4 ">
+            <div className="flex items-center">
               <Link to="/orderDetails">
-                <Button className="hover:bg-[#155b4e] bg-[#20856d] text-white m-2 px-5">
+                <Button className="hover:bg-[#155b4e] hover:scale-110 duration-300 mx-2 bg-[#20856d] text-white">
                   Place Order
                 </Button>
               </Link>
               <Button
-                className="m-2 p-5 hover:bg-[#66181c] bg-[#ab3339] text-white"
+                className="m-2 p-5 hover:bg-[#66181c] hover:scale-110 duration-300 mx-2 bg-[#ab3339] text-white"
                 onClick={() => dispatch(clearCart())}
               >
                 Clear Cart
