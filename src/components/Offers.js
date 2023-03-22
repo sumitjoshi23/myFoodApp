@@ -21,7 +21,7 @@ const Offers = () => {
   const renderedOffers = offers.map((offer) => {
     return (
       <div
-        className="border bg-gray-200 hover:bg-[#f6cece] duration-300 hover:scale-110 hover:shadow-[#a81010] border-gray-300 rounded-xl shadow-lg m-8 p-4 text-center"
+        className="border bg-gray-200 hover:bg-[#f6cece] duration-300 hover:scale-110 hover:shadow-[#fb6c3c] border-gray-300 rounded-xl shadow-lg m-8 p-4 text-center"
         key={offer.couponCode}
       >
         <div className="flex m-4 items-center justify-center">
@@ -30,7 +30,7 @@ const Offers = () => {
             src={CDN_IMG_URL + offer.logo}
             alt="offerLogo"
           />
-          <p className="text-[#a81010] font-semibold text-xl m-4">
+          <p className="text-[#fb6c3c] font-semibold text-xl m-4">
             {offer.couponCode}
           </p>
         </div>
@@ -43,7 +43,7 @@ const Offers = () => {
   });
   return (
     <div className="flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold mb-8 text-[#a81010]">
+      <h1 className="text-3xl font-bold mb-8 text-[#fb6c3c]">
         Offers and Coupons
       </h1>
       <div className="grid grid-cols-3">{renderedOffers}</div>

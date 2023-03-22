@@ -12,7 +12,7 @@ const FixedSideBars = () => {
 
   const leftSideBar = (
     <div
-      className="fixed top-[50%] translate-y-[-40%] text-white text-center font-semibold bg-[#a81010] pr-1 pl-2 py-4 rounded rotate-180 hover:scale-125 duration-300"
+      className="fixed top-[50%] translate-y-[-40%] text-black text-center font-semibold bg-[#EA5C2B] pr-1 pl-2 py-4 rounded rotate-180 hover:scale-125 duration-300"
       style={{
         writingMode: "vertical-rl",
       }}
@@ -21,9 +21,7 @@ const FixedSideBars = () => {
         {profile ? (
           <>
             Currently logged in as{" "}
-            <span className="text-green-400 font-extrabold">
-              {profile.name}
-            </span>
+            <span className="text-white font-bold">{profile.name}</span>
           </>
         ) : (
           <>
@@ -34,19 +32,16 @@ const FixedSideBars = () => {
       </i>
     </div>
   );
+
   const rightSideBar = (
-    <div className="fixed flex flex-col top-[50%] right-0 translate-y-[-40%] font-semibold bg-[#a81010] p-2 rounded hover:scale-125 duration-300">
+    <div className="fixed flex flex-col top-[50%] right-0 translate-y-[-40%] font-semibold bg-[#EA5C2B] p-2 rounded hover:scale-125 duration-300">
       <a
         target="_blank"
         rel="noreferrer"
         className="hover:scale-110 duration-300 my-1 py-1"
         href="https://www.facebook.com/sumit.joshi.9469545/"
       >
-        <img
-          src={facebookLogo}
-          alt="facebookLogo"
-          className="w-8 rounded-xl text-green-500"
-        />
+        <img src={facebookLogo} alt="facebookLogo" className="w-8 rounded-xl" />
       </a>
       <a
         target="_blank"
@@ -57,7 +52,7 @@ const FixedSideBars = () => {
         <img
           src={instagramLogo}
           alt="instagramLogo"
-          className="w-8 rounded-xl text-green-500"
+          className="w-8 rounded-xl"
         />
       </a>
       <a
@@ -66,11 +61,7 @@ const FixedSideBars = () => {
         rel="noreferrer"
         href="https://twitter.com/"
       >
-        <img
-          src={twitterLogo}
-          alt="twitterLogo"
-          className="w-8 rounded-xl text-green-500"
-        />
+        <img src={twitterLogo} alt="twitterLogo" className="w-8 rounded-xl" />
       </a>
       <a
         target="_blank"
@@ -78,11 +69,7 @@ const FixedSideBars = () => {
         className="hover:scale-125 duration-300  my-1 py-1"
         href="https://telegram.com/"
       >
-        <img
-          src={telegramLogo}
-          alt="telegramLogo"
-          className="w-8 rounded-xl text-green-500"
-        />
+        <img src={telegramLogo} alt="telegramLogo" className="w-8 rounded-xl" />
       </a>
       <a
         target="_blank"
@@ -90,11 +77,7 @@ const FixedSideBars = () => {
         className="hover:scale-125 duration-300 my-1 py-1"
         href="https://quora.com/"
       >
-        <img
-          alt="quoraLogo"
-          src={quoraLogo}
-          className="w-8 rounded-xl text-green-500"
-        />
+        <img alt="quoraLogo" src={quoraLogo} className="w-8 rounded-xl" />
       </a>
     </div>
   );
@@ -109,7 +92,7 @@ const FixedSideBars = () => {
         <img
           src={whatsAppLogo}
           alt="whatsappLogo"
-          className="w-14 rounded-lg text-green-500"
+          className="w-14 rounded-lg"
         />
       </a>
     </div>

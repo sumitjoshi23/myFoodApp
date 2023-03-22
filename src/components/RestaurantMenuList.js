@@ -34,7 +34,7 @@ function RestaurantMenuList({ menuDataSet }) {
     <div className="grid grid-cols-2 ">
       {menuInfo.map((menuItem, i) => (
         <div
-          className="even:mr-0 odd:ml-0 hover:bg-[#f3d2d2] duration-300 hover:scale-105 hover:shadow-[#a81010] rounded-lg m-6 shadow-lg border border-gray-200 grid"
+          className="even:mr-0 odd:ml-0 hover:bg-[#f9ebb0] duration-300 hover:scale-105 hover:shadow-[#fb6c3c] rounded-lg m-6 shadow-lg border border-gray-200 grid"
           key={i}
         >
           <div className="max-w-[10vw] p-4">
@@ -65,7 +65,7 @@ function RestaurantMenuList({ menuDataSet }) {
               /-
             </p>
             {items.some((i) => i.id === menuItem.id) ? (
-              <div className="font-semibold flex items-center hover:bg-[#681212] bg-[#992626] justify-between text-white hover:text-white text-xl rounded-full duration-500 h-12 py-4 px-9 w-min">
+              <div className="font-semibold flex items-center hover:bg-[#8c3113] bg-[#cc4416] justify-between text-white hover:text-white text-xl rounded-full duration-500 h-12 py-4 px-9 w-min">
                 <button
                   className="px-3"
                   onClick={() => dispatch(removeItem(menuItem))}
@@ -84,7 +84,7 @@ function RestaurantMenuList({ menuDataSet }) {
               </div>
             ) : (
               <Button
-                className="border-none text-white py-4 px-[70px] hover:bg-[#fa1a1a] bg-[#a81010]"
+                className="border-none text-white py-4 px-[70px] hover:bg-[#c74f27] bg-[#fb6c3c]"
                 onClick={() => dispatch(addItem(menuItem))}
               >
                 Add
@@ -93,25 +93,24 @@ function RestaurantMenuList({ menuDataSet }) {
           </div>
         </div>
       ))}
-      <div className="px-0 fixed bottom-2 right-44">
+      <div className="px-0 fixed bottom-8 right-44">
         {items.length !== 0 && (
           <div className="rounded-full flex ">
+            <Button
+              onClick={() => {
+                dispatch(clearCart());
+              }}
+              className="hover:scale-110 text-base rounded-l-full text-white rounded-lg bg-gray-500 "
+            >
+              Clear cart
+            </Button>
             <Link to="/cart">
-              <Button className="hover:scale-110 hover:bg-green-700 text-xs rounded-l-full text-white rounded-lg bg-green-800 ">
+              <Button className="hover:scale-110 text-base rounded-r-full text-white rounded-lg bg-[#ed5d2d]">
                 <AiOutlineShoppingCart className="m-1 text-4xl" />
                 {totalItemsInCart} !! Proceed to pay{" "}
                 <BiRightArrowAlt className="text-2xl" />
               </Button>
             </Link>
-
-            <Button
-              onClick={() => {
-                dispatch(clearCart());
-              }}
-              className="hover:scale-110 hover:bg-red-700 text-xs rounded-r-full text-white rounded-lg bg-red-800 "
-            >
-              Clear cart
-            </Button>
           </div>
         )}
       </div>

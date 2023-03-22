@@ -9,14 +9,14 @@ import Checkmark from "./Checkmark";
 const OrderSuccess = () => {
   const showLoader = useShowLoader(5000);
 
-  var d = new Date();
-  d.setMinutes(d.getMinutes() + 30);
+  const date = new Date();
+  date.setMinutes(date.getMinutes() + 30);
   const profile = useSelector((store) => store.signedInUser.profile);
   const content = showLoader ? (
     <Checkmark />
   ) : (
     <div className="flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold mb-8 text-[#a81010]">
+      <h1 className="text-3xl font-bold mb-8 text-[#fb6c3c]">
         Order Confirmed
       </h1>
       <div className="p-5 bg-gray-200 rounded-lg text-center">
@@ -52,7 +52,7 @@ const OrderSuccess = () => {
         <p className="mt-8">
           <Link
             to="/"
-            className="p-2 text-[#E97171] font-semibold hover:font-bold hover:text-[#a81010] hover:shadow-lg rounded-lg hover:bg-gray-100"
+            className="p-2 text-[#E97171] font-semibold hover:font-bold hover:text-[#fb6c3c] hover:shadow-lg rounded-lg hover:bg-gray-100"
           >
             Back to Home
           </Link>

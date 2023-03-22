@@ -39,7 +39,7 @@ const ButtonList = () => {
     <Link
       key={button.title}
       to={button.to}
-      className="flex mx-6 text-xl items-center text-white hover:scale-110 duration-200 hover:text-pink-200"
+      className="flex mx-6 text-xl items-center text-white hover:scale-110 duration-200 hover:text-black"
     >
       <span className="m-1 text-4xl">{button.icon}</span>
       {button.totalItemsInCart && (

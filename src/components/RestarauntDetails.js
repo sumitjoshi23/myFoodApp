@@ -31,7 +31,7 @@ function RestaurantDetails() {
     <Shimmer />
   ) : (
     <>
-      <div className="z-10 text-3xl font-bold mb-8 text-white py-4 mt-4 bg-[#a81010] rounded-lg flex justify-center">
+      <div className="z-10 text-3xl font-bold mb-8 text-white py-4 mt-4 bg-[#fb6c3c] rounded-lg flex justify-center">
         {veg ? (
           <GiThreeLeaves className="text-green-600 text-center text-2xl m-1" />
         ) : (
@@ -44,7 +44,7 @@ function RestaurantDetails() {
           ""
         )}
       </div>
-      <div className="flex items-center justify-center rounded-lg border border-gray-200 bg-[#f3c5c5]">
+      <div className="flex items-center justify-center rounded-lg border border-gray-200 bg-[#f9ebb0]">
         <div className="p-2 rounded ml-8 m-2 border border-gray-300">
           <img
             className="w-72 rounded"
@@ -76,16 +76,16 @@ function RestaurantDetails() {
           </div>
           <ul
             className={
-              "my-4 p-1 flex items-center justify-between bg-gray-300 rounded-lg font-semibold"
+              "my-4 p-1 flex items-center justify-between bg-[#f6c291] rounded-lg font-semibold"
             }
           >
             <li>
               <span className="p-1">{avgRating}</span>
-              <AiFillStar className="inline" />
+              <AiFillStar className="inline  mr-2" />
             </li>
             {sla?.slaString !== "--" && <li>{totalRatingsString}</li>}
             <li>
-              <RxDotFilled className="inline" />
+              <RxDotFilled className="inline mr-1" />
               {costForTwoMessage}
             </li>
           </ul>

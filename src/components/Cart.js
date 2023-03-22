@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../Button";
-import { clearCart } from "../store";
 import { addItem, removeItem } from "../store";
 import fallBackItemPic from "../utils/images/fallBackItemPic.jpeg";
 import { CDN_IMG_URL } from "../config";
@@ -23,7 +22,7 @@ const Cart = () => {
 
   const renderedItems = items.map((item, index) => (
     <div
-      className="hover:bg-[#f3d2d2] duration-500 hover:scale-105 hover:shadow-[#a81010] rounded-lg my-4 p-4 shadow-lg border "
+      className="hover:bg-[#FED39F] duration-500 hover:scale-105 hover:shadow-[#fb6c3c] rounded-lg my-4 p-4 shadow-lg border "
       key={index}
     >
       <div className="grid grid-cols-8 justify-between items-center">
@@ -47,7 +46,7 @@ const Cart = () => {
             {item.quantity}
           </span>
         </div>
-        <div className="font-semibold flex items-center justify-between text-white m-5 hover:text-white text-xl hover:scale-125 rounded-full duration-500 h-6 p-5 hover:bg-[#681212] bg-[#a81010]">
+        <div className="font-semibold flex items-center justify-between text-white m-5 hover:text-white text-xl hover:scale-125 rounded-full duration-500 h-6 p-5 hover:bg-[#f4511a] bg-[#fb6c3c]">
           <button
             className="hover:scale-125 duration-300 p-0 m-0"
             onClick={() => dispatch(removeItem(item))}
@@ -68,10 +67,10 @@ const Cart = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center">
-        <h1 className="text-3xl font-bold mb-8 text-[#a81010] ">Cart</h1>
+        <h1 className="text-3xl font-bold mb-8 text-[#fb6c3c] ">Cart</h1>
         {cartTotal !== 0 && (
           <>
-            <div className="bg-[#fde3e3] rounded-lg px-28 py-8 mb-4 text-center shadow-xl">
+            <div className="bg-[#FED39F] rounded-lg px-28 py-8 mb-4 text-center shadow-xl">
               <div className="font-bold text-xl text-red-700 mb-2">
                 Summary:
               </div>{" "}
@@ -84,33 +83,27 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-            <div className="flex justify-between items-center text-[#A84448] text-2xl font-bold mb-4 ">
-              <div className="flex items-center">
-                <Link to="/orderDetails">
-                  <Button className="hover:bg-[#681212] bg-[#a81010] hover:scale-110 duration-300 mx-2 text-white">
-                    Place Order
-                  </Button>
-                </Link>
-                <Button
-                  className="m-2 p-5 hover:bg-gray-700 hover:scale-110 duration-300 mx-2 bg-gray-500 text-white"
-                  onClick={() => dispatch(clearCart())}
-                >
-                  Clear Cart
-                </Button>
-              </div>
-            </div>{" "}
           </>
         )}
         {items.length ? (
           <>
             <div className="flex flex-wrap">{renderedItems}</div>
-            <div className="sticky bottom-2 self-end">
-              <Button
-                onClick={() => nav(-1)}
-                className="hover:scale-110 hover:bg-green-700 px-8 text-white text-xs rounded-full h-12 bg-green-800"
-              >
-                <BiArrowBack className="text-xl mr-1" /> Go back
-              </Button>
+            <div className="fixed bottom-8 self-end">
+              <div className="rounded-full flex">
+                <Button
+                  onClick={() => nav(-1)}
+                  className="hover:scale-110 rounded-l-full text-white rounded-lg bg-gray-500
+                   "
+                >
+                  <BiArrowBack className="text-xl mr-1" />
+                  <span className="text-base">Go back</span>
+                </Button>
+                <Link to="/orderDetails">
+                  <Button className="hover:scale-110 text-base rounded-r-full text-white rounded-lg bg-[#ed5d2d]">
+                    Place Order
+                  </Button>
+                </Link>
+              </div>
             </div>
           </>
         ) : (
