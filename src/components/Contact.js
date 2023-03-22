@@ -94,7 +94,9 @@ const ContactUsPage = () => {
           ></textarea>
         </div>
         <div className="flex justify-center">
-          <Button>Submit</Button>
+          <Button className="hover:scale-110 duration-300 mx-2 hover:bg-[#155b4e] bg-[#20856d] text-white">
+            Submit
+          </Button>
         </div>
       </form>
     </>

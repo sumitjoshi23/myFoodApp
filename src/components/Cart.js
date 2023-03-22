@@ -33,7 +33,7 @@ const Cart = () => {
           alt="Item Pic"
         />
         <div className="font-semibold text-center ml-4 mr-2">{item.name}</div>
-        <div className="m-2 col-span-3 text-center text-gray-400 max-h-36 overflow-hidden">
+        <div className="m-2 col-span-3 text-center text-gray-600 max-h-36 overflow-hidden">
           {item?.description}
         </div>
         <div className="m-2 font-semibold text-center">
@@ -69,33 +69,37 @@ const Cart = () => {
     <>
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-3xl font-bold mb-8 text-[#2E4F4F] ">Cart</h1>
-        <div className="bg-slate-200 rounded-lg p-8 mb-4 text-center shadow-xl">
-          <div className="font-bold text-xl text-gray-700 mb-2">Summary:</div>
-          <div className="flex flex-col items-center flex-wrap justify-center">
-            <div className="font-semibold text-gray-700 mb-2">
-              Total number of items: {totalQuantity}
-            </div>
-            <div className="text-end font-semibold text-gray-700 mb-2">
-              Total Payable: {cartTotal}
-            </div>
-          </div>
-        </div>
         {cartTotal !== 0 && (
-          <div className="flex justify-between items-center text-[#A84448] text-2xl font-bold mb-4 ">
-            <div className="flex items-center">
-              <Link to="/orderDetails">
-                <Button className="hover:bg-[#155b4e] hover:scale-110 duration-300 mx-2 bg-[#20856d] text-white">
-                  Place Order
-                </Button>
-              </Link>
-              <Button
-                className="m-2 p-5 hover:bg-[#66181c] hover:scale-110 duration-300 mx-2 bg-[#ab3339] text-white"
-                onClick={() => dispatch(clearCart())}
-              >
-                Clear Cart
-              </Button>
+          <>
+            <div className="bg-slate-200 rounded-lg p-8 mb-4 text-center shadow-xl">
+              <div className="font-bold text-xl text-gray-700 mb-2">
+                Summary:
+              </div>{" "}
+              <div className="flex flex-col items-center flex-wrap justify-center">
+                <div className="font-semibold text-gray-700 mb-2">
+                  Total number of items: {totalQuantity}
+                </div>
+                <div className="text-end font-semibold text-gray-700 mb-2">
+                  Total Payable: {cartTotal}
+                </div>
+              </div>
             </div>
-          </div>
+            <div className="flex justify-between items-center text-[#A84448] text-2xl font-bold mb-4 ">
+              <div className="flex items-center">
+                <Link to="/orderDetails">
+                  <Button className="hover:bg-[#155b4e] hover:scale-110 duration-300 mx-2 bg-[#20856d] text-white">
+                    Place Order
+                  </Button>
+                </Link>
+                <Button
+                  className="m-2 p-5 hover:bg-[#66181c] hover:scale-110 duration-300 mx-2 bg-[#ab3339] text-white"
+                  onClick={() => dispatch(clearCart())}
+                >
+                  Clear Cart
+                </Button>
+              </div>
+            </div>{" "}
+          </>
         )}
         {items.length ? (
           <>

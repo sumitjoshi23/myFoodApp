@@ -84,7 +84,7 @@ function RestaurantMenuList({ menuDataSet }) {
               </div>
             ) : (
               <Button
-                className="border-none text-white py-4 px-[70px] hover:bg-[#2b8e77] bg-green-800"
+                className="border-none text-white py-4 px-[70px] hover:bg-[#155b4e] bg-[#20856d]"
                 onClick={() => dispatch(addItem(menuItem))}
               >
                 Add
@@ -93,7 +93,6 @@ function RestaurantMenuList({ menuDataSet }) {
           </div>
         </div>
       ))}
-      (
       <div className="px-0 fixed bottom-2 right-44">
         {items.length !== 0 && (
           <div className="rounded-full flex ">
@@ -116,7 +115,6 @@ function RestaurantMenuList({ menuDataSet }) {
           </div>
         )}
       </div>
-      );
     </div>
   );
 }
