@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
 import { BiReset, BiSearchAlt } from "react-icons/bi";
 import { FOODAPP_API_URL } from "../config";
 import RestaurantList from "./RestaurantList";
 import { fallBackLandingPage } from "../utils/helper";
 import { useSelector } from "react-redux";
+import RestaurantsListingShimmer from "./shimmer/RestaurantsListingShimmer.js";
 
 const filterData = (searchText, restaurantList) => {
   return restaurantList.filter((restaurant) =>
@@ -51,7 +51,7 @@ function Body() {
   }
 
   return allRestaurants?.length === 0 ? (
-    <Shimmer />
+    <RestaurantsListingShimmer />
   ) : (
     <>
       <div className="max-w-fit m-auto">

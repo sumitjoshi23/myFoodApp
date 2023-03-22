@@ -1,4 +1,4 @@
-function Shimmer() {
+function RestaurantsListingShimmer() {
   return (
     <div className="flex flex-wrap justify-center">
       {Array(10)
@@ -14,4 +14,4 @@ function Shimmer() {
     </div>
   );
 }
-export default Shimmer;
+export default RestaurantsListingShimmer;

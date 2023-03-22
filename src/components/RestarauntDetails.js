@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { CDN_IMG_URL } from "../config";
 import useRestaurant from "../hooks/useRestaurant";
-import Shimmer from "./Shimmer";
+import RestaurantDetailsShimmer from "./shimmer/RestaurantDetailsShimmer";
 import OfferSection from "./OfferSection";
 import { RxDotFilled } from "react-icons/rx";
 import { AiFillStar } from "react-icons/ai";
@@ -28,7 +28,7 @@ function RestaurantDetails() {
   } = restaurant?.cards[0]?.card?.card?.info ?? {};
 
   return !restaurant ? (
-    <Shimmer />
+    <RestaurantDetailsShimmer />
   ) : (
     <>
       <div className="z-10 text-3xl font-bold mb-8 text-white py-4 mt-4 bg-[#fb6c3c] rounded-lg flex justify-center">

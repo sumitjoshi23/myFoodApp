@@ -9,7 +9,7 @@ import Error from "./components/Error";
 import About from "./components/About";
 import Body from "./components/Body";
 import Contact from "./components/Contact";
-import Shimmer from "./components/Shimmer";
+import Shimmer from "./components/shimmer/RestaurantsListingShimmer.js.js";
 import ConfirmOrderDetails from "./components/ConfirmOrderDetails";
 import RestaurantDetails from "./components/RestarauntDetails";
 import OrderSuccess from "./components/OrderSuccess";
