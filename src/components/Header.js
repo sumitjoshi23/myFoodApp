@@ -67,7 +67,7 @@ function Header() {
               onClick={login}
             >
               <img
-                className="rounded-full w-8"
+                className="rounded-full w-9"
                 src={googleIcon}
                 alt="googleIcon"
               />
@@ -79,7 +79,7 @@ function Header() {
               onClick={logOut}
             >
               <img
-                className="rounded-full w-8"
+                className="rounded-full bg-white p-1 w-9"
                 src={profile.picture}
                 alt="userProfile"
               />

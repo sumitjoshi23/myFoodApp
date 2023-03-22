@@ -12,7 +12,7 @@ const FixedSideBars = () => {
 
   const leftSideBar = (
     <div
-      className="fixed top-[50%] translate-y-[-40%] text-white text-center font-semibold bg-[#a81010] pr-1 pl-2 py-2 rounded rotate-180 hover:scale-125 duration-300"
+      className="fixed top-[50%] translate-y-[-40%] text-white text-center font-semibold bg-[#a81010] pr-1 pl-2 py-4 rounded rotate-180 hover:scale-125 duration-300"
       style={{
         writingMode: "vertical-rl",
       }}
@@ -21,7 +21,9 @@ const FixedSideBars = () => {
         {profile ? (
           <>
             Currently logged in as{" "}
-            <span className="text-red-400 font-extrabold">{profile.name}</span>
+            <span className="text-green-400 font-extrabold">
+              {profile.name}
+            </span>
           </>
         ) : (
           <>

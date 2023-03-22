@@ -72,7 +72,7 @@ const Cart = () => {
         {cartTotal !== 0 && (
           <>
             <div className="bg-[#fde3e3] rounded-lg px-28 py-8 mb-4 text-center shadow-xl">
-              <div className="font-bold text-xl text-gray-700 mb-2">
+              <div className="font-bold text-xl text-red-700 mb-2">
                 Summary:
               </div>{" "}
               <div className="flex flex-col items-center flex-wrap justify-center">
@@ -80,7 +80,7 @@ const Cart = () => {
                   Total number of items: {totalQuantity}
                 </div>
                 <div className="text-end font-semibold text-gray-700 mb-2">
-                  Total Payable: {cartTotal}
+                  Total Payable: Rs {cartTotal}/-
                 </div>
               </div>
             </div>
