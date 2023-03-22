@@ -1,13 +1,13 @@
 import React from "react";
 import { ImCheckmark } from "react-icons/im";
-import useShowLoader from "../hooks/useShowLoader";
-const Checkmark = () => {
-  const showLoader = useShowLoader(2500);
+import useShowMainContent from "../hooks/useShowMainContent";
+const OrderProcessing = () => {
+  const showMainContent = useShowMainContent(2000);
 
-  let content = (
+  const content = (
     <div className="flex flex-col items-center justify-center h-96 font-semibold text-xl">
       <div className="flex flex-col items-center justify-center">
-        {showLoader ? (
+        {!showMainContent ? (
           <>
             Sit back and relax while we are processing your order ♨️♨️♨️
             <div
@@ -18,10 +18,7 @@ const Checkmark = () => {
         ) : (
           <>
             Yayy...Order placed 😋 !!! Enjoy your delicious food soon...
-            <div
-              className=" flex items-center justify-center h-12 w-12 m-8 duration-500 scale-150 rounded-full bg-green-600"
-              role="status"
-            >
+            <div className="flex items-center justify-center h-12 w-12 m-8 duration-700 scale-150 rounded-full bg-green-600">
               <ImCheckmark className="text-white" />
             </div>
           </>
@@ -32,4 +29,4 @@ const Checkmark = () => {
   return content;
 };
 
-export default Checkmark;
+export default OrderProcessing;
