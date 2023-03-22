@@ -50,7 +50,7 @@ function Header() {
             <img
               src={appLogo}
               alt="logo"
-              className="rounded w-10 mr-5 hover:rotate-180 hover:scale-125 duration-700 "
+              className="rounded w-14 mr-5 hover:rotate-180 hover:scale-125 duration-700 "
             />
             <span className="hover:text-white hover:scale-110 font-semibold text-xl">
               J Foods & Co.
