@@ -19,6 +19,8 @@ function Body() {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
   const handleChange = (e) => {
+    const data = filterData(e.target.value, allRestaurants);
+    setFilteredRestaurants(data);
     setSearchText(e.target.value);
   };
 
