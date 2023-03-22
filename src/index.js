@@ -14,7 +14,7 @@ import ConfirmOrderDetails from "./components/ConfirmOrderDetails";
 import RestaurantDetails from "./components/RestarauntDetails";
 import OrderSuccess from "./components/OrderSuccess";
 import Offers from "./components/Offers";
-import AboutMe from "./components/AboutMe";
+import NestedAbout from "./components/NestedAbout";
 const Cart = lazy(() => import("./components/Cart"));
 
 const el = document.querySelector("#root");
@@ -34,8 +34,8 @@ const appRouter = createBrowserRouter([
         element: <About />,
         children: [
           {
-            path: "me",
-            element: <AboutMe />,
+            path: "nestedAbout",
+            element: <NestedAbout />,
           },
         ],
       },

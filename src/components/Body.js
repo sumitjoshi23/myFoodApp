@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 
 const filterData = (searchText, restaurantList) => {
   return restaurantList.filter((restaurant) =>
-    restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
+    restaurant?.data.name.toLowerCase().includes(searchText.toLowerCase())
   );
 };
 

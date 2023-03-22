@@ -8,7 +8,6 @@ const store = configureStore({
     signedInUser: signedInUserReducer,
   },
 });
-// console.log(store.getState());
 
 export * from "./slices/cartSlice";
 export * from "./slices/signedInUserSlice";
