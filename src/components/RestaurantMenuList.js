@@ -34,7 +34,7 @@ function RestaurantMenuList({ menuDataSet }) {
     <div className="grid grid-cols-2 ">
       {menuInfo.map((menuItem, i) => (
         <div
-          className="even:mr-0 odd:ml-0 hover:bg-[#f3d2d2] duration-300 hover:scale-105 hover:shadow-[#810000] rounded-lg m-6 shadow-lg border border-gray-200 grid"
+          className="even:mr-0 odd:ml-0 hover:bg-[#f3d2d2] duration-300 hover:scale-105 hover:shadow-[#a81010] rounded-lg m-6 shadow-lg border border-gray-200 grid"
           key={i}
         >
           <div className="max-w-[10vw] p-4">
@@ -84,7 +84,7 @@ function RestaurantMenuList({ menuDataSet }) {
               </div>
             ) : (
               <Button
-                className="border-none text-white py-4 px-[70px] hover:bg-[#fa1a1a] bg-[#e32d2d]"
+                className="border-none text-white py-4 px-[70px] hover:bg-[#fa1a1a] bg-[#a81010]"
                 onClick={() => dispatch(addItem(menuItem))}
               >
                 Add

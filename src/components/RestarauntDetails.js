@@ -31,7 +31,7 @@ function RestaurantDetails() {
     <Shimmer />
   ) : (
     <>
-      <div className="z-10 text-3xl font-bold mb-8 text-white py-4 mt-4 bg-[#810000] rounded-lg flex justify-center">
+      <div className="z-10 text-3xl font-bold mb-8 text-white py-4 mt-4 bg-[#a81010] rounded-lg flex justify-center">
         {veg ? (
           <GiThreeLeaves className="text-green-600 text-center text-2xl m-1" />
         ) : (

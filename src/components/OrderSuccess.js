@@ -16,7 +16,7 @@ const OrderSuccess = () => {
     <Checkmark />
   ) : (
     <div className="flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold mb-8 text-[#810000]">
+      <h1 className="text-3xl font-bold mb-8 text-[#a81010]">
         Order Confirmed
       </h1>
       <div className="p-5 bg-gray-200 rounded-lg text-center">
@@ -52,7 +52,7 @@ const OrderSuccess = () => {
         <p className="mt-8">
           <Link
             to="/"
-            className="p-2 text-[#E97171] hover:font-semibold hover:text-[#810000] hover:shadow-lg rounded hover:bg-gray-100"
+            className="p-2 text-[#E97171] font-semibold hover:font-bold hover:text-[#a81010] hover:shadow-lg rounded-lg hover:bg-gray-100"
           >
             Back to Home
           </Link>

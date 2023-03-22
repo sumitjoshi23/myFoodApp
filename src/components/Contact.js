@@ -22,7 +22,7 @@ const ContactUsPage = () => {
   }
   const form = (
     <>
-      <h1 className="text-3xl font-bold mb-8 text-[#810000]">Contact Us</h1>
+      <h1 className="text-3xl font-bold mb-8 text-[#a81010]">Contact Us</h1>
       <form className="py-4 max-w-lg w-full" onSubmit={handleFormSubmit}>
         <div className="flex flex-wrap mb-6">
           <div className="w-1/2 pr-3">
@@ -109,7 +109,7 @@ const ContactUsPage = () => {
       <p>Your message has been successfully received at our end.</p>
       <p>
         We will contact you shortly on your provided email address i.e.
-        <span className="font-semibold text-[#810000]">{emailAddress}</span>
+        <span className="font-semibold text-[#a81010]">{emailAddress}</span>
       </p>
       <Button className="mt-5" onClick={handleCloseButtonClick} type="submit">
         Close

@@ -22,7 +22,7 @@ function RestaurantCard({
   );
 
   return (
-    <div className="relative m-8 hover:bg-[#f0b4b4] duration-300 hover:scale-110 hover:shadow-[#810000] h-80 w-60 shadow-2xl bg-[#f7dddd] rounded-lg overflow-hidden border border-[#f9c7c7]">
+    <div className="relative m-8 hover:bg-[#f0b4b4] duration-300 hover:scale-110 hover:shadow-[#a81010] h-80 w-60 shadow-2xl bg-[#f7dddd] rounded-lg overflow-hidden border border-[#f9c7c7]">
       <span className="absolute w-6 bg-slate-200 ">
         <img src={veg ? logoVeg : logoNonVeg} alt="vegNonVegIcon" />
       </span>

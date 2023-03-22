@@ -70,11 +70,11 @@ function Body() {
           >
             <input
               placeholder="Search restaurant here"
-              className="text-center pl-12 h-12 focus:bg-[#fde3e3] outline-none rounded-l-full w-[32rem] rounded-lg bg-gray-100 border border-[#810000]"
+              className="text-center pl-12 h-12 focus:bg-[#fde3e3] outline-none rounded-l-full w-[32rem] rounded-lg bg-gray-100 border border-[#daaeae]"
               value={searchText}
               onChange={handleChange}
             ></input>
-            <button className="rounded-r-full h-12 text-xl bg-gray-100 w-14 pl-4 border border-[#810000]">
+            <button className="rounded-r-full h-12 text-xl bg-gray-100 w-14 pl-4 border border-[#daaeae]">
               <BiSearchAlt />
             </button>
           </form>

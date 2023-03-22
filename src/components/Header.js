@@ -44,7 +44,7 @@ function Header() {
 
   return (
     <>
-      <nav className="sticky top-0 shadow-lg z-10 flex items-center justify-between bg-[#810000] p-4">
+      <nav className="sticky top-0 shadow-lg z-10 flex items-center justify-between bg-[#a81010] p-4">
         <div className="flex items-center text-white mx-4">
           <Link className="flex items-center" to="/">
             <img
@@ -63,7 +63,7 @@ function Header() {
         <div className="mr-4 w-40">
           {!profile ? (
             <button
-              className="flex items-center text-xl px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:scale-125 duration-300 hover:text-[#810000] hover:bg-white mt-4 lg:mt-0"
+              className="flex items-center text-xl px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:scale-125 duration-300 hover:text-[#a81010] hover:bg-white mt-4 lg:mt-0"
               onClick={login}
             >
               <img
@@ -75,7 +75,7 @@ function Header() {
             </button>
           ) : (
             <button
-              className="flex items-center text-xl px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:scale-110 duration-300 hover:text-[#810000] hover:bg-white mt-4 lg:mt-0 "
+              className="flex items-center text-xl px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:scale-110 duration-300 hover:text-[#a81010] hover:bg-white mt-4 lg:mt-0 "
               onClick={logOut}
             >
               <img
