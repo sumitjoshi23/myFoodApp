@@ -82,6 +82,7 @@ function About() {
             touch
           </li>
           <li>A taste of traditional class-based components</li>
+          <li>A pinch of lazy loading technique to optimize bundle size</li>
           <li>
             Used live data from a very popular food delivering app's API in
             India

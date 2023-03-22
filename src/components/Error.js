@@ -3,9 +3,11 @@ import { useRouteError } from "react-router-dom";
 function Error() {
   let err = useRouteError();
   return (
-    <div className="">
-      Oops {err.status} !!! Landed to a wrong page..
-      <p>please check url and retry!!!!!</p>
+    <div className="absolute top-72 font-bold text-2xl text-center w-full text-[#276d6f]">
+      Oops {err.status} 😕 !!! You have landed to a wrong page..
+      <p className="p-4 font-semibold text-[#0E8388]">
+        Please check url and retry!!!!!
+      </p>
     </div>
   );
 }

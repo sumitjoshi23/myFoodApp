@@ -2,6 +2,7 @@ import "./index.css";
 import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import App from "./App";
 import Error from "./components/Error";
@@ -13,13 +14,12 @@ import ConfirmOrderDetails from "./components/ConfirmOrderDetails";
 import RestaurantDetails from "./components/RestarauntDetails";
 import OrderSuccess from "./components/OrderSuccess";
 import Offers from "./components/Offers";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 import AboutMe from "./components/AboutMe";
 const Cart = lazy(() => import("./components/Cart"));
 
-let el = document.querySelector("#root");
-let root = ReactDOM.createRoot(el);
-let appRouter = createBrowserRouter([
+const el = document.querySelector("#root");
+const root = ReactDOM.createRoot(el);
+const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
