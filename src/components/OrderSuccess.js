@@ -37,7 +37,6 @@ const OrderSuccess = () => {
           Order details have been mailed
           {profile && (
             <>
-              {" "}
               to{" "}
               <span className="italic font-semibold text-[#E97171]">
                 {profile.email}

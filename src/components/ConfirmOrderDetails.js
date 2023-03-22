@@ -11,7 +11,6 @@ const ConfirmOrderDetails = () => {
   const cartTotal = items.reduce(
     (acc, curr) =>
       (acc += ((curr.price || fallbackItemPrice) * curr.quantity) / 100),
-
     0
   );
   const totalQuantity = items.reduce((acc, curr) => (acc += curr.quantity), 0);
@@ -54,7 +53,7 @@ const ConfirmOrderDetails = () => {
                   </th>
                   <th className="w-1/5 px-4 py-2 font-bold text-gray-700">
                     Rate(per piece)
-                  </th>{" "}
+                  </th>
                   <th className="w-1/5 px-4 py-2 font-bold text-gray-700">
                     Price
                   </th>

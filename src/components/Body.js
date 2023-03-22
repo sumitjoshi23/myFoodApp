@@ -33,7 +33,7 @@ function Body() {
   async function getRestaurants() {
     const data = await fetch(FOODAPP_API_URL);
     const json = await data.json();
-    let allRestaurantsCard = json?.data?.cards.find(
+    const allRestaurantsCard = json?.data?.cards.find(
       (card) => card.cardType === "seeAllRestaurants"
     );
     setAllRestaurants(allRestaurantsCard?.data?.data?.cards);

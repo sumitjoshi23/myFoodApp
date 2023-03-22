@@ -7,7 +7,6 @@ const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      console.log(state.items);
       if (state.items.some((item) => item.id === action.payload.id)) {
         // increase quantity if item already exists in cart
         state.items = state.items.map((item) =>
