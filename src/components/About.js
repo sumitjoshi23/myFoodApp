@@ -90,7 +90,8 @@ function About() {
           <li>Added custom error page for incorrect urls</li>
           <li>
             Added Shimmer/ Skeleton effects to give real-time experience to the
-            user and restrict his attention to the UI
+            user and restrict his attention to the UI and avoid the perception
+            of a frozen or unresponsive interface.
           </li>
           <li>
             Implemented flow for Nested routing,{" "}
