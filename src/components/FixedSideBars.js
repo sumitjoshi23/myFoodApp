@@ -12,7 +12,7 @@ const FixedSideBars = () => {
 
   const leftSideBar = (
     <div
-      className="fixed top-[50%] translate-y-[-40%] text-white text-center font-semibold bg-[#2E4F4F] pr-1 pl-2 py-2 rounded rotate-180 hover:scale-125 duration-300"
+      className="fixed top-[50%] translate-y-[-40%] text-white text-center font-semibold bg-[#810000] pr-1 pl-2 py-2 rounded rotate-180 hover:scale-125 duration-300"
       style={{
         writingMode: "vertical-rl",
       }}
@@ -33,7 +33,7 @@ const FixedSideBars = () => {
     </div>
   );
   const rightSideBar = (
-    <div className="fixed flex flex-col top-[50%] right-0 translate-y-[-40%] font-semibold bg-[#2E4F4F] p-2 rounded hover:scale-125 duration-300">
+    <div className="fixed flex flex-col top-[50%] right-0 translate-y-[-40%] font-semibold bg-[#810000] p-2 rounded hover:scale-125 duration-300">
       <a
         target="_blank"
         rel="noreferrer"

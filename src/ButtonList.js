@@ -39,11 +39,13 @@ const ButtonList = () => {
     <Link
       key={button.title}
       to={button.to}
-      className="flex mx-6 text-xl items-center text-white hover:scale-110 duration-200 hover:text-teal-200"
+      className="flex mx-6 text-xl items-center text-white hover:scale-110 duration-200 hover:text-pink-200"
     >
       <span className="m-1 text-4xl">{button.icon}</span>
       {button.totalItemsInCart && (
-        <span className="mr-1 text-red-400">{button.totalItemsInCart}</span>
+        <span className="mr-1 font-semibold text-green-400">
+          {button.totalItemsInCart}
+        </span>
       )}
       <span className="m-1">{button.title}</span>
     </Link>

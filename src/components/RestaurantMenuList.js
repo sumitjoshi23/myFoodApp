@@ -34,7 +34,7 @@ function RestaurantMenuList({ menuDataSet }) {
     <div className="grid grid-cols-2 ">
       {menuInfo.map((menuItem, i) => (
         <div
-          className="even:mr-0 odd:ml-0 hover:bg-[#CBE4DE] duration-300 hover:scale-105 hover:shadow-[#2E4F4F] rounded-lg m-6 shadow-lg border border-gray-200 grid"
+          className="even:mr-0 odd:ml-0 hover:bg-[#f3d2d2] duration-300 hover:scale-105 hover:shadow-[#810000] rounded-lg m-6 shadow-lg border border-gray-200 grid"
           key={i}
         >
           <div className="max-w-[10vw] p-4">
@@ -65,7 +65,7 @@ function RestaurantMenuList({ menuDataSet }) {
               /-
             </p>
             {items.some((i) => i.id === menuItem.id) ? (
-              <div className="font-semibold flex items-center justify-between text-white hover:text-white text-xl rounded-full duration-500 h-12 py-4 px-9 w-min bg-[#3F979B] hover:bg-[#2d7d81]">
+              <div className="font-semibold flex items-center hover:bg-[#681212] bg-[#992626] justify-between text-white hover:text-white text-xl rounded-full duration-500 h-12 py-4 px-9 w-min">
                 <button
                   className="px-3"
                   onClick={() => dispatch(removeItem(menuItem))}
@@ -84,7 +84,7 @@ function RestaurantMenuList({ menuDataSet }) {
               </div>
             ) : (
               <Button
-                className="border-none text-white py-4 px-[70px] hover:bg-[#155b4e] bg-[#20856d]"
+                className="border-none text-white py-4 px-[70px] hover:bg-[#fa1a1a] bg-[#e32d2d]"
                 onClick={() => dispatch(addItem(menuItem))}
               >
                 Add

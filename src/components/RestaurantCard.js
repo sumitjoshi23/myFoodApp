@@ -22,7 +22,7 @@ function RestaurantCard({
   );
 
   return (
-    <div className="relative m-8 hover:bg-[#CBE4DE] duration-300 hover:scale-110 hover:shadow-[#2E4F4F] h-80 w-60 shadow-2xl bg-[#E1EEDD] rounded-lg overflow-hidden border border-[#0E8388]">
+    <div className="relative m-8 hover:bg-[#f0b4b4] duration-300 hover:scale-110 hover:shadow-[#810000] h-80 w-60 shadow-2xl bg-[#f7dddd] rounded-lg overflow-hidden border border-[#f9c7c7]">
       <span className="absolute w-6 bg-slate-200 ">
         <img src={veg ? logoVeg : logoNonVeg} alt="vegNonVegIcon" />
       </span>
@@ -30,7 +30,6 @@ function RestaurantCard({
       <div className="p-2">
         <h2 className="font-semibold my-2">{name}</h2>
         <h2 className="text-gray-700 text-sm">{cuisines?.join(", ")}</h2>
-        <hr />
         <ul
           className={
             "my-2 flex items-center bg-gray-200 rounded-full text-sm font-semibold text-gray-700"
@@ -45,9 +44,8 @@ function RestaurantCard({
           <RxDotFilled />
           <li>{costForTwoString}</li>
         </ul>
-        <hr />
         {aggregatedDiscountInfo && (
-          <h2 className="flex items-center font-sans text-red-800">
+          <h2 className="flex items-center font-semibold text-green-800">
             <TbDiscount2 />
             {aggregatedDiscountInfo?.shortDescriptionList[0].meta}
           </h2>

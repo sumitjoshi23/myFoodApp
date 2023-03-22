@@ -52,29 +52,29 @@ function Body() {
     <Shimmer />
   ) : (
     <>
-      <div className="  max-w-fit m-auto  ">
-        <div className=" flex flex-col items-center">
+      <div className="max-w-fit m-auto  ">
+        <div className="flex flex-col items-center">
           <div className="m-4 font-semibold text-center text-3xl">
             {profile && (
               <p className="pb-4">
                 Hey,{" "}
-                <span className="italic text-[#0E8388] ">{profile.name}</span>
+                <span className="italic text-[#E97171] ">{profile.name}</span>
                 😊 Welcome back !!!
               </p>
             )}
             Our restaurants are waiting for your next order...
           </div>
           <form
-            className="rounded-full bg-slate-200 shadow-xl p-2 flex"
+            className="rounded-full bg-[#f7dddd] shadow-xl p-2 flex"
             onSubmit={handleFormSubmit}
           >
             <input
               placeholder="Search restaurant here"
-              className="text-center pl-12 h-12 focus:bg-[#CBE4DE] outline-none rounded-l-full w-96 rounded-lg bg-gray-100 border border-[#2E4F4F]"
+              className="text-center pl-12 h-12 focus:bg-[#fde3e3] outline-none rounded-l-full w-[32rem] rounded-lg bg-gray-100 border border-[#810000]"
               value={searchText}
               onChange={handleChange}
             ></input>
-            <button className="rounded-r-full h-12 text-xl bg-gray-100 w-14 pl-4 border border-[#2E4F4F]">
+            <button className="rounded-r-full h-12 text-xl bg-gray-100 w-14 pl-4 border border-[#810000]">
               <BiSearchAlt />
             </button>
           </form>

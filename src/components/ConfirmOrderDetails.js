@@ -29,7 +29,7 @@ const ConfirmOrderDetails = () => {
   ));
   return (
     <div className="flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold mb-8 text-[#2E4F4F]">Confirm Order</h1>
+      <h1 className="text-3xl font-bold mb-8 text-[#810000]">Confirm Order</h1>
       {items.length ? (
         <>
           <div className="p-5 text-center">
@@ -79,7 +79,7 @@ const ConfirmOrderDetails = () => {
           </div>
           <Link className="p-2" to="/orderSuccess">
             <Button
-              className="hover:bg-[#155b4e] bg-[#20856d] text-white m-2 px-5"
+              className="hover:bg-[#681212] bg-[#b03333] hover:scale-110 duration-300 text-white m-2 px-5"
               onClick={() => dispatch(clearCart())}
             >
               Confirm Order
@@ -87,7 +87,7 @@ const ConfirmOrderDetails = () => {
           </Link>
         </>
       ) : (
-        <div className="absolute top-72 font-bold text-2xl text-[#0E8388]">
+        <div className="absolute top-72 font-bold text-2xl text-[#E97171]">
           Add items first to confirm and place an order!!
         </div>
       )}

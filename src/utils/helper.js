@@ -13,7 +13,7 @@ export const getETA = (mins) => {
   return (
     <>
       {mins} minutes ({" "}
-      <span className="text-[#0E8388] font-semibold">
+      <span className="text-[#E97171] font-semibold">
         {new Date(new Date().getTime() + mins * 60 * 1000).toLocaleTimeString()}
       </span>{" "}
       )

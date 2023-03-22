@@ -22,7 +22,7 @@ const ContactUsPage = () => {
   }
   const form = (
     <>
-      <h1 className="text-3xl font-bold mb-8 text-[#2E4F4F]">Contact Us</h1>
+      <h1 className="text-3xl font-bold mb-8 text-[#810000]">Contact Us</h1>
       <form className="py-4 max-w-lg w-full" onSubmit={handleFormSubmit}>
         <div className="flex flex-wrap mb-6">
           <div className="w-1/2 pr-3">
@@ -94,7 +94,7 @@ const ContactUsPage = () => {
           ></textarea>
         </div>
         <div className="flex justify-center">
-          <Button className="hover:scale-110 duration-300 mx-2 hover:bg-[#155b4e] bg-[#20856d] text-white">
+          <Button className="hover:scale-110 duration-300 mx-2 px-10 hover:bg-[#155b4e] bg-[#20856d] text-white">
             Submit
           </Button>
         </div>
@@ -102,14 +102,14 @@ const ContactUsPage = () => {
     </>
   );
   const formSubmissionConfirmationBox = (
-    <div className="h-96 rounded-lg shadow-lg p-4 my-4 bg-[#CBE4DE] flex flex-col items-center justify-center">
+    <div className="h-96 rounded-lg shadow-lg p-4 my-4 bg-[#E97171] flex flex-col items-center justify-center">
       <h1 className="p-4 font-bold text-xl">
         Thanks for connecting Mr/Ms {firstName} {lastName}
       </h1>
       <p>Your message has been successfully received at our end.</p>
       <p>
         We will contact you shortly on your provided email address i.e.
-        <span className="font-semibold text-[#2E4F4F]">{emailAddress}</span>
+        <span className="font-semibold text-[#810000]">{emailAddress}</span>
       </p>
       <Button className="mt-5" onClick={handleCloseButtonClick} type="submit">
         Close
