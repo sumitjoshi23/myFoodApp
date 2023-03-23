@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import googleIcon from "../utils/images/googleIcon.png";
-import ButtonList from "../ButtonList";
+import NavbarLinksSection from "../NavbarLinksSection";
 import appLogo from "../utils/images/appLogo.jpg";
 import axios from "axios";
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 import { useDispatch, useSelector } from "react-redux";
 import { setSignedInUser, setSignedInUserProfile } from "../store";
+import Button from "../Button";
 
 function Header() {
   const { user, profile } = useSelector((store) => store.signedInUser);
@@ -36,7 +37,6 @@ function Header() {
     }
   }, [user, dispatch]);
 
-  // log out function to log the user out of google and set the profile array to null
   const logOut = () => {
     googleLogout();
     dispatch(setSignedInUserProfile(null));
@@ -58,12 +58,12 @@ function Header() {
           </Link>
         </div>
         <div className="flex items-center justify-center">
-          <ButtonList />
+          <NavbarLinksSection />
         </div>
-        <div className="mr-4 w-40">
+        <div className="w-40">
           {!profile ? (
-            <button
-              className="flex items-center text-xl px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:scale-125 duration-300 hover:text-[#fb6c3c] hover:bg-white mt-4 lg:mt-0"
+            <Button
+              className="py-2 leading-none px-2 border text-white border-white hover:border-transparent hover:scale-125 hover:text-[#fb6c3c] hover:bg-white"
               onClick={login}
             >
               <img
@@ -72,10 +72,10 @@ function Header() {
                 alt="googleIcon"
               />
               <span className="m-2">Sign In</span>
-            </button>
+            </Button>
           ) : (
-            <button
-              className="flex items-center text-xl px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:scale-110 duration-300 hover:text-[#fb6c3c] hover:bg-white mt-4 lg:mt-0 "
+            <Button
+              className="py-2 leading-none px-2 border text-white border-white hover:border-transparent hover:scale-125 hover:text-[#fb6c3c] hover:bg-white"
               onClick={logOut}
             >
               <img
@@ -84,7 +84,7 @@ function Header() {
                 alt="userProfile"
               />
               <span className="m-2 ">Sign out</span>
-            </button>
+            </Button>
           )}
         </div>
       </nav>

@@ -8,14 +8,14 @@ import {
 } from "react-icons/md";
 import { useSelector } from "react-redux";
 
-const ButtonList = () => {
+const NavbarLinksSection = () => {
   let items = useSelector((store) => store.cart.items);
   const totalItemsInCart = items.reduce(
     (acc, curr) => (acc += curr.quantity),
     0
   );
 
-  let allButtons = [
+  let navbarLinks = [
     { title: "Home", icon: <AiOutlineHome />, to: "/" },
     {
       title: "Offers",
@@ -35,22 +35,20 @@ const ButtonList = () => {
     },
     { title: "About", icon: <MdContactSupport />, to: "/about" },
   ];
-  let renderedButtons = allButtons.map((button) => (
+  let renderedNavbarLinks = navbarLinks.map((link) => (
     <Link
-      key={button.title}
-      to={button.to}
+      key={link.title}
+      to={link.to}
       className="flex mx-6 text-xl items-center text-white hover:scale-110 duration-200 hover:text-black"
     >
-      <span className="m-1 text-4xl">{button.icon}</span>
-      {button.totalItemsInCart && (
-        <span className="mr-1 font-semibold text-green-400">
-          {button.totalItemsInCart}
-        </span>
+      <span className="m-1 text-4xl">{link.icon}</span>
+      {link.totalItemsInCart && (
+        <span className="mr-1 font-semibold">{link.totalItemsInCart}</span>
       )}
-      <span className="m-1">{button.title}</span>
+      <span className="m-1">{link.title}</span>
     </Link>
   ));
-  return renderedButtons;
+  return renderedNavbarLinks;
 };
 
-export default ButtonList;
+export default NavbarLinksSection;
