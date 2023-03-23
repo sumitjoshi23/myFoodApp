@@ -44,7 +44,7 @@ function RestaurantDetails() {
           ""
         )}
       </div>
-      <div className="flex items-center justify-center rounded-lg border border-gray-200 bg-[#f9ebb0]">
+      <div className="flex items-center justify-center rounded-lg border border-gray-200 bg-[#feeee9]">
         <div className="p-2 rounded ml-8 m-2 border border-gray-300">
           <img
             className="w-72 rounded"
@@ -54,7 +54,7 @@ function RestaurantDetails() {
         </div>
         <div className="flex flex-col items-center my-2 text-center">
           <h2 className="my-4 font-bold text-lg">{cuisines?.join(", ")}</h2>
-          <div className="">
+          <div>
             {sla?.lastMileTravelString && (
               <p className="font-semibold mx-1 inline">
                 <AiFillClockCircle className="inline text-green-800 text-2xl" />
@@ -76,7 +76,7 @@ function RestaurantDetails() {
           </div>
           <ul
             className={
-              "my-4 p-1 flex items-center justify-between bg-[#f6c291] rounded-lg font-semibold"
+              "my-4 p-1 flex items-center justify-between bg-[#f6bead] rounded-lg font-semibold"
             }
           >
             <li>

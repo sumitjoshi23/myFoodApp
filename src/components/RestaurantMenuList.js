@@ -34,7 +34,7 @@ function RestaurantMenuList({ menuDataSet }) {
     <div className="grid grid-cols-2 ">
       {menuInfo.map((menuItem, i) => (
         <div
-          className="even:mr-0 odd:ml-0 hover:bg-[#f9ebb0] duration-300 hover:scale-105 hover:shadow-[#fb6c3c] rounded-lg m-6 shadow-lg border border-gray-200 grid"
+          className="even:mr-0 odd:ml-0 hover:bg-gray-200 duration-300 hover:scale-105 hover:shadow-[#faac92] rounded-lg m-6 shadow-lg border border-gray-200 grid"
           key={i}
         >
           <div className="max-w-[10vw] p-4">

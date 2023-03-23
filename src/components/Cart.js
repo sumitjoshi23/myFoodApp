@@ -22,7 +22,7 @@ const Cart = () => {
 
   const renderedItems = items.map((item, index) => (
     <div
-      className="hover:bg-[#FED39F] duration-500 hover:scale-105 hover:shadow-[#fb6c3c] rounded-lg my-4 p-4 shadow-lg border "
+      className="hover:bg-[#edebe8] duration-500 hover:scale-105 hover:shadow-[#f5a58a] rounded-lg my-4 p-4 shadow-lg border "
       key={index}
     >
       <div className="grid grid-cols-8 justify-between items-center">
@@ -70,7 +70,7 @@ const Cart = () => {
         <h1 className="text-3xl font-bold mb-8 text-[#fb6c3c] ">Cart</h1>
         {cartTotal !== 0 && (
           <>
-            <div className="bg-[#FED39F] rounded-lg px-28 py-8 mb-4 text-center shadow-xl">
+            <div className="bg-[#edebe8] rounded-lg px-28 py-8 mb-4 text-center shadow-xl">
               <div className="font-bold text-xl text-red-700 mb-2">
                 Summary:
               </div>{" "}

@@ -63,7 +63,7 @@ function Header() {
         <div className="w-40">
           {!profile ? (
             <Button
-              className="py-2 leading-none px-1 border text-white border-white hover:border-transparent hover:scale-125 hover:text-[#fb6c3c] hover:bg-white"
+              className="py-2 leading-none px-2 border text-white border-white hover:border-transparent hover:scale-125 hover:text-[#fb6c3c] hover:bg-white"
               onClick={login}
             >
               <img
@@ -75,7 +75,7 @@ function Header() {
             </Button>
           ) : (
             <Button
-              className="py-2 leading-none px-1 border text-white border-white hover:border-transparent hover:scale-125 hover:text-[#fb6c3c] hover:bg-white"
+              className="py-2 leading-none px-2 border text-white border-white hover:border-transparent hover:scale-125 hover:text-[#fb6c3c] hover:bg-white"
               onClick={logOut}
             >
               <img
