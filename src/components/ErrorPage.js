@@ -1,6 +1,6 @@
 import { useRouteError } from "react-router-dom";
 
-function Error() {
+function ErrorPage() {
   let err = useRouteError();
   return (
     <div className="absolute top-72 font-bold text-2xl text-center w-full text-[#276d6f]">
@@ -11,4 +11,4 @@ function Error() {
     </div>
   );
 }
-export default Error;
+export default ErrorPage;

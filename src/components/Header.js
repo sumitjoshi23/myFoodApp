@@ -52,7 +52,7 @@ function Header() {
               alt="logo"
               className="rounded w-14 mr-5 hover:rotate-180 hover:scale-125 duration-700 "
             />
-            <span className="text-white hover:scale-110 font-semibold text-xl">
+            <span className="text-white hover:scale-110 duration-300 font-semibold text-xl">
               J Foods & Co.
             </span>
           </Link>

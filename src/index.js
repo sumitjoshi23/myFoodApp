@@ -5,7 +5,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import App from "./App";
-import Error from "./components/Error";
 import About from "./components/About";
 import Body from "./components/Body";
 import Contact from "./components/Contact";
@@ -15,6 +14,7 @@ import RestaurantDetails from "./components/RestarauntDetails";
 import OrderSuccess from "./components/OrderSuccess";
 import Offers from "./components/Offers";
 import NestedAbout from "./components/NestedAbout";
+import ErrorPage from "./components/ErrorPage";
 const Cart = lazy(() => import("./components/Cart"));
 
 const el = document.querySelector("#root");
@@ -23,7 +23,7 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <Error />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
