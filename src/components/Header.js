@@ -60,10 +60,10 @@ function Header() {
         <div className="flex items-center justify-center">
           <NavbarLinksSection />
         </div>
-        <div className="w-40">
+        <div className="w-44">
           {!profile ? (
             <Button
-              className="py-2 leading-none px-2 border text-white border-white hover:border-transparent hover:scale-125 hover:text-[#fb6c3c] hover:bg-white"
+              className="py-2 leading-none border text-white border-white hover:border-transparent hover:scale-125 hover:text-[#fb6c3c] hover:bg-white"
               onClick={login}
             >
               <img
@@ -75,7 +75,7 @@ function Header() {
             </Button>
           ) : (
             <Button
-              className="py-2 leading-none px-2 border text-white border-white hover:border-transparent hover:scale-125 hover:text-[#fb6c3c] hover:bg-white"
+              className="py-2 leading-none  border text-white border-white hover:border-transparent hover:scale-125 hover:text-[#fb6c3c] hover:bg-white"
               onClick={logOut}
             >
               <img
@@ -83,7 +83,7 @@ function Header() {
                 src={profile.picture}
                 alt="userProfile"
               />
-              <span className="m-2 ">Sign out</span>
+              <span className="m-2">Sign out</span>
             </Button>
           )}
         </div>
