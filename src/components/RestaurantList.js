@@ -8,6 +8,7 @@ const RestaurantList = ({ filteredRestaurants }) => {
       {filteredRestaurants.map((restaurant) => {
         return (
           <Link
+            className="m-8"
             key={restaurant.data.id}
             to={"/restaurant/" + restaurant.data.id}
           >
