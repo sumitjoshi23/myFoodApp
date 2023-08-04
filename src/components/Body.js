@@ -8,7 +8,7 @@ import RestaurantsListingShimmer from "./shimmer/RestaurantsListingShimmer.js";
 
 const filterData = (searchText, restaurantList) => {
   return restaurantList.filter((restaurant) =>
-    restaurant?.data.name.toLowerCase().includes(searchText.toLowerCase())
+    restaurant?.info.name.toLowerCase().includes(searchText.toLowerCase())
   );
 };
 
@@ -33,11 +33,17 @@ function Body() {
   async function getRestaurants() {
     const data = await fetch(FOODAPP_API_URL);
     const json = await data.json();
-    const allRestaurantsCard = json?.data?.cards.find(
-      (card) => card.cardType === "seeAllRestaurants"
+    // const allRestaurantsCard = json?.data?.cards.find(
+    //   (card) => card.cardType === "seeAllRestaurants"
+    // );
+    // setAllRestaurants(allRestaurantsCard?.data?.data?.cards);
+    // setFilteredRestaurants(allRestaurantsCard?.data?.data?.cards);
+    setAllRestaurants(
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    setAllRestaurants(allRestaurantsCard?.data?.data?.cards);
-    setFilteredRestaurants(allRestaurantsCard?.data?.data?.cards);
+    setFilteredRestaurants(
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   }
 
   useEffect(() => {

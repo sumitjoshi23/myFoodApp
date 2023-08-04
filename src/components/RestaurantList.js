@@ -9,10 +9,10 @@ const RestaurantList = ({ filteredRestaurants }) => {
         return (
           <Link
             className="m-8"
-            key={restaurant.data.id}
-            to={"/restaurant/" + restaurant.data.id}
+            key={restaurant?.info.id}
+            to={"/restaurant/" + restaurant?.info.id}
           >
-            <RestaurantCard {...restaurant.data} />
+            <RestaurantCard {...restaurant.info} />
           </Link>
         );
       })}

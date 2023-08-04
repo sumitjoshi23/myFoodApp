@@ -12,8 +12,8 @@ function RestaurantCard({
   name,
   avgRating,
   cloudinaryImageId,
-  costForTwoString,
-  slaString,
+  costForTwo,
+  sla,
   veg,
 }) {
   let classes = classNames(
@@ -40,9 +40,9 @@ function RestaurantCard({
             <AiFillStar />
           </li>
           <RxDotFilled />
-          <li>{slaString}</li>
+          <li>{sla.slaString}</li>
           <RxDotFilled />
-          <li>{costForTwoString}</li>
+          <li>{costForTwo}</li>
         </ul>
         {aggregatedDiscountInfo && (
           <h2 className="flex items-center font-semibold text-green-800">
