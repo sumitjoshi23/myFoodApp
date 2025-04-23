@@ -1,6 +1,6 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import myPic from "../utils/images/myPic.jpg";
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import myPic from '../utils/images/myPic.jpg';
 
 function About() {
   return (
@@ -15,52 +15,52 @@ function About() {
       <div className="max-w-3xl">
         <p className="text-lg text-gray-700 leading-relaxed mb-6">
           I'm a passionate web developer who loves building beautiful,
-          responsive user interfaces using various technologies including{" "}
+          responsive user interfaces using various technologies including{' '}
           <span className="text-[#216e71] font-semibold">
-            HTML, CSS, Javascript, React, Redux{" "}
+            HTML, CSS, Javascript, React, Redux{' '}
             <span className="text-gray-700 font-normal">and</span> Tailwind
           </span>
           .
         </p>
         <p className="text-lg text-gray-700 leading-relaxed mb-6">
-          I have a professional working experience of around{" "}
+          I have a professional working experience of around{' '}
           <span className="text-[#216e71] font-semibold">4 years</span> and
           worked on a variety of web projects, from small websites to
           large-scale web applications. I also worked as a software tester and
           used tools like
           <span className="text-[#216e71] font-semibold">
-            {" "}
+            {' '}
             Cucumber
-          </span> and{" "}
+          </span> and{' '}
           <span className="text-[#216e71] font-semibold">Selenium</span> in
-          order to automate the web app. I have also worked in{" "}
+          order to automate the web app. I have also worked in{' '}
           <span className="text-[#1e6669] font-semibold">Java</span> to fix bugs
           and implementing required usecases. Later on I switched purely to
-          front end and helped my organization in{" "}
+          front end and helped my organization in{' '}
           <span className="text-[#216e71] font-semibold">
             migrating the whole UI
-          </span>{" "}
-          and{" "}
+          </span>{' '}
+          and{' '}
           <span className="text-[#216e71] font-semibold">
             writing own components like Accordions, Buttons, Dropdowns, Routes,
             etc
-          </span>{" "}
+          </span>{' '}
           using React JS.
         </p>
         <p className="text-lg text-gray-700 leading-relaxed mb-6">
-          I am{" "}
+          I am{' '}
           <span className="text-[#216e71] font-semibold">
             well versed in giving training to new joiness
-          </span>{" "}
-          and handling teams as I was{" "}
+          </span>{' '}
+          and handling teams as I was{' '}
           <span className="text-[#216e71] font-semibold">
             leading the testing team
-          </span>{" "}
+          </span>{' '}
           in the previous organization before switching myself in front end. I
-          also have great experience in client-handling as I{" "}
+          also have great experience in client-handling as I{' '}
           <span className="text-[#216e71] font-semibold">
             often gave product demos to client
-          </span>{" "}
+          </span>{' '}
           for the organization.
           <br />
         </p>
@@ -94,7 +94,7 @@ function About() {
           </li>
           <li>Added custom error page for incorrect urls</li>
           <li>
-            Implemented flow for Nested routing,{" "}
+            Implemented flow for Nested routing,{' '}
             <span className="text-gray-700">and many more...</span>
           </li>
         </ul>

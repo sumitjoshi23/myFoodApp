@@ -1,9 +1,9 @@
-import React from "react";
-import { CDN_IMG_URL } from "../config";
+import React from 'react';
+import { CDN_IMG_URL } from '../config';
 
 const OfferSection = ({ restaurant }) => {
   const { offers } =
-    restaurant?.cards[1]?.card?.card?.gridElements.infoWithStyle ?? {};
+    restaurant?.cards[3]?.card?.card?.gridElements.infoWithStyle ?? {};
   return (
     <div className="bg-[#feeee9] text-center border border-gray-200 rounded-lg ">
       <p className="my-5 font-semibold text-2xl ">💸**Coupons and offers**💰</p>

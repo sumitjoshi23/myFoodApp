@@ -1,12 +1,12 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Button from "../Button";
-import { addItem, removeItem } from "../store";
-import fallBackItemPic from "../utils/images/fallBackItemPic.jpeg";
-import { CDN_IMG_URL } from "../config";
-import { Link, useNavigate } from "react-router-dom";
-import { fallbackItemPrice } from "../utils/helper";
-import { BiArrowBack } from "react-icons/bi";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Button from '../Button';
+import { addItem, removeItem } from '../store';
+import fallBackItemPic from '../utils/images/fallBackItemPic.jpeg';
+import { CDN_IMG_URL } from '../config';
+import { Link, useNavigate } from 'react-router-dom';
+import { fallbackItemPrice } from '../utils/helper';
+import { BiArrowBack } from 'react-icons/bi';
 
 const Cart = () => {
   const nav = useNavigate();
@@ -40,12 +40,12 @@ const Cart = () => {
           {item.price ? item.price / 100 : fallbackItemPrice / 100}
           /-
         </div>
-        <div className="font-semibold text-center m-2">
-          Qty-{" "}
+        {/* <div className="font-semibold text-center m-2">
+          Qty-{' '}
           <span className="text-red-800 font-extrabold text-lg">
             {item.quantity}
           </span>
-        </div>
+        </div> */}
         <div className="font-semibold flex items-center justify-between text-white m-5 hover:text-white text-xl hover:scale-125 rounded-full duration-500 h-6 p-5 hover:bg-[#f4511a] bg-[#fb6c3c]">
           <button
             className="hover:scale-125 duration-300 p-0 m-0"
@@ -53,6 +53,8 @@ const Cart = () => {
           >
             -
           </button>
+          {item.quantity}
+
           <button
             className="hover:scale-125 duration-300 p-0 m-0"
             onClick={() => dispatch(addItem(item))}
@@ -73,7 +75,7 @@ const Cart = () => {
             <div className="bg-[#edebe8] rounded-lg px-28 py-8 mb-4 text-center shadow-xl">
               <div className="font-bold text-xl text-red-700 mb-2">
                 Summary:
-              </div>{" "}
+              </div>{' '}
               <div className="flex flex-col items-center flex-wrap justify-center">
                 <div className="font-semibold text-gray-700 mb-2">
                   Total number of items: {totalQuantity}

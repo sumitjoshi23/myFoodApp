@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import { BiReset, BiSearchAlt } from "react-icons/bi";
-import { FOODAPP_API_URL } from "../config";
-import RestaurantList from "./RestaurantList";
-import { fallBackLandingPage } from "../utils/helper";
-import { useSelector } from "react-redux";
-import RestaurantsListingShimmer from "./shimmer/RestaurantsListingShimmer.js";
+import { useEffect, useState } from 'react';
+import { BiReset, BiSearchAlt } from 'react-icons/bi';
+import { FOODAPP_API_URL } from '../config';
+import RestaurantList from './RestaurantList';
+import { fallBackLandingPage } from '../utils/helper';
+import { useSelector } from 'react-redux';
+import RestaurantsListingShimmer from './shimmer/RestaurantsListingShimmer.js';
+import axios from 'axios';
 
 const filterData = (searchText, restaurantList) => {
   return restaurantList.filter((restaurant) =>
@@ -14,7 +15,7 @@ const filterData = (searchText, restaurantList) => {
 
 function Body() {
   const profile = useSelector((store) => store.signedInUser.profile);
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState('');
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
@@ -31,18 +32,19 @@ function Body() {
   };
 
   async function getRestaurants() {
-    const data = await fetch(FOODAPP_API_URL);
-    const json = await data.json();
+    const json = await axios.get(FOODAPP_API_URL);
     // const allRestaurantsCard = json?.data?.cards.find(
     //   (card) => card.cardType === "seeAllRestaurants"
     // );
     // setAllRestaurants(allRestaurantsCard?.data?.data?.cards);
     // setFilteredRestaurants(allRestaurantsCard?.data?.data?.cards);
     setAllRestaurants(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
     );
     setFilteredRestaurants(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
     );
   }
 
@@ -55,6 +57,7 @@ function Body() {
   if (!allRestaurants) {
     return null;
   }
+  console.log(allRestaurants);
 
   return allRestaurants?.length === 0 ? (
     <RestaurantsListingShimmer />
@@ -65,7 +68,7 @@ function Body() {
           <div className="m-4 font-semibold text-center text-3xl">
             {profile && (
               <p className="pb-4">
-                Hey,{" "}
+                Hey,{' '}
                 <span className="italic text-[#E97171] ">{profile.name}</span>
                 😊 Welcome back !!!
               </p>
@@ -89,7 +92,7 @@ function Body() {
           {searchText ? (
             <button
               onClick={() => {
-                setSearchText("");
+                setSearchText('');
                 setFilteredRestaurants(allRestaurants);
               }}
               className="font-semibold  hover:bg-[#2C3333] hover:text-white mx-2 p-1 text-xl border-2 rounded-full duration-500  bg-gray-100 border-gray-300 mt-1"
