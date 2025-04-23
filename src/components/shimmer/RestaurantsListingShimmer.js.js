@@ -6,12 +6,12 @@ function RestaurantsListingShimmer() {
       </div>
       <div className="flex flex-wrap justify-center">
         {Array(10)
-          .fill("")
+          .fill('')
           .map((e, index) => {
             return (
               <div
                 key={index}
-                className="mx-4 my-8 h-80 w-60 bg-gray-100 rounded-lg overflow-hidden animate-pulse"
+                className="mx-4 my-8 min-h-[27rem] w-72 bg-gray-100 rounded-lg overflow-hidden animate-pulse"
               >
                 <div className="h-full bg-gradient-to-r from-gray-100 to-gray-200 rounded-lg"></div>
               </div>
