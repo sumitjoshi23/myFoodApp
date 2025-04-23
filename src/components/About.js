@@ -14,39 +14,44 @@ function About() {
       <p className="text-xl text-gray-600 mb-6"> Front End Web Developer</p>
       <div className="max-w-3xl">
         <p className="text-lg text-gray-700 leading-relaxed mb-6">
-          I'm a passionate web developer who loves building beautiful,
-          responsive user interfaces using various technologies including{' '}
+          I am a dedicated and results-driven Frontend Developer with around{' '}
+          <span className="text-[#216e71] font-semibold">6 years</span> of
+          experience in crafting high-quality, user-centric web applications.
+          Proficient in modern frontend technologies including{' '}
           <span className="text-[#216e71] font-semibold">
-            HTML, CSS, Javascript, React, Redux{' '}
-            <span className="text-gray-700 font-normal">and</span> Tailwind
+            HTML, CSS, Tailwind, PrimeReact, Javascript, TypeScript, ReactJS,
+            Redux, NextJS <span className="text-gray-700 font-normal">and</span>{' '}
+            Hasura-GraphQL
           </span>
           .
         </p>
+
         <p className="text-lg text-gray-700 leading-relaxed mb-6">
-          I have a professional working experience of around{' '}
-          <span className="text-[#216e71] font-semibold">4 years</span> and
-          worked on a variety of web projects, from small websites to
-          large-scale web applications. I also worked as a software tester and
-          used tools like
+          Throughout my career, I have contributed to a diverse range of
+          projects, from small-scale websites to complex enterprise-level
+          applications. Notably, I played a key role in developing{' '}
           <span className="text-[#216e71] font-semibold">
-            {' '}
-            Cucumber
-          </span> and{' '}
-          <span className="text-[#216e71] font-semibold">Selenium</span> in
-          order to automate the web app. I have also worked in{' '}
-          <span className="text-[#1e6669] font-semibold">Java</span> to fix bugs
-          and implementing required usecases. Later on I switched purely to
-          front end and helped my organization in{' '}
-          <span className="text-[#216e71] font-semibold">
-            migrating the whole UI
+            banking web products for clients in the U.S. and Canada.
           </span>{' '}
-          and{' '}
-          <span className="text-[#216e71] font-semibold">
-            writing own components like Accordions, Buttons, Dropdowns, Routes,
-            etc
-          </span>{' '}
-          using React JS.
+          collaborating closely with cross-functional teams to deliver secure
+          and performant solutions.
         </p>
+        <p className="text-lg text-gray-700 leading-relaxed mb-6">
+          Initially starting as a Software Tester, I gained hands-on experience
+          with automation tools like{' '}
+          <span className="text-[#216e71] font-semibold"> Cucumber</span> and{' '}
+          <span className="text-[#216e71] font-semibold">Selenium</span>, and
+          contributed to bug fixes using{' '}
+          <span className="text-[#1e6669] font-semibold">Java</span>.
+          Transitioning to frontend development, I led initiatives to{' '}
+          <span className="text-[#216e71] font-semibold">
+            migrate legacy UI components to React, developing reusable
+            components such as accordions, buttons, dropdowns, and routing
+            mechanisms
+          </span>
+          , thereby enhancing code maintainability and user experience.
+        </p>
+
         <p className="text-lg text-gray-700 leading-relaxed mb-6">
           I am{' '}
           <span className="text-[#216e71] font-semibold">
