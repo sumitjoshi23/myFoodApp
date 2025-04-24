@@ -26,12 +26,7 @@ function RestaurantDetails() {
     sla,
     labels,
   } = restaurant?.cards[2]?.card?.card?.info ?? {};
-  console.log(
-    'labels',
-    labels,
-    restaurant?.cards[0]?.card?.card?.info,
-    restaurant
-  );
+
   return !restaurant ? (
     <RestaurantDetailsShimmer />
   ) : (

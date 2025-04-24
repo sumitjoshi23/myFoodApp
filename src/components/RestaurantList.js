@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import RestaurantCard from './RestaurantCard';
 
 const RestaurantList = ({ filteredRestaurants }) => {
-  console.log('fil', filteredRestaurants);
   return (
     <div className="flex flex-wrap justify-around">
       {filteredRestaurants.map((restaurant) => {
