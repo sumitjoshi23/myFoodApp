@@ -65,15 +65,16 @@ function Body() {
     <>
       <div className="max-w-fit m-auto">
         <div className="flex flex-col items-center">
-          <div className="m-4 font-semibold text-center text-3xl">
+          <div className="m-4 font-normal text-center text-3xl">
             {profile && (
               <p className="pb-4">
-                Hey,{' '}
-                <span className="italic text-[#E97171] ">{profile.name}</span>
+                Hey, <span className="text-[#E97171] ">{profile.name}</span>
                 😊 Welcome back!
               </p>
             )}
-            Our restaurants are waiting for your next order...
+            <span className="text-xl">
+              Our restaurants are waiting for your next order...
+            </span>
           </div>
           <form
             className="rounded-full bg-[#fbe9d8] shadow-xl p-2 flex"
