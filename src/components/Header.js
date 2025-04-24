@@ -1,13 +1,13 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import googleIcon from "../utils/images/googleIcon.png";
-import NavbarLinksSection from "../NavbarLinksSection";
-import appLogo from "../utils/images/appLogo.jpg";
-import axios from "axios";
-import { googleLogout, useGoogleLogin } from "@react-oauth/google";
-import { useDispatch, useSelector } from "react-redux";
-import { setSignedInUser, setSignedInUserProfile } from "../store";
-import Button from "../Button";
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import googleIcon from '../utils/images/googleIcon.png';
+import NavbarLinksSection from '../NavbarLinksSection';
+import appLogo from '../utils/images/appLogo.jpg';
+import axios from 'axios';
+import { googleLogout, useGoogleLogin } from '@react-oauth/google';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSignedInUser, setSignedInUserProfile } from '../store';
+import Button from '../Button';
 
 function Header() {
   const { user, profile } = useSelector((store) => store.signedInUser);
@@ -15,7 +15,7 @@ function Header() {
 
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => dispatch(setSignedInUser(codeResponse)),
-    onError: (error) => console.log("Login Failed:", error),
+    onError: (error) => console.log('Login Failed:', error),
   });
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function Header() {
           {
             headers: {
               Authorization: `Bearer ${user.access_token}`,
-              Accept: "application/json",
+              Accept: 'application/json',
             },
           }
         )
@@ -44,16 +44,16 @@ function Header() {
 
   return (
     <>
-      <nav className="sticky top-0 shadow-lg z-10 flex items-center justify-between bg-[#fb6c3c] p-4">
+      <nav className="sticky top-0 shadow-lg z-10 flex items-center justify-between bg-[#fb6c3c] p-2">
         <div className="flex items-center mx-4">
           <Link className="flex items-center" to="/">
             <img
               src={appLogo}
               alt="logo"
-              className="rounded w-14 mr-5 hover:rotate-180 hover:scale-125 duration-700 "
+              className="rounded w-14 mr-4 hover:rotate-180 hover:scale-125 duration-700 "
             />
             <span className="text-white hover:scale-110 duration-300 font-semibold text-xl">
-              J Foods & Co.
+              Jo Foods
             </span>
           </Link>
         </div>
