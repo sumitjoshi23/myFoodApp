@@ -7,6 +7,7 @@ import { CDN_IMG_URL } from '../config';
 import { Link, useNavigate } from 'react-router-dom';
 import { fallbackItemPrice } from '../utils/helper';
 import { BiArrowBack } from 'react-icons/bi';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 const Cart = () => {
   const nav = useNavigate();
@@ -109,9 +110,12 @@ const Cart = () => {
             </div>
           </>
         ) : (
-          <div className="absolute top-72 font-bold text-2xl text-[#E97171]">
-            Empty cart 🙃 Visit restaurants and choose your favourite cuisine
-            !!!
+          <div className="absolute top-72 flex flex-col items-center">
+            <AiOutlineShoppingCart className="text-8xl text-gray-500 mb-4" />
+            <div className="font-bold text-center text-2xl text-gray-500">
+              Empty cart 🙃. <br />
+              Visit restaurants and choose your favourite cuisine !!!
+            </div>
           </div>
         )}
       </div>
