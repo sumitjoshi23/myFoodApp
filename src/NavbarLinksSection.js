@@ -42,8 +42,8 @@ const NavbarLinksSection = () => {
       className="flex mx-3 text-xl items-center text-white hover:scale-110 duration-200 hover:text-black"
     >
       <span className="m-1 text-3xl">{link.icon}</span>
-      {link.totalItemsInCart && (
-        <span className="mr-1 font-semibold">{link.totalItemsInCart}</span>
+      {link.totalItemsInCart > 0 && (
+        <span className="mr-0font-semibold">{link.totalItemsInCart}</span>
       )}
       <span className="m-1">{link.title}</span>
     </Link>
