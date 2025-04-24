@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineHome, AiOutlineShoppingCart } from 'react-icons/ai';
 import {
-  MdContactSupport,
   MdOutlineConnectWithoutContact,
   MdOutlineLocalOffer,
 } from 'react-icons/md';
+import { IoMdInformationCircleOutline } from 'react-icons/io';
+
 import { useSelector } from 'react-redux';
 
 const NavbarLinksSection = () => {
@@ -33,7 +34,7 @@ const NavbarLinksSection = () => {
       to: '/cart',
       totalItemsInCart,
     },
-    { title: 'About', icon: <MdContactSupport />, to: '/about' },
+    { title: 'About', icon: <IoMdInformationCircleOutline />, to: '/about' },
   ];
   let renderedNavbarLinks = navbarLinks.map((link) => (
     <Link
@@ -42,10 +43,8 @@ const NavbarLinksSection = () => {
       className="flex mx-3 text-xl items-center text-white hover:scale-110 duration-200 hover:text-black"
     >
       <span className="m-1 text-3xl">{link.icon}</span>
-      {link.totalItemsInCart > 0 && (
-        <span className="mr-0font-semibold">{link.totalItemsInCart}</span>
-      )}
       <span className="m-1">{link.title}</span>
+      {link.totalItemsInCart > 0 && <sup>{link.totalItemsInCart}</sup>}
     </Link>
   ));
   return renderedNavbarLinks;

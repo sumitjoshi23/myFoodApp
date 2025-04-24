@@ -22,10 +22,7 @@ const Cart = () => {
   const totalQuantity = items.reduce((acc, curr) => (acc += curr.quantity), 0);
 
   const renderedItems = items.map((item, index) => (
-    <div
-      className="hover:bg-[#edebe8] duration-500 hover:scale-105 hover:shadow-[#f5a58a] rounded-lg my-4 p-4 shadow-lg border "
-      key={index}
-    >
+    <div className="rounded-lg my-4 p-4 shadow-lg border " key={index}>
       <div className="grid grid-cols-8 justify-between items-center">
         <img
           className="rounded-lg m-2"
