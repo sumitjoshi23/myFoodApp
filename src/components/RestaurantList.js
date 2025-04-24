@@ -9,7 +9,7 @@ const RestaurantList = ({ filteredRestaurants }) => {
       {filteredRestaurants.map((restaurant) => {
         return (
           <Link
-            className="m-8"
+            className="m-6"
             key={restaurant?.info.id}
             to={'/restaurant/' + restaurant?.info.id}
           >
