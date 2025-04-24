@@ -1,32 +1,32 @@
-import React from "react";
-import whatsAppLogo from "../utils/images/whatsAppLogo.png";
-import facebookLogo from "../utils/images/facebookLogo.png";
-import instagramLogo from "../utils/images/instagramLogo.png";
-import twitterLogo from "../utils/images/twitterLogo.png";
-import telegramLogo from "../utils/images/telegramLogo.png";
-import quoraLogo from "../utils/images/quoraLogo.png";
-import { useSelector } from "react-redux";
+import React from 'react';
+import whatsAppLogo from '../utils/images/whatsAppLogo.png';
+import facebookLogo from '../utils/images/facebookLogo.png';
+import instagramLogo from '../utils/images/instagramLogo.png';
+import twitterLogo from '../utils/images/twitterLogo.png';
+import telegramLogo from '../utils/images/telegramLogo.png';
+import quoraLogo from '../utils/images/quoraLogo.png';
+import { useSelector } from 'react-redux';
 
 const FixedSideBars = () => {
   const { profile } = useSelector((store) => store.signedInUser);
 
   const leftSideBar = (
     <div
-      className="fixed top-[50%] translate-y-[-40%] text-black text-center font-semibold bg-[#EA5C2B] pr-1 pl-2 py-4 rounded rotate-180 hover:scale-125 duration-300"
+      className="h-80 fixed top-[50%] translate-y-[-40%] text-black text-center font-semibold bg-[#EA5C2B] pr-1 pl-2 py-4 rounded rotate-180 hover:scale-125 duration-300"
       style={{
-        writingMode: "vertical-rl",
+        writingMode: 'vertical-rl',
       }}
     >
       <i>
         {profile ? (
           <>
-            Currently logged in as{" "}
+            Currently logged in as{' '}
             <span className="text-white font-bold">{profile.name}</span>
           </>
         ) : (
           <>
             <span className="not-italic">🙃</span> Delicious stuff ... Order
-            quickly <span className="not-italic">🙃</span>
+            quickly &nbsp;<span className="not-italic">🙃</span>
           </>
         )}
       </i>
