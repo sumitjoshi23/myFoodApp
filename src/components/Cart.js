@@ -46,7 +46,7 @@ const Cart = () => {
             {item.quantity}
           </span>
         </div> */}
-        <div className="font-semibold flex items-center justify-between text-white m-5 hover:text-white text-xl hover:scale-125 rounded-full duration-500 h-6 p-5 hover:bg-[#f4511a] bg-[#fb6c3c]">
+        <div className="font-semibold flex items-center justify-between text-white m-5 hover:text-white text-xl hover:scale-125 min-w-[5rem] rounded-full duration-500 h-6 p-5 hover:bg-[#f4511a] bg-[#fb6c3c]">
           <button
             className="hover:scale-125 duration-300 p-0 m-0"
             onClick={() => dispatch(removeItem(item))}
