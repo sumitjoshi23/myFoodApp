@@ -102,7 +102,8 @@ function Body() {
           ) : null}
           <br />
           <p className="font-normal text-lg text-gray-600">
-            {filteredRestaurants.length} Outlet(s) found...
+            {filteredRestaurants.length} currently active outlet
+            {filteredRestaurants.length > 1 && 's'} found
           </p>
         </div>
       </div>
