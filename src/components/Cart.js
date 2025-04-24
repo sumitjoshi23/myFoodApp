@@ -115,7 +115,7 @@ const Cart = () => {
             <div className="font-bold text-center text-2xl text-gray-500">
               Empty cart 🙃
               <br />
-              Visit restaurants and choose your favourite cuisine !!!
+              Visit restaurants and choose your favourite cuisine!
             </div>
           </div>
         )}

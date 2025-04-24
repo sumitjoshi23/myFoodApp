@@ -70,7 +70,7 @@ function Body() {
               <p className="pb-4">
                 Hey,{' '}
                 <span className="italic text-[#E97171] ">{profile.name}</span>
-                😊 Welcome back !!!
+                😊 Welcome back!
               </p>
             )}
             Our restaurants are waiting for your next order...
