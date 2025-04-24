@@ -1,7 +1,7 @@
 import { CDN_IMG_URL } from '../config';
 import { AiFillStar } from 'react-icons/ai';
 import { RxDotFilled } from 'react-icons/rx';
-import { TbDiscount2 } from 'react-icons/tb';
+import { MdDiscount } from 'react-icons/md';
 import classNames from 'classnames';
 import logoVeg from '../utils/images/logoVeg.png';
 import logoNonVeg from '../utils/images/logoNonVeg.png';
@@ -55,7 +55,7 @@ function RestaurantCard({
         </ul>
         {aggregatedDiscountInfoV3 && (
           <h2 className="flex pt-2 items-center justify-center font-semibold text-[#fb6c3c]">
-            <TbDiscount2 className="mr-2 text-red-500" />{' '}
+            <MdDiscount className="mr-2 text-red-500" />{' '}
             {aggregatedDiscountInfoV3?.header}{' '}
             {aggregatedDiscountInfoV3?.subHeader}
           </h2>
