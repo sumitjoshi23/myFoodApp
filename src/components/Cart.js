@@ -111,9 +111,10 @@ const Cart = () => {
           </>
         ) : (
           <div className="absolute top-72 flex flex-col items-center">
-            <AiOutlineShoppingCart className="text-8xl text-gray-500 mb-4" />
+            <AiOutlineShoppingCart className="text-8xl text-gray-500 mb-3" />
             <div className="font-bold text-center text-2xl text-gray-500">
-              Empty cart 🙃. <br />
+              Empty cart 🙃
+              <br />
               Visit restaurants and choose your favourite cuisine !!!
             </div>
           </div>
