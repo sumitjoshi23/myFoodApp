@@ -23,7 +23,7 @@ function RestaurantCard({
 
   console.log('aggregatedDiscountInfo', aggregatedDiscountInfoV3);
   return (
-    <div className="relative hover:bg-[#f6d3b3] duration-300 hover:scale-110 hover:shadow-[#fb6c3c] w-64 p-1 shadow-2xl rounded-lg overflow-hidden border border-[#f9cea6]">
+    <div className="relative hover:bg-[#f6d3b3] duration-300 hover:scale-110 hover:shadow-[#fb6c3c] w-72 p-1 shadow-2xl rounded-lg overflow-hidden border border-[#f9cea6]">
       <span className="absolute w-6 bg-slate-200 ">
         <img src={veg ? logoVeg : logoNonVeg} alt="vegNonVegIcon" />
       </span>
