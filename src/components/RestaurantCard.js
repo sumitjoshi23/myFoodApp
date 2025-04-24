@@ -23,7 +23,7 @@ function RestaurantCard({
 
   console.log('aggregatedDiscountInfo', aggregatedDiscountInfoV3);
   return (
-    <div className="relative hover:bg-[#f6d3b3] duration-300 hover:scale-110 hover:shadow-[#fb6c3c] min-h-[28rem] w-64 p-1 shadow-2xl rounded-lg overflow-hidden border border-[#f9cea6]">
+    <div className="relative hover:bg-[#f6d3b3] duration-300 hover:scale-110 hover:shadow-[#fb6c3c] w-64 p-1 shadow-2xl rounded-lg overflow-hidden border border-[#f9cea6]">
       <span className="absolute w-6 bg-slate-200 ">
         <img src={veg ? logoVeg : logoNonVeg} alt="vegNonVegIcon" />
       </span>
@@ -33,8 +33,10 @@ function RestaurantCard({
         alt="card"
       />
       <div className="p-2">
-        <h2 className="font-semibold my-2 text-center">{name}</h2>
-        <h2 className="text-gray-700 text-sm text-center">
+        <h2 className="font-semibold my-2 text-center overflow-hidden text-ellipsis whitespace-nowrap">
+          {name}
+        </h2>
+        <h2 className="text-gray-700 text-sm text-center overflow-hidden text-ellipsis whitespace-nowrap">
           {cuisines?.join(', ')}
         </h2>
         <ul
